@@ -1,3 +1,20 @@
+/*------------------------------------
+ * Theme: Plate by studio.bio 
+ * File: Theme customizer js file
+ * Author: Joshua Michaels
+ * URI: https://studio.bio/themes/plate
+ *------------------------------------
+ *
+ * Customize all of the things. This js file adds a helper function
+ * to do that.
+ *
+ * Lots more info here:
+ * https://maddisondesigns.com/2017/05/the-wordpress-customizer-a-developers-guide-part-1/
+ *
+ *
+*/
+
+
 (function( $ ) {
 
 	wp.customize( 'blogname', function( value ) {

@@ -19,12 +19,13 @@ We're gonna use a placeholder selector here
 so we can use common styles. We then use this
 to load up the defaults in all our buttons.
 
-Here's a quick video to show how it works:
-http://www.youtube.com/watch?v=hwdVpKiJzac
+See here on placeholder selectors and why you should
+use @extend instead of @include:
+http://thesassway.com/intermediate/understanding-placeholder-selectors
 
 *********************/
 
-%btn {
+%button {
   position: relative;
   display: inline-block;
   margin-bottom: .5em;
@@ -45,3 +46,12 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   } // end active
 
 } // end .button
+
+.button {
+  @extend %button;
+}
+
+.blue-button {
+  @extend %button;
+  background: #0088CC;
+}

@@ -540,8 +540,8 @@ more here: http://www.newnet-soft.com/blog/csstypography
 */
 p {
   -ms-word-wrap: break-word;
-  word-break: break-word;
   word-wrap: break-word;
+  word-break: break-word;
   -webkit-hyphens: none;
   -ms-hyphens: none;
       hyphens: none;
@@ -905,10 +905,26 @@ We're gonna use a placeholder selector here
 so we can use common styles. We then use this
 to load up the defaults in all our buttons.
 
-Here's a quick video to show how it works:
-http://www.youtube.com/watch?v=hwdVpKiJzac
+See here on placeholder selectors and why you should
+use @extend instead of @include:
+http://thesassway.com/intermediate/understanding-placeholder-selectors
 
 *********************/
+.button, .blue-button {
+  position: relative;
+  display: inline-block;
+  margin-bottom: .5em;
+  padding: 0.5em 1em;
+  border: 0;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer; }
+  .button:active, .blue-button:active {
+    top: 1px; }
+
+.blue-button {
+  background: #0088CC; }
+
 /******************************************************************
 Site Name:
 Author:

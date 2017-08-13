@@ -72,14 +72,14 @@ FONT STACKS
 // Let's use OS system fonts and let the system do the work. We've included all the major desktop and mobile OS's.
 // See here: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/. 
 
-$sans:        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$serif: "Georgia", Cambria, Times New Roman, Times, serif;
 
 /*
  Commented out since WP uses system fonts now but if you can't let go I won't be upset. 
 */
-// $open:              'Open Sans', $sans-serif;
+// $open: 'Open Sans', $sans-serif;
 
 /*
 some nice typographical defaults
@@ -87,8 +87,8 @@ more here: http://www.newnet-soft.com/blog/csstypography
 */
 p {
   -ms-word-wrap: break-word;
-  word-break: break-word; //non-standart css for webkit
   word-wrap: break-word;
+  word-break: break-word; //non-standart css for webkit
   // I don't like hyphens for web text so uncomment the next section if you do
   -webkit-hyphens: none;
      -moz-hyphens: none;
@@ -107,4 +107,3 @@ p {
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
 }
-

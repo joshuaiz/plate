@@ -113,8 +113,8 @@ more here: http://www.newnet-soft.com/blog/csstypography
 */
 p {
   -ms-word-wrap: break-word;
-  word-break: break-word;
   word-wrap: break-word;
+  word-break: break-word;
   -webkit-hyphens: none;
   -ms-hyphens: none;
       hyphens: none;
