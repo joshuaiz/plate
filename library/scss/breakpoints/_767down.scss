@@ -1,0 +1,86 @@
+/******************************************************************
+Site Name: 
+Author:
+
+Stylesheet: Below Tablet
+
+This stylesheet will show on devices smaller than an iPad or tablet.
+Use this to add styles that will *only* show on mobile.
+
+I find it easier to do it this way than to have to override base styles.
+
+******************************************************************/
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+nav {}
+
+.header-nav {}
+
+.main-menu {}
+
+.nav {
+	margin: 0;
+	padding: 0;
+	border-bottom: 0;
+	list-style-type: none;
+
+	li {
+
+		a {
+			display: block;
+			padding: 0.2em;
+			text-decoration: none;
+
+
+			&:hover, &:focus {
+
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+		/* 
+		Are you really going to use drop-down menus for mobile?
+		Probably not. We almost always use the Responsive Menu
+		plugin: https://wordpress.org/plugins/responsive-menu/
+		*/
+		ul.sub-menu,
+		ul.children {
+
+			li {
+
+				a {
+					padding-left: 30px;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+
+			}
+
+		}
+
+	} /* end .menu li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+
+		a {}
+
+	}  /* end current highlighters */
+
+} /* end .nav */

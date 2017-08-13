@@ -1,0 +1,687 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Base Stylesheet
+
+As the name implies, this is the base stylesheet. This will be
+loaded by all devices and viewports so keep it as light as possible.
+
+If you are using progressive enhancement, load styles that will be
+only seen on tablets or desktops in the stylesheets targeted for
+those viewpoints.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+html {
+	font-size: 1em; // 1em = 16px; Adjust if you want a different baseline.
+}
+
+body {
+	color: #333333;
+	font-size: 100%;
+	font-family: $sans;
+	line-height: 1.5;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+img { // responsive images by default
+	max-width: 100%;
+	height: auto;
+}
+
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+
+.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
+.home {}                          /* home page */
+.blog {}                          /* blog template page */
+.archive {}                       /* archive page */
+.date {}                          /* date archive page */
+	.date-paged-1 {}                /* replace the number to the corresponding page number */
+.search {}                        /* search page */
+	.search-results {}              /* search result page */
+	.search-no-results {}           /* no results search page */
+	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+.error404 {}                      /* 404 page */
+.single {}                        /* single post page */
+	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+.attachment {}                    /* attatchment page */
+	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {}        /* style mime type pages */
+.author {}                        /* author page */
+	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {}                      /* category page */
+	.category-1 {}                  /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {}            /* replace the number to the corresponding page number */
+.tag {}                           /* tag page */
+	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+.page-template {}                 /* custom page template page */
+	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {}                /* replace the number to the corresponding page number */
+	.page-parent {}                 /* parent page template */
+	.page-child {}                  /* child page template */
+	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+.logged-in {}                     /* if user is logged in */
+.paged {}                         /* paged items like search results or archives */
+	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	margin: 0 auto;
+	width: 96%;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+
+	/* on hover */
+	&:hover, &:focus {}
+
+	/* on click */
+	&:active {}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/******************************************************************
+HEADING STYLES
+******************************************************************/
+
+/* While there are several frameworks for Sass web typography and
+baselines like Sassline, Megatype and Gutenberg, those all seemed
+overly complex. What I wanted was simple defaults that looked good
+out of the box without a lot of calculations and segmented mixins.
+
+After searching far and wide, I came across this:
+http://type-scale.com which we used to get our base sizes.
+
+*/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	margin: 1.333em 0 0.5em;
+	color: lighten($sb-black, 12%);
+  	font-weight: 500;
+  	line-height: 1.2;
+	text-rendering: optimizelegibility;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	margin-top: 0;
+  	margin-bottom: 0.319em;
+  	font-size: 3.157em;
+}
+
+h2, .h2 {
+	margin-top: 0.88em;
+	font-size: 2.369em;
+}
+
+h3, .h3 {
+	font-size: 1.777em;
+}
+
+h4, .h4 {
+	font-size: 1.333em;
+}
+
+h5, .h5 {
+	font-size: 1em;
+}
+
+h6, .h6 {
+	text-transform: uppercase;
+	letter-spacing: 4.333px;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+	background: #efefef;
+}
+
+	#site-title {
+		font-size: 2em;
+	}
+
+	#banner {
+		.header-image {}
+	}
+
+	#logo {}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/* Where did the nav menu go?
+Navigation styles for mobile are now in 767down.scss
+if you need them.
+
+We almost always use the Responsive Menu plugin:
+https://wordpress.org/plugins/responsive-menu/ for mobile
+menus but those selectors are there if you need them.
+
+For your main navigation, styles are in 768up.scss.
+*/
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+
+}
+		.hentry {
+			
+
+			header {
+				
+			}
+
+			footer {
+				
+			}
+
+		} /* end .hentry */
+
+		.single-title,
+		.page-title,
+		.entry-title {}
+
+		.single-title {}
+
+		.page-title {}
+
+		.entry-title {}
+
+		.archive-title {}
+
+		/* want to style individual post classes? Booya! */
+		.post-id {}         /* post by id (i.e. post-3) */
+		.post {}            /* general post style */
+		.page {}            /* general article on a page style */
+		.attachment {}      /* general style on an attatchment */
+		.sticky {}          /* sticky post style */
+		.hentry {}          /* hentry class */
+		.category-slug {}   /* style by category (i.e. category-videos) */
+		.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+		/* post meta */
+		.byline {
+
+			time {}
+		}
+
+		/* entry content */
+		.entry-content {
+
+			p {
+				
+			}
+
+
+			ul, ol, table, dl {}
+
+			ul, ol {
+
+				li {}
+
+			}
+
+			ul {
+
+				li {}
+
+			}
+
+			ol {
+
+				li {}
+
+			}
+
+			table {
+				margin-bottom: 1.5em;
+				width: 100%;
+				border: 1px solid #ccc;
+
+				caption {
+					
+				}
+			}
+
+			tr {
+				border-bottom: 1px solid #ccc;
+
+				&:nth-child(even) {
+					background-color: #dedede;
+				}
+			}
+
+			td {
+				padding: 7px;
+				border-right: 1px solid #ccc;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			th {
+				border-right: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				background-color: #dedede;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			blockquote p {
+				&:before {}
+
+			}
+
+			dl {}
+
+			dt {}
+
+			dd {}
+
+			img {}
+
+			/*
+			image alignment on a screen this size may be
+			a bit difficult. It's set to start aligning
+			and floating images at the next breakpoint,
+			but it's up to you. Feel free to change it up.
+			*/
+			.alignleft, img.alignleft {}
+			.alignright, img.alignright {}
+			.aligncenter, img.aligncenter {}
+
+			.size-auto,
+			.size-full,
+			.size-large,
+			.size-medium,
+			.size-thumbnail {}
+
+			pre {}
+			code {}
+
+		} /* end .entry-content */
+
+		.wp-caption {
+
+			/* images inside wp-caption */
+			img {}
+
+			p.wp-caption-text {}
+
+		} /* end .wp-caption */
+
+		/* image gallery styles */
+		.gallery {
+
+			dl {
+
+				a {}
+
+				img {}
+
+			}
+
+			dt {}
+
+			dd {}
+
+		} /* end .gallery */
+
+		/* gallery caption styles */
+		.gallery-caption {}
+
+		.size-full {}
+		.size-large {}
+		.size-medium {}
+		.size-thumbnail {}
+
+	// the tag output
+	.tags {}
+
+
+/******************************************************************
+SCREEN READER STYLES
+******************************************************************/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	width: 1px;
+	height: 1px;
+        white-space: nowrap;
+}
+
+.screen-reader-text:focus {
+	top: 5px;
+	left: 5px;
+	z-index: 100000; /* Above WP toolbar. */
+	display: block;
+	clip: auto !important;
+	padding: 15px 23px 14px;
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #21759b;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.875rem;
+	font-size: 14px;
+	line-height: normal;
+}
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.pagination,
+.wp-prev-next {}
+
+	.pagination{
+
+    	ul {}
+
+    		li {}
+
+    		a, span {
+      
+      			&:hover, &:focus {}
+    		}
+
+    	.current{
+
+    		&:hover, &:focus {}
+    	}
+
+  	} /* end template_page_navi */
+
+	/* fallback previous & next links */
+	.wp-prev-next {
+
+		ul {}
+
+		.prev-link {
+			float: left;
+		}
+
+		.next-link {
+			float: right;
+		}
+
+	} /* end .wp-prev-next */
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+/* h3 comment title */
+#comments-title {
+
+	/* number of comments span */
+	span {}
+
+}
+
+.comment-nav {
+
+	ul {
+
+		li {}
+
+	}
+}
+
+.commentlist {
+	margin: 0;
+	list-style-type: none;
+}
+
+.comment {
+
+	.comment-author {}
+
+	/* vcard */
+	.vcard {
+
+		cite.fn {
+
+			a.url {}
+		}
+
+		time {
+
+			a {
+
+				&:hover {
+					
+				}
+
+			}
+
+		}
+
+		.photo {}
+
+		.avatar {
+	
+		}
+
+	} /* end .commentlist .vcard */
+
+	&:last-child {
+		
+	}
+
+	.children {
+		
+
+		li {}
+
+			/* variations */
+			.comment {}
+			.alt {}
+			.odd {}
+			.even {}
+			.depth-1 {}           /* change number for different depth */
+			.byuser {}
+			.bypostauthor {}
+			.comment-author-admin {}
+
+	} /* end children */
+
+
+	&[class*=depth-] {}
+
+	&.depth-1 {}
+
+	&:not(.depth-1) {}
+
+	&.depth-2 {}
+	&.depth-3 {}
+	&.depth-4 {}
+	&.depth-5 {}
+
+	/* general comment classes */
+	&.alt {}
+	&.odd {}
+	&.even {}
+	&.parent {}
+	&.comment {}
+	&.children {}
+	&.pingback {}
+	&.bypostauthor {}
+	&.comment-author {}
+	&.comment-author-admin {}
+	&.thread-alt {}
+	&.thread-odd {}
+	&.thread-even {}
+}
+
+
+	/* comment meta */
+	.comment-meta {
+
+		a {}
+
+	}
+
+	.commentmetadata {
+
+		a {}
+
+	}
+
+	/* comment content */
+	.comment_content {
+
+		p {}
+
+	} /* end .commentlist .comment_content */
+
+	/* comment reply link */
+	.comment-reply-link {
+
+		&:hover,
+		&:focus {}
+
+	} /* end .commentlist .comment-reply-link */
+
+	/* edit comment link */
+	.comment-edit-link {}
+
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.comment-respond {}
+
+	#reply-title {
+		
+	}
+
+	.logged-in-as {}
+
+	.comment-form-comment {}
+
+	.form-allowed-tags {}
+
+	/* comment submit button */
+	#submit {}
+
+	/* comment form title */
+	#comment-form-title {}
+
+	/* cancel comment reply link */
+	#cancel-comment-reply {
+		a {}
+	}
+
+	/* logged in comments */
+	.comments-logged-in-as {}
+
+	/* allowed tags */
+	#allowed_tags {}
+
+	/* no comments */
+	.nocomments {}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+	.widgettitle {}
+
+	.widget {
+
+		ul {
+
+			li {
+
+				&:first-child {}
+
+				&:last-child {}
+
+				a {}
+
+				/* deep nesting */
+				ul {}
+
+			}
+
+		}
+
+	}
+
+	.no-widgets {}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+}
+
+	.footer-links {
+
+		ul {
+
+			li {}
+
+		}
+
+	} /* end .footer-links */
+
+
+	.copyright {}

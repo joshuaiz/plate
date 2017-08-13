@@ -1,0 +1,108 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Form Styles
+
+We put all the form and button styles in here to setup a consistent
+look. If we need to customize them, we can do this in the main
+stylesheets and just override them. Easy Peasy.
+
+You're gonna see a few data-uri thingies down there. If you're not
+sure what they are, check this link out:
+http://css-tricks.com/data-uris/
+If you want to create your own, use this helpful link:
+http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/
+
+******************************************************************/
+
+/*********************
+INPUTS
+*********************/
+
+// setting up defaults
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+.field {
+  display: block;
+  
+  // a focused input (or hovered on)
+  &:focus,
+  &:active {} // end hover or focus
+
+  // error notification
+  &.error,
+  &.is-invalid {} // end invalid input
+
+  // success notification
+  &.success,
+  &.is-valid {} // end valid input
+
+  // a disabled input
+  &[disabled],
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:focus,
+    &:active {} // end disabled focus
+
+  } // end disabled input
+
+} // end input defaults
+
+// spacing out the password (thx @murtaugh)
+input[type="password"] {
+  letter-spacing: 0.3em;
+}
+
+// textareas
+textarea {
+  max-width: 100%;
+}
+
+// selects
+select {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  label {
+    font-weight: 600;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+legend {
+  padding: 0 0.5em;
+}
+
+.radio-buttons {
+  margin-top: 0;
+  li {
+    margin-left: 2px;
+    list-style-type: none;
+  }
+  label {
+    font-weight: normal;
+  }
+}

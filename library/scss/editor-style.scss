@@ -1,0 +1,194 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: TinyMCE Editor
+
+This stylesheet is loaded automatically by Wordpress when compiled
+and placed in the root theme directory folder as editor-style.css
+
+For more info, check out the codex:
+http://codex.wordpress.org/Editor_Style
+
+******************************************************************/
+
+/* Wrap the entire post style inside the TinyMCE selector, as suggested
+here http://codex.wordpress.org/Function_Reference/add_editor_style */
+body#tinymce.wp-editor {
+
+	// normalize: http://necolas.github.io/normalize.css/
+	@import "partials/normalize";
+
+	// Sass variables
+	@import "partials/variables";
+
+	// typography
+	@import "partials/typography";
+
+	// Sass functions
+	@import "partials/functions";
+
+	// import mixins
+	@import "partials/mixins";
+
+		/*********************
+		LARGER MOBILE DEVICES
+		This is for devices like the Galaxy Note or something that's
+		larger than an iPhone but smaller than a tablet. Let's call them
+		tweeners.
+		*********************/
+		@media only screen and (min-width: 481px) {
+
+			/* at this larger size, we can start to align images */
+			.alignleft, img.alignleft {
+				display: inline;
+				float: left;
+				margin-right: 1.5em;
+			}
+			.alignright, img.alignright {
+				display: inline;
+				float: right;
+				margin-left: 1.5em;
+			}
+			.aligncenter, img.aligncenter {
+				display: block;
+				clear: both;
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+		}
+
+  /*********************
+	LINK STYLES
+	*********************/
+
+	a, a:visited {
+		
+
+		/* on hover */
+		&:hover, &:focus {
+			
+		}
+
+		/* on click */
+		&:active {
+
+		}
+
+		&:link {
+
+			-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+		}
+	}
+
+	/******************************************************************
+	H1, H2, H3, H4, H5 STYLES
+	******************************************************************/
+
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	margin: 1.333em 0 0.5em;
+	color: lighten($sb-black, 12%);
+  	font-weight: 500;
+  	line-height: 1.2;
+	text-rendering: optimizelegibility;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+		/* removing text decoration from all headline links */
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h1, .h1 {
+		margin-top: 0;
+	  	margin-bottom: 0.319em;
+	  	font-size: 3.157em;
+	}
+	
+	h2, .h2 {
+		margin-top: 0.88em;
+		font-size: 2.369em;
+	}
+	
+	h3, .h3 {
+		font-size: 1.777em;
+	}
+	
+	h4, .h4 {
+		font-size: 1.333em;
+	}
+	
+	h5, .h5 {
+		font-size: 1em;
+	}
+	
+	h6, .h6 {
+		text-transform: uppercase;
+		letter-spacing: 4.333px;
+	}
+
+	
+
+		p {
+			margin: 0 0 1.5em;
+		}
+
+		table {
+			width: 100%;
+			
+			caption {
+				
+			}
+		}
+
+		tr {
+			border-bottom: 1px solid #ccc;
+			&:nth-child(even) {
+				background-color: #dedede;
+			}
+		}
+
+		td {
+			padding: 7px;
+			border-right: 1px solid #ccc;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+
+		th {
+			border-right: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			background-color: #dedede;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+
+		blockquote {
+
+			&:before {}
+
+		}
+
+		dd {}
+
+		img {}
+
+		.size-auto,
+		.size-full,
+		.size-large,
+		.size-medium,
+		.size-thumbnail {
+			max-width: 100%;
+			height: auto;
+		}
+
+		pre {}
+}
