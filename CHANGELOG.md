@@ -2,9 +2,15 @@
 
 For more information, please visit: https://studio.bio/themes/plate
 
-Author: Joshua Michaels for studio.bio
+Author: Joshua Michaels for studio.bio with help from Jon Iler
+
 
 *******************************************************************
+
+### 1.0.2 2017-08-31
+Updated a few functions and calls with get_theme_file_uri(); which
+was added in 4.7 to replace get_template_directory_uri();
+
 
 ### 1.0.1 2017-08-13
 To be honest, I've been using Plate way more than Template in my
