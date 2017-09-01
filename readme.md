@@ -1,4 +1,4 @@
-# Template
+# Plate by studio.bio
 https://github.com/joshuaiz/plate/
 
 https://studio.bio/themes/plate/
