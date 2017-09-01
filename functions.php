@@ -195,7 +195,7 @@ function template_comments( $comment, $args, $depth ) {
           // create variable
           $bgauthemail = get_comment_author_email();
         ?>
-        <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+        <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
         <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'templatetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'templatetheme' ),'  ','') ) ?>
         <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'templatetheme' )); ?> </a></time>
@@ -333,16 +333,16 @@ function template_scripts_and_styles() {
   if (!is_admin()) {
 
     // modernizr (without media query polyfill)
-    wp_register_script( 'template-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
+    wp_register_script( 'template-modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
 
     // register main stylesheet
-    wp_register_style( 'template-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+    wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
 
     // ie-only style sheet
-    wp_register_style( 'template-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+    wp_register_style( 'template-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
 
     // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+    if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) {
       wp_enqueue_script( 'comment-reply' );
     }
 
@@ -578,7 +578,7 @@ function template_customizer_scripts() {
   );
 
   // register customizer stylesheet
-  wp_register_style( 'template-customizer', get_stylesheet_directory_uri() . '/library/css/customizer.css', array(), '', 'all' );
+  wp_register_style( 'template-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
   wp_enqueue_style( 'template-customizer' );
 
 }

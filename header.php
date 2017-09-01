@@ -23,13 +23,13 @@
 		<link rel="apple-touch-icon" sizes="167x167" href="iPad-Pro.png">
 
 		<?php // favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		<link rel="icon" href="<?php echo get_theme_file_uri(); ?>/favicon.png">
 		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+			<link rel="shortcut icon" href="<?php echo get_theme_file_uri(); ?>/favicon.ico">
 		<![endif]-->
 		<?php // or, set /favicon.ico for IE10 win ?>
 		<meta name="msapplication-TileColor" content="#f01d4f">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+		<meta name="msapplication-TileImage" content="<?php echo get_theme_file_uri(); ?>/library/images/win8-tile-icon.png">
         <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -72,7 +72,7 @@
 					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
 					<div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div>
 
-					<!-- <div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/template_logo.png" /></a></div> -->
+					<!-- <div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.png" /></a></div> -->
 
 					<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
