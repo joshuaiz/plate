@@ -771,12 +771,28 @@ function template_custom_quicktags() {
 // Load dashicons on the front end
 // To use, go here and copy the css/html for the dashicon you want: https://developer.wordpress.org/resource/dashicons/
 // Example: <span class="dashicons dashicons-wordpress"></span>
-add_action( 'wp_enqueue_scripts', 'template_load_dashicons' );
-function template_load_dashicons() {
-    wp_enqueue_style( 'dashicons' );
-}
+// add_action( 'wp_enqueue_scripts', 'template_load_dashicons' );
+// function template_load_dashicons() {
+//     wp_enqueue_style( 'dashicons' );
+// }
 
-
+// Remove wp-embed.min.js from the front end
+add_action( 'init', function() {
+  
+      // Remove the REST API endpoint.
+      remove_action('rest_api_init', 'wp_oembed_register_route');
+  
+      // Turn off oEmbed auto discovery.
+      // Don't filter oEmbed results.
+      remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+  
+      // Remove oEmbed discovery links.
+      remove_action('wp_head', 'wp_oembed_add_discovery_links');
+  
+      // Remove oEmbed-specific JavaScript from the front-end and back-end.
+      remove_action('wp_head', 'wp_oembed_add_host_js');
+  }, PHP_INT_MAX - 1 );
+  
 // Post Author function (from WP Twenty Seventeen theme)
 // We use this in the byline template part but included here in case you want to use it elsewhere.
 if ( ! function_exists( 'template_posted_on' ) ) :
@@ -823,5 +839,17 @@ function template_time_link() {
   );
 }
 endif;
+
+
+// Live Reload for Grunt during development
+//If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
+if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
+  function livereload_script() {
+  	wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+  	wp_enqueue_script('livereload');
+  }
+  
+  add_action( 'wp_enqueue_scripts', 'livereload_script' );
+}
 
 ?>

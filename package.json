@@ -1,0 +1,15 @@
+{
+  "name": "BoilerPlate",
+  "version": "0.0.2",
+  "devDependencies": {
+    "connect-livereload": "*",
+    "grunt": "*",
+    "grunt-autoprefixer": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-svgstore": "*"
+  }
+}
