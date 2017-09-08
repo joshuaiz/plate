@@ -7,6 +7,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+###1.0.3 2017-09-08
+Added Grunt support (thanks @micahmills)
+Added REST API support in the custom post type plugin template
+Added extras in /library/extras (brilliant I know)
+
+
 ### 1.0.2 2017-08-31
 Updated a few functions and calls with get_theme_file_uri(); which
 was added in 4.7 to replace get_template_directory_uri();
