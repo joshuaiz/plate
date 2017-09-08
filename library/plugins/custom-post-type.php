@@ -8,7 +8,7 @@
 */
 
 /******************************************************************
-A PLUGIN? IN MY THEME? 
+A PLUGIN? IN MY THEME?
 *******************************************************************
 Wait a minute there buddy, what is a plugin file doing in a theme?
 
@@ -17,7 +17,7 @@ on will need your CPT to work with or without your theme. You may
 not be the dev in 5 years time but they will still need their data.
 
 Thus, it makes sense to put each custom post type in a plugin. This
-is an example of a 'Staff' custom post type and includes its own 
+is an example of a 'Staff' custom post type and includes its own
 taxonomy 'Grouping' plus some functions to change the 'Title' field
 on edit screens and make the admin columns sortable.
 
@@ -25,7 +25,7 @@ You *could* edit this file to make your own CPT. But it's even easier
 to just go to https://generatewp.com and use the Post Type Generator
 and the Taxonomy Generator there. That's what I do.
 
-Edit this or replace your own code from generatewp.com and then place 
+Edit this or replace your own code from generatewp.com and then place
 in the /wp-content/plugins folder and activate it like any other
 plugin. Sweetness.
 
@@ -92,11 +92,15 @@ function template_staff_cpt() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,		
+		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'rewrite'               => $rewrite,
 		'capability_type'       => 'page',
+		'show_in_rest'          => true,
+		// You can change the base request here
+		//'rest_base'             => 'staff',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	);
 	register_post_type( 'template_staff', $args );
 
@@ -137,6 +141,10 @@ function template_staff_grouping_tax() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => false,
 		'show_tagcloud'              => false,
+		'show_in_rest'               => true,
+		// You can change the base request here
+		//'rest_base'                  => 'grouping',
+		'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
 	register_taxonomy( 'grouping', array( 'template_staff' ), $args );
 
@@ -148,14 +156,14 @@ add_action( 'init', 'template_staff_grouping_tax', 0 );
 // Change the 'Title' field text on edit screen
 function template_staff_change_title_text( $title ){
      $screen = get_current_screen();
- 
+
      if  ( 'template_staff' == $screen->post_type ) {
           $title = 'Full Name (First Last)';
      }
- 
+
      return $title;
 }
- 
+
 add_filter( 'enter_title_here', 'template_staff_change_title_text' );
 
 
