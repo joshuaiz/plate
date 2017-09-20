@@ -1,49 +1,49 @@
 <?php get_header(); ?>
 
-			<div id="content">
+	<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+		<div id="inner-content" class="wrap cf">
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+			<main id="main" class="m-all t-2of3 d-5of7 cf" role="main">
 
-						<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'templatetheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+				<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'templatetheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
+					<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
 
-								<header class="entry-header article-header">
+						<header class="entry-header article-header">
 
-									<?php get_template_part( 'templates/header', 'title'); ?>
+							<?php get_template_part( 'templates/header', 'title'); ?>
 
-                  					<?php get_template_part( 'templates/byline'); ?>
+          					<?php get_template_part( 'templates/byline'); ?>
 
-								</header>
+						</header>
 
-								<section class="entry-content">
-									
-									<?php get_template_part( 'templates/content', 'excerpt'); ?>
+						<section class="entry-content">
+							
+							<?php get_template_part( 'templates/content', 'excerpt'); ?>
 
-								</section>
+						</section>
 
-								<footer class="article-footer">
+						<footer class="article-footer">
 
-									<?php get_template_part( 'templates/category-tags'); ?>
+							<?php get_template_part( 'templates/category-tags'); ?>
 
-								</footer> <!-- end article footer -->
+						</footer> <!-- end article footer -->
 
-							</article>
+					</article>
 
-							<?php get_template_part( 'templates/post-navigation'); ?>
+					<?php get_template_part( 'templates/post-navigation'); ?>
 
-						<?php endwhile; endif; ?>
+				<?php endwhile; endif; ?>
 
-					</main>
+			</main>
 
-					<?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
 
-				</div>
+		</div>
 
-			</div>
+	</div>
 
 <?php get_footer(); ?>

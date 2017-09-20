@@ -1,6 +1,6 @@
 <?php
 /*
-The comments page for Bones
+The comments page for Plate
 */
 
 // don't load it if you can't comment
@@ -48,4 +48,3 @@ if ( post_password_required() ) {
   <?php endif; ?>
 
   <?php comment_form(); ?>
-

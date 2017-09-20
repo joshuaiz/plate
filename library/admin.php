@@ -38,7 +38,7 @@ function template_remove_dashboard_widgets() {
   remove_meta_box('rg_forms_dashboard','dashboard','normal'); //Gravity Forms
   remove_meta_box('dashboard_recent_comments','dashboard','normal'); //Recent Comments
   remove_meta_box('icl_dashboard_widget','dashboard','normal'); //Multi Language Plugin
- remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
+  remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
   remove_action('welcome_panel','wp_welcome_panel');
 
 }

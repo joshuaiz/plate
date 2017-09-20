@@ -1,46 +1,46 @@
 <?php get_header(); ?>
+	
+	<div id="content">
 
-			<div id="content">
+		<div id="inner-content" class="wrap cf">
 
-				<div id="inner-content" class="wrap cf">
+			<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-					<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+				<article id="post-not-found" class="hentry cf">
 
-						<article id="post-not-found" class="hentry cf">
+					<header class="article-header">
 
-							<header class="article-header">
+						<?php get_template_part( 'templates/header', 'title'); ?>
 
-								<?php get_template_part( 'templates/header', 'title'); ?>
+					</header>
 
-							</header>
+					<section class="entry-content">
 
-							<section class="entry-content">
+						<div class="404-txt">
 
-								<div class="404-txt">
+							<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'templatetheme' ); ?></h3>
+							<p>We couldn't find what you are looking for, please try searching.</p>
 
-									<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'templatetheme' ); ?></h3>
-									<p>We couldn't find what you are looking for, please try searching.</p>
+						</div>
 
-								</div>
+					</section>
 
-							</section>
+					<section class="search">
 
-							<section class="search">
+							<p><?php get_search_form(); ?></p>
 
-									<p><?php get_search_form(); ?></p>
+					</section>
 
-							</section>
+					<footer class="article-footer">
 
-							<footer class="article-footer">
+					</footer>
 
-							</footer>
+				</article>
 
-						</article>
+			</main>
 
-					</main>
+		</div>
 
-				</div>
-
-			</div>
+	</div>
 
 <?php get_footer(); ?>
