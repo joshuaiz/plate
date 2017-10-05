@@ -367,7 +367,7 @@ function template_scripts_and_styles() {
 }
 
 /****************************************
-* REMOVE WP EXTRAS *
+* REMOVE WP EXTRAS & DEQUEUEING STUFFS *
 ****************************************/
 
 // Remove emojis: because WordPress is serious business.
@@ -400,13 +400,51 @@ function disable_emojicons_tinymce( $plugins ) {
 }
 
 
-// Dequeue jQuery Migrate
-add_action( 'wp_default_scripts', 'template_dequeue_jquery_migrate' );
-function template_dequeue_jquery_migrate( $scripts ) {
-  if (! empty( $scripts->registered['jquery'] ) ) {
-    $jquery_dependencies = $scripts->registered['jquery']->deps;
-    $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
-  }
+/* Dequeue jQuery Migrate
+* I'm commenting this out by default. Why? Because Gravity Forms *requires* it
+* for some forms functions to work...***eye roll***. 
+* 
+*/
+// add_action( 'wp_default_scripts', 'template_dequeue_jquery_migrate' );
+// function template_dequeue_jquery_migrate( $scripts ) {
+//   if (! empty( $scripts->registered['jquery'] ) ) {
+//     $jquery_dependencies = $scripts->registered['jquery']->deps;
+//     $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
+//   }
+// }
+
+
+// Remove wp-embed.min.js from the front end. Commented out by default as you may need it.
+// See here: https://wordpress.stackexchange.com/questions/211701/what-does-wp-embed-min-js-do-in-wordpress-4-4
+// add_action( 'init', function() {
+  
+//       // Remove the REST API endpoint.
+//       remove_action('rest_api_init', 'wp_oembed_register_route');
+  
+//       // Turn off oEmbed auto discovery.
+//       // Don't filter oEmbed results.
+//       remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+  
+//       // Remove oEmbed discovery links.
+//       remove_action('wp_head', 'wp_oembed_add_discovery_links');
+  
+//       // Remove oEmbed-specific JavaScript from the front-end and back-end.
+//       remove_action('wp_head', 'wp_oembed_add_host_js');
+//   }, PHP_INT_MAX - 1 );
+
+
+// Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+// Not sure if this actually works anymore.
+function template_filter_ptags_on_images($content){
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+
+// This removes the annoying […] to a Read More link
+function template_excerpt_more($more) {
+    global $post;
+     // edit here if you like
+    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'templatetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'templatetheme' ) .'</a>';
 }
 
 
@@ -417,202 +455,209 @@ THEME SUPPORT
 // Adding WP 3+ Functions & Theme Support
 function template_theme_support() {
 
-  // wp thumbnails (sizes handled in functions.php)
-  add_theme_support( 'post-thumbnails' );
+    // wp thumbnails (sizes handled in functions.php)
+    add_theme_support( 'post-thumbnails' );
 
-  // default thumb size
-  set_post_thumbnail_size(125, 125, true);
+    // default thumb size
+    set_post_thumbnail_size(125, 125, true);
 
-  // wp custom background (thx to @bransonwerner for update)
-  add_theme_support( 'custom-background',
-      array(
-      'default-image' => '',    // background image default
-      'default-color' => '',    // background color default (dont add the #)
-      'wp-head-callback' => '_custom_background_cb',
-      'admin-head-callback' => '',
-      'admin-preview-callback' => ''
-      )
-  );
+    // wp custom background (thx to @bransonwerner for update)
+    add_theme_support( 'custom-background',
+        array(
+        'default-image' => '',    // background image default
+        'default-color' => '',    // background color default (dont add the #)
+        'wp-head-callback' => '_custom_background_cb',
+        'admin-head-callback' => '',
+        'admin-preview-callback' => ''
+        )
+    );
 
-  // Custom Header Image
-  add_theme_support( 'custom-header', array( 
-    'default-image'          => get_template_directory_uri() . '/library/images/header-image.png',
-      'default-text-color'     => 'ffffff',
-      'header-text'            => true,
-      'uploads'                => true,
-      'wp-head-callback'       => 'template_style_header'
-  ) );
+    // Custom Header Image
+    add_theme_support( 'custom-header', 
+        array( 
+        'default-image'          => get_template_directory_uri() . '/library/images/header-image.png',
+        'default-text-color'     => 'ffffff',
+        'header-text'            => true,
+        'uploads'                => true,
+        'wp-head-callback'       => 'template_style_header'
+        ) 
+    );
 
-  // Custom Logo
-  add_theme_support( 'custom-logo', array(
-    'height'      => 100,
-    'width'       => 400,
-    'flex-height' => true,
-    'flex-width'  => true,
-    'header-text' => array( 'site-title', 'site-description' ),
-  ) );
+    // Custom Logo
+    add_theme_support( 'custom-logo',
+        array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+        ) 
+    );
 
-  // rss thingy
-  add_theme_support('automatic-feed-links');
+    // rss thingy
+    add_theme_support('automatic-feed-links');
 
-  // wp menus
-  add_theme_support( 'menus' );
+    // wp menus
+    add_theme_support( 'menus' );
 
-  // registering wp3+ menus
-  // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
-  register_nav_menus(
+    // registering wp3+ menus
+    // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
+    register_nav_menus(
+        array(
+          'main-nav' => __( 'The Main Menu', 'templatetheme' ),   // main nav in header
+          // 'footer-links' => __( 'Footer Links', 'templatetheme' ) // secondary nav in footer. Uncomment to use or edit.
+        )
+    );
+
+    // Title tag
+    add_theme_support( 'title-tag' );
+
+    // Enable support for HTML5 markup.
+    add_theme_support( 'html5', 
+        array( 
+        'comment-list', 
+        'comment-form', 
+        'search-form', 
+        'gallery', 
+        'caption' 
+        ) 
+    );
+
+    /* Post Formats
+    Ahhhh yes, the wild and wonderful world of Post Formats. 
+    I've never really gotten into them but I could see some
+    situations where they would come in handy. Here's a few
+    examples: https://www.competethemes.com/blog/wordpress-post-format-examples/
+
+    This theme doesn't use post formats per se but we need this 
+    to pass the theme check.
+
+    We may add better support for post formats in the future.
+
+    If you want to use them in your project, do so by all means. 
+    We won't judge you.
+    */
+
+    add_theme_support( 'post-formats',
     array(
-      'main-nav' => __( 'The Main Menu', 'templatetheme' ),   // main nav in header
-      // 'footer-links' => __( 'Footer Links', 'templatetheme' ) // secondary nav in footer. Uncomment to use
-    )
-  );
+        'aside',             // title less blurb
+        'gallery',           // gallery of images
+        'link',              // quick link to other site
+        'image',             // an image
+        'quote',             // a quick quote
+        'status',            // a Facebook like status update
+        'video',             // video
+        'audio',             // audio
+        'chat'               // chat transcript
+        )
+    );
 
-  // Title tag
-  add_theme_support( 'title-tag' );
-
-  // Enable support for HTML5 markup.
-  add_theme_support( 'html5', array( 
-    'comment-list', 
-    'comment-form', 
-    'search-form', 
-    'gallery', 
-    'caption' ) 
-  );
-
-  /* Post Formats
-  Ahhhh yes, the wild and wonderful world of Post Formats. 
-  I've never really gotten into them but I could see some
-  situations where they would come in handy. Here's a few
-  examples: https://www.competethemes.com/blog/wordpress-post-format-examples/
-
-  This theme doesn't use post formats per se but we need this 
-  to pass the theme check.
-
-  We may add better support for post formats in the future.
-
-  If you want to use them in your project, do so by all means. 
-  We won't judge you.
-  */
-
-  add_theme_support( 'post-formats',
-   array(
-     'aside',             // title less blurb
-     'gallery',           // gallery of images
-     'link',              // quick link to other site
-     'image',             // an image
-     'quote',             // a quick quote
-     'status',            // a Facebook like status update
-     'video',             // video
-     'audio',             // audio
-     'chat'               // chat transcript
-   )
-  );
-
-} /* end template theme support */
+    } /* end template theme support */
 
 
-/* Add WooCommerce support. This function only removes the warning 
-in the WP admin when WooCommerce is installed. To fully support
-WooCommerce you will need to add some stuff to your product loops.
-See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
-*/
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
+    /* Add WooCommerce support. This function only removes the warning 
+    in the WP admin when WooCommerce is installed. To fully support
+    WooCommerce you will need to add some stuff to your product loops.
+    See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+    */
+    add_action( 'after_setup_theme', 'woocommerce_support' );
+
+    function woocommerce_support() {
+        add_theme_support( 'woocommerce' );
+    }
 
 
 /****************************************
 * CUSTOMIZER *
 ****************************************/
 
-add_action( 'customize_register', 'template_register_theme_customizer' );
+    add_action( 'customize_register', 'template_register_theme_customizer' );
 
-function template_register_theme_customizer( $wp_customize ) {
+    function template_register_theme_customizer( $wp_customize ) {
 
-  // Uncomment this to see what's going on if you make a lot of changes
-  // echo '<pre>';
-  // var_dump( $wp_customize );  
-  // echo '</pre>';
+        // Uncomment this to see what's going on if you make a lot of changes
+        // echo '<pre>';
+        // var_dump( $wp_customize );  
+        // echo '</pre>';
 
-  // Customize title and tagline sections and labels
-  $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatetheme');  
-  $wp_customize->get_control('blogname')->label = __('Site Name', 'templatetheme');  
-  $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatetheme');  
-  $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-  $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+        // Customize title and tagline sections and labels
+        $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatetheme');  
+        $wp_customize->get_control('blogname')->label = __('Site Name', 'templatetheme');  
+        $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatetheme');  
+        $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+        $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
-  // Customize the Front Page Settings
-  $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatetheme');
-  $wp_customize->get_section('static_front_page')->priority = 20;
-  $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatetheme');  
-  $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatetheme');  
-  $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatetheme');  
+        // Customize the Front Page Settings
+        $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatetheme');
+        $wp_customize->get_section('static_front_page')->priority = 20;
+        $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatetheme');  
+        $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatetheme');  
+        $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatetheme');  
 
-  // Customize Background Settings
-  $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatetheme');  
-  $wp_customize->get_control('background_color')->section = 'background_image'; 
+        // Customize Background Settings
+        $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatetheme');  
+        $wp_customize->get_control('background_color')->section = 'background_image'; 
 
-  // Customize Header Image Settings  
-  $wp_customize->add_section( 'header_text_styles' , array(
-    'title'      => __('Header Text Styles','templatetheme'), 
-    'priority'   => 30    
-  ) );
-  $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
-  $wp_customize->get_control('header_textcolor')->section = 'header_text_styles'; 
-  $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
+        // Customize Header Image Settings  
+        $wp_customize->add_section( 'header_text_styles' , array(
+        'title'      => __('Header Text Styles','templatetheme'), 
+        'priority'   => 30    
+        ) );
+        $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
+        $wp_customize->get_control('header_textcolor')->section = 'header_text_styles'; 
+        $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
 
-}
+    }
 
 
-// Custom scripts + styles for theme customizer
-add_action( 'customize_preview_init', 'template_customizer_scripts' );
+    // Custom scripts + styles for theme customizer
+    add_action( 'customize_preview_init', 'template_customizer_scripts' );
 
-function template_customizer_scripts() {
-  wp_enqueue_script(
-    'template_theme_customizer',
-    get_template_directory_uri() . '/library/js/theme-customizer.js',
-    array( 'jquery', 'customize-preview' ),
-    '',
-    true
-  );
+    function template_customizer_scripts() {
+        wp_enqueue_script(
+        'template_theme_customizer',
+        get_template_directory_uri() . '/library/js/theme-customizer.js',
+        array( 'jquery', 'customize-preview' ),
+        '',
+        true
+    );
 
-  // register customizer stylesheet
-  wp_register_style( 'template-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
-  wp_enqueue_style( 'template-customizer' );
+    // register customizer stylesheet
+    wp_register_style( 'template-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
+    wp_enqueue_style( 'template-customizer' );
 
-}
+    }
 
 
 // Callback function for updating header styles
 function template_style_header() {
 
-  $text_color = get_header_textcolor();
+    $text_color = get_header_textcolor();
   
-  ?>
+    ?>
   
-  <style type="text/css">
+    <style type="text/css">
 
-    header.header .site-title a {
-      color: #<?php echo esc_attr( $text_color ); ?>;
-    }
-  
-    <?php if(display_header_text() != true): ?>
-    .site-title, .site-description {
-      display: none;
-    } 
-    <?php endif; ?>
+        header.header .site-title a {
+          color: #<?php echo esc_attr( $text_color ); ?>;
+        }
+      
+        <?php if(display_header_text() != true): ?>
+        .site-title, .site-description {
+          display: none;
+        } 
+        <?php endif; ?>
 
-    #banner .header-image {
-      max-width: 100%;
-      height: auto;
-    }
+        #banner .header-image {
+          max-width: 100%;
+          height: auto;
+        }
 
-    .customize-control-description {
-      font-style: normal;
-    }
+        .customize-control-description {
+          font-style: normal;
+        }
 
-  </style>
+    </style>
   <?php 
 
 }
@@ -672,22 +717,6 @@ function template_page_navi() {
   ) );
   echo '</nav>';
 } /* end page navi */
-
-/*********************
-RANDOM CLEANUP ITEMS
-*********************/
-
-// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function template_filter_ptags_on_images($content){
-  return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
-
-// This removes the annoying […] to a Read More link
-function template_excerpt_more($more) {
-  global $post;
-  // edit here if you like
-  return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'templatetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'templatetheme' ) .'</a>';
-}
 
 
 /*
@@ -776,22 +805,6 @@ function template_custom_quicktags() {
 //     wp_enqueue_style( 'dashicons' );
 // }
 
-// Remove wp-embed.min.js from the front end
-add_action( 'init', function() {
-  
-      // Remove the REST API endpoint.
-      remove_action('rest_api_init', 'wp_oembed_register_route');
-  
-      // Turn off oEmbed auto discovery.
-      // Don't filter oEmbed results.
-      remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
-  
-      // Remove oEmbed discovery links.
-      remove_action('wp_head', 'wp_oembed_add_discovery_links');
-  
-      // Remove oEmbed-specific JavaScript from the front-end and back-end.
-      remove_action('wp_head', 'wp_oembed_add_host_js');
-  }, PHP_INT_MAX - 1 );
   
 // Post Author function (from WP Twenty Seventeen theme)
 // We use this in the byline template part but included here in case you want to use it elsewhere.
