@@ -1,6 +1,6 @@
 <?php
 /*
- * CUSTOM POST TYPE TAXONOMY TEMPLATE
+ * Custom Post Type Taxonomy Templatate
  *
  * This is the custom post type taxonomy template. If you edit the custom taxonomy name,
  * you've got to change the name of this template to reflect that name change.

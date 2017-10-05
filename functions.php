@@ -668,29 +668,29 @@ RELATED POSTS FUNCTION
 
 // Related Posts Function (call using template_related_posts(); )
 function template_related_posts() {
-  echo '<ul id="template-related-posts">';
-  global $post;
-  $tags = wp_get_post_tags( $post->ID );
-  if($tags) {
-    foreach( $tags as $tag ) {
-      $tag_arr .= $tag->slug . ',';
-    }
-    $args = array(
-      'tag' => $tag_arr,
-      'numberposts' => 5, /* you can change this to show more */
-      'post__not_in' => array($post->ID)
-    );
-    $related_posts = get_posts( $args );
-    if($related_posts) {
-      foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
-        <li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-      <?php endforeach; }
-    else { ?>
-      <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'templatetheme' ) . '</li>'; ?>
-    <?php }
-  }
-  wp_reset_postdata();
-  echo '</ul>';
+    echo '<ul id="template-related-posts">';
+    global $post;
+    $tags = wp_get_post_tags( $post->ID );
+    if( $tags ) {
+        foreach( $tags as $tag ) {
+            $tag_arr .= $tag->slug . ',';
+        }
+        $args = array(
+            'tag' => $tag_arr,
+            'numberposts' => 5, /* you can change this to show more */
+            'post__not_in' => array($post->ID)
+        );
+        $related_posts = get_posts( $args );
+        if( $related_posts ) {
+            foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
+            <li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+            <?php endforeach; 
+        } else { ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'templatetheme' ) . '</li>'; ?>
+        <?php }
+    } /* end if ($tags) */
+    wp_reset_postdata();
+    echo '</ul>';
 } /* end template related posts function */
 
 /*********************
@@ -699,22 +699,23 @@ PAGE NAVI
 
 // Numeric Page Navi (built into the theme by default)
 function template_page_navi() {
-  global $wp_query;
-  $bignum = 999999999;
-  if ( $wp_query->max_num_pages <= 1 )
-    return;
-  echo '<nav class="pagination">';
-  echo paginate_links( array(
-    'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
-    'format'       => '',
-    'current'      => max( 1, get_query_var('paged') ),
-    'total'        => $wp_query->max_num_pages,
-    'prev_text'    => '&larr;',
-    'next_text'    => '&rarr;',
-    'type'         => 'list',
-    'end_size'     => 3,
-    'mid_size'     => 3
-  ) );
+    global $wp_query;
+    $bignum = 999999999;
+    if ( $wp_query->max_num_pages <= 1 )
+        return;
+    echo '<nav class="pagination">';
+    echo paginate_links( array(
+        'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
+        'format'       => '',
+        'current'      => max( 1, get_query_var('paged') ),
+        'total'        => $wp_query->max_num_pages,
+        'prev_text'    => '&larr;',
+        'next_text'    => '&rarr;',
+        'type'         => 'list',
+        'end_size'     => 3,
+        'mid_size'     => 3
+        )
+    );
   echo '</nav>';
 } /* end page navi */
 
@@ -731,15 +732,15 @@ function template_page_navi() {
 add_filter( 'body_class', 'template_body_class' );
 
 function template_body_class( $classes ) {
-global $post;
-  if ( isset( $post ) ) {
-  /* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
-  $pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
-  $classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
-  $classes[] = $post->post_name;
-  }
+    global $post;
+    if ( isset( $post ) ) {
+        /* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
+        $pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
+        $classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
+        $classes[] = $post->post_name;
+    }
 
-if (is_page()) {
+    if (is_page()) {
         global $post;
         if ( $post->post_parent ) {
             # Parent post name/slug
@@ -769,7 +770,7 @@ if (is_page()) {
         $classes[] = "{$post->post_type}-{$post->post_name}";
     }
 
-return $classes;
+    return $classes;
 
 }
 
@@ -781,19 +782,17 @@ add_action( 'admin_print_footer_scripts', 'template_custom_quicktags' );
 
 function template_custom_quicktags() {
 
-  if ( wp_script_is( 'quicktags' ) ) {
-  ?>
-  <script type="text/javascript">
-  QTags.addButton( 'qt-p', 'p', '<p>', '</p>', '', '', 1 );
-  QTags.addButton( 'qt-br', 'br', '<br>', '', '', '', 9 );
-  QTags.addButton( 'qt-span', 'span', '<span>', '</span>', '', '', 11 );
-  QTags.addButton( 'qt-h2', 'h2', '<h2>', '</h2>', '', '', 12 );
-  QTags.addButton( 'qt-h3', 'h3', '<h3>', '</h3>', '', '', 13 );
-  QTags.addButton( 'qt-h4', 'h4', '<h4>', '</h4>', '', '', 14 );
-  QTags.addButton( 'qt-h5', 'h5', '<h5>', '</h5>', '', '', 15 );
-  </script>
-  <?php
-  }
+    if ( wp_script_is( 'quicktags' ) ) { ?>
+        <script type="text/javascript">
+        QTags.addButton( 'qt-p', 'p', '<p>', '</p>', '', '', 1 );
+        QTags.addButton( 'qt-br', 'br', '<br>', '', '', '', 9 );
+        QTags.addButton( 'qt-span', 'span', '<span>', '</span>', '', '', 11 );
+        QTags.addButton( 'qt-h2', 'h2', '<h2>', '</h2>', '', '', 12 );
+        QTags.addButton( 'qt-h3', 'h3', '<h3>', '</h3>', '', '', 13 );
+        QTags.addButton( 'qt-h4', 'h4', '<h4>', '</h4>', '', '', 14 );
+        QTags.addButton( 'qt-h5', 'h5', '<h5>', '</h5>', '', '', 15 );
+        </script>
+<?php }
 
 }
 
@@ -832,24 +831,24 @@ if ( ! function_exists( 'template_time_link' ) ) :
  * Gets a nicely formatted string for the published date.
  */
 function template_time_link() {
-  $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-  // if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-  //   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-  // }
+    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    // if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+    //   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+    // }
 
-  $time_string = sprintf( $time_string,
+    $time_string = sprintf( $time_string,
     get_the_date( DATE_W3C ),
     get_the_date(),
     get_the_modified_date( DATE_W3C ),
     get_the_modified_date()
-  );
+    );
 
-  // Wrap the time string in a link, and preface it with 'Posted on'.
-  return sprintf(
+    // Wrap the time string in a link, and preface it with 'Posted on'.
+    return sprintf(
     /* translators: %s: post date */
     __( '<span class="screen-reader-text">Posted on</span> %s', 'templatetheme' ),
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-  );
+    );
 }
 endif;
 
@@ -857,12 +856,12 @@ endif;
 // Live Reload for Grunt during development
 //If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
 if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
-  function livereload_script() {
-  	wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
-  	wp_enqueue_script('livereload');
-  }
+    function livereload_script() {
+    	wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+    	wp_enqueue_script('livereload');
+    }
   
-  add_action( 'wp_enqueue_scripts', 'livereload_script' );
+    add_action( 'wp_enqueue_scripts', 'livereload_script' );
 }
 
 ?>

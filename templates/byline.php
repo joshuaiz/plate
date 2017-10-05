@@ -1,6 +1,6 @@
 <div class="byline-wrap">
     <?php // Get the author name; wrap it in a link.
-	if (get_the_author_meta( 'ID' )) {
+	if ( get_the_author_meta( 'ID' ) ) {
         $byline = sprintf(
         /* translators: %s: post author */
         __( 'by %s', 'templatetheme' ),
