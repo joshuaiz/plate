@@ -37,6 +37,6 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 	</article>
 
-<?php get_template_part( 'templates/post-navigation'); ?>
-
 <?php endwhile; endif; ?>
+
+<?php get_template_part( 'templates/post-navigation'); ?>
