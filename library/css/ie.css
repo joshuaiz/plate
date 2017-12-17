@@ -290,8 +290,8 @@ NAVIGATION STYLES
     float: left;
     list-style: none;
     /*
-		plan your menus and drop-downs wisely.
-		*/
+        plan your menus and drop-downs wisely.
+        */
     /* showing sub-menus */ }
     .nav li a {
       display: block;
@@ -299,9 +299,9 @@ NAVIGATION STYLES
       border-bottom: 0;
       text-decoration: none;
       /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
+            you can use hover styles here even though this size
+            has the possibility of being a mobile device.
+            */ }
       .nav li a:hover, .nav li a:focus {
         text-decoration: underline; }
     .nav li ul.sub-menu,
@@ -313,10 +313,10 @@ NAVIGATION STYLES
       .nav li ul.sub-menu li,
       .nav li ul.children li {
         /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
+                if you need to go deeper, go nuts
+                just remember deeper menus suck
+                for usability. k, bai.
+                */ }
         .nav li ul.sub-menu li:last-child a,
         .nav li ul.children li:last-child a {
           border-bottom: 0; }
@@ -398,10 +398,10 @@ mobile. Make sure to double check these!
 */
 .footer-links ul li {
   /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/ }
+            be careful with the depth of your menus.
+            it's very rare to have multi-depth menus in
+            the footer.
+            */ }
 
 /* end .footer-links */
 /******************************************************************

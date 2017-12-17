@@ -7,6 +7,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+###1.0.4 2017-12-17
+Replaced parallax script in extras.js
+Updated all files to 4 spaces per tab
+Formatting updates
+
+
 ###1.0.3 2017-09-08
 Added Grunt support (thanks @micahmills)
 Added REST API support in the custom post type plugin template

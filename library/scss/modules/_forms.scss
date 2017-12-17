@@ -38,71 +38,86 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block;
-  
-  // a focused input (or hovered on)
-  &:focus,
-  &:active {} // end hover or focus
+    display: block;
 
-  // error notification
-  &.error,
-  &.is-invalid {} // end invalid input
-
-  // success notification
-  &.success,
-  &.is-valid {} // end valid input
-
-  // a disabled input
-  &[disabled],
-  &.is-disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-
+    // a focused input (or hovered on)
     &:focus,
-    &:active {} // end disabled focus
+    &:active {}
 
-  } // end disabled input
+    // end hover or focus
 
-} // end input defaults
+    // error notification
+    &.error,
+    &.is-invalid {}
+
+    // end invalid input
+
+    // success notification
+    &.success,
+    &.is-valid {}
+
+    // end valid input
+
+    // a disabled input
+    &[disabled],
+    &.is-disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+
+        &:focus,
+        &:active {}
+
+        // end disabled focus
+   
+    }
+
+    // end disabled input
+}
+
+// end input defaults
 
 // spacing out the password (thx @murtaugh)
 input[type="password"] {
-  letter-spacing: 0.3em;
+    letter-spacing: 0.3em;
 }
 
 // textareas
 textarea {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 // selects
 select {
-  -webkit-appearance: none; /* 1 */
-  -moz-appearance: none;
-  appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 fieldset {
-  border: 1px solid #ccc;
-  label {
-    font-weight: 600;
-  }
-  p {
-    margin-bottom: 0;
-  }
+    border: 1px solid #ccc;
+
+    label {
+        font-weight: 600;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 legend {
-  padding: 0 0.5em;
+    padding: 0 0.5em;
 }
 
 .radio-buttons {
-  margin-top: 0;
-  li {
-    margin-left: 2px;
-    list-style-type: none;
-  }
-  label {
-    font-weight: normal;
-  }
+    margin-top: 0;
+
+    li {
+        margin-left: 2px;
+        list-style-type: none;
+    }
+
+    label {
+        font-weight: normal;
+    }
 }

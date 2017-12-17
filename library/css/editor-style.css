@@ -400,8 +400,8 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor section {
     display: block; }
   body#tinymce.wp-editor h1 {
-    font-size: 2em;
-    margin: 0.67em 0; }
+    margin: 0.67em 0;
+    font-size: 2em; }
   body#tinymce.wp-editor figcaption,
   body#tinymce.wp-editor figure,
   body#tinymce.wp-editor main {
@@ -410,25 +410,26 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor figure {
     margin: 1em 40px; }
   body#tinymce.wp-editor hr {
-    box-sizing: content-box;
+    overflow: visible;
+    /* 2 */
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     /* 1 */
     height: 0;
-    /* 1 */
-    overflow: visible;
-    /* 2 */ }
+    /* 1 */ }
   body#tinymce.wp-editor pre {
-    font-family: monospace, monospace;
-    /* 1 */
     font-size: 1em;
-    /* 2 */ }
+    /* 2 */
+    font-family: monospace, monospace;
+    /* 1 */ }
   body#tinymce.wp-editor pre, body#tinymce.wp-editor code, body#tinymce.wp-editor kbd, body#tinymce.wp-editor samp {
     font-family: monospace, sans-serif; }
   body#tinymce.wp-editor pre {
+    padding: 15px;
     /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
     white-space: pre;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    padding: 15px; }
+    word-wrap: break-word; }
   body#tinymce.wp-editor a {
     background-color: transparent;
     /* 1 */
@@ -439,7 +440,8 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     /* 1 */
     text-decoration: underline;
     /* 2 */
-    text-decoration: underline dotted;
+    -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted;
     /* 2 */ }
   body#tinymce.wp-editor b,
   body#tinymce.wp-editor strong {
@@ -450,10 +452,10 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor code,
   body#tinymce.wp-editor kbd,
   body#tinymce.wp-editor samp {
-    font-family: monospace, monospace;
-    /* 1 */
     font-size: 1em;
-    /* 2 */ }
+    /* 2 */
+    font-family: monospace, monospace;
+    /* 1 */ }
   body#tinymce.wp-editor dfn {
     font-style: italic; }
   body#tinymce.wp-editor mark {
@@ -463,10 +465,10 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     font-size: 80%; }
   body#tinymce.wp-editor sub,
   body#tinymce.wp-editor sup {
-    font-size: 75%;
-    line-height: 0;
     position: relative;
-    vertical-align: baseline; }
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0; }
   body#tinymce.wp-editor sub {
     bottom: -0.25em; }
   body#tinymce.wp-editor sup {
@@ -486,14 +488,14 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor optgroup,
   body#tinymce.wp-editor select,
   body#tinymce.wp-editor textarea {
-    font-family: sans-serif;
-    /* 1 */
+    margin: 0;
+    /* 2 */
     font-size: 100%;
     /* 1 */
-    line-height: 1.15;
+    font-family: sans-serif;
     /* 1 */
-    margin: 0;
-    /* 2 */ }
+    line-height: 1.15;
+    /* 1 */ }
   body#tinymce.wp-editor button,
   body#tinymce.wp-editor input {
     /* 1 */
@@ -512,8 +514,8 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor [type="button"]::-moz-focus-inner,
   body#tinymce.wp-editor [type="reset"]::-moz-focus-inner,
   body#tinymce.wp-editor [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0; }
+    padding: 0;
+    border-style: none; }
   body#tinymce.wp-editor button:-moz-focusring,
   body#tinymce.wp-editor [type="button"]:-moz-focusring,
   body#tinymce.wp-editor [type="reset"]:-moz-focusring,
@@ -522,16 +524,17 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor fieldset {
     padding: 0.35em 0.75em 0.625em; }
   body#tinymce.wp-editor legend {
-    box-sizing: border-box;
-    /* 1 */
-    color: inherit;
-    /* 2 */
     display: table;
     /* 1 */
-    max-width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 3 */
+    max-width: 100%;
+    /* 1 */
+    color: inherit;
+    /* 2 */
     white-space: normal;
     /* 1 */ }
   body#tinymce.wp-editor progress {
@@ -543,7 +546,8 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     overflow: auto; }
   body#tinymce.wp-editor [type="checkbox"],
   body#tinymce.wp-editor [type="radio"] {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 2 */ }
@@ -551,18 +555,18 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor [type="number"]::-webkit-outer-spin-button {
     height: auto; }
   body#tinymce.wp-editor [type="search"] {
-    -webkit-appearance: textfield;
-    /* 1 */
     outline-offset: -2px;
-    /* 2 */ }
+    /* 2 */
+    -webkit-appearance: textfield;
+    /* 1 */ }
   body#tinymce.wp-editor [type="search"]::-webkit-search-cancel-button,
   body#tinymce.wp-editor [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none; }
   body#tinymce.wp-editor ::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    /* 1 */
     font: inherit;
-    /* 2 */ }
+    /* 2 */
+    -webkit-appearance: button;
+    /* 1 */ }
   body#tinymce.wp-editor details,
   body#tinymce.wp-editor menu {
     display: block; }
@@ -577,17 +581,18 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor .clearfix, body#tinymce.wp-editor .cf {
     zoom: 1; }
     body#tinymce.wp-editor .clearfix:before, body#tinymce.wp-editor .clearfix:after, body#tinymce.wp-editor .cf:before, body#tinymce.wp-editor .cf:after {
-      content: "";
-      display: table; }
+      display: table;
+      content: ""; }
     body#tinymce.wp-editor .clearfix:after, body#tinymce.wp-editor .cf:after {
       clear: both; }
   body#tinymce.wp-editor * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   body#tinymce.wp-editor .image-replacement,
   body#tinymce.wp-editor .ir {
+    overflow: hidden;
     text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden; }
+    white-space: nowrap; }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-wrap: break-word;

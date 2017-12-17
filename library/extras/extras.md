@@ -9,8 +9,8 @@ Retina credit card icons in .svg format. We use these to replace the default Gra
 
 How to use with Gravity Forms (for example with the Stripe CC field block):
 
-	.gform_card_icon_amex {
-        	background-image: url(../images/icons/amex.svg) !important;
-        	background-position: 0 0 !important;
-        	background-size: 36px 32px;
-    	}
+.gform_card_icon_amex {
+	background-image: url(../images/icons/amex.svg) !important;
+	background-position: 0 0 !important;
+	background-size: 36px 32px;
+}

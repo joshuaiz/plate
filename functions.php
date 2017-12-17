@@ -32,39 +32,39 @@ Let's get everything up and running.
 
 function template_launch() {
 
-  //Allow editor style.
-  add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
+    //Allow editor style.
+    add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
-  // let's get language support going, if you need it
-  //load_theme_textdomain( 'templatetheme', get_template_directory() . '/library/translation' );
+    // let's get language support going, if you need it
+    //load_theme_textdomain( 'templatetheme', get_template_directory() . '/library/translation' );
 
-  // launching operation cleanup
-  add_action( 'init', 'template_head_cleanup' );
-  // A better title
-  add_filter( 'wp_title', 'rw_title', 10, 3 );
-  // remove WP version from RSS
-  add_filter( 'the_generator', 'template_rss_version' );
-  // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'template_remove_wp_widget_recent_comments_style', 1 );
-  // clean up comment styles in the head
-  add_action( 'wp_head', 'template_remove_recent_comments_style', 1 );
-  // clean up gallery output in wp
-  add_filter( 'gallery_style', 'template_gallery_style' );
+    // launching operation cleanup
+    add_action( 'init', 'template_head_cleanup' );
+    // A better title
+    add_filter( 'wp_title', 'rw_title', 10, 3 );
+    // remove WP version from RSS
+    add_filter( 'the_generator', 'template_rss_version' );
+    // remove pesky injected css for recent comments widget
+    add_filter( 'wp_head', 'template_remove_wp_widget_recent_comments_style', 1 );
+    // clean up comment styles in the head
+    add_action( 'wp_head', 'template_remove_recent_comments_style', 1 );
+    // clean up gallery output in wp
+    add_filter( 'gallery_style', 'template_gallery_style' );
 
-  // enqueue base scripts and styles
-  add_action( 'wp_enqueue_scripts', 'template_scripts_and_styles', 999 );
-  // ie conditional wrapper
+    // enqueue base scripts and styles
+    add_action( 'wp_enqueue_scripts', 'template_scripts_and_styles', 999 );
+    // ie conditional wrapper
 
-  // launching this stuff after theme setup
-  template_theme_support();
+    // launching this stuff after theme setup
+    template_theme_support();
 
-  // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'template_register_sidebars' );
+    // adding sidebars to Wordpress (these are created in functions.php)
+    add_action( 'widgets_init', 'template_register_sidebars' );
 
-  // cleaning up random code around images
-  add_filter( 'the_content', 'template_filter_ptags_on_images' );
-  // cleaning up excerpt
-  add_filter( 'excerpt_more', 'template_excerpt_more' );
+    // cleaning up random code around images
+    add_filter( 'the_content', 'template_filter_ptags_on_images' );
+    // cleaning up excerpt
+    add_filter( 'excerpt_more', 'template_excerpt_more' );
 
 } /* end template ahoy */
 
@@ -181,37 +181,37 @@ function new_default_avatar ( $avatar_defaults ) {
 // Comment Layout
 function template_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
-  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
-    <article  class="cf">
-      <header class="comment-author vcard">
-        <?php
-        /*
-          this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
-          echo get_avatar($comment,$size='32',$default='<path_to_url>' );
-        */
-        ?>
-        <?php // custom gravatar call ?>
-        <?php
-          // create variable
-          $bgauthemail = get_comment_author_email();
-        ?>
-        <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/nothing.gif" />
-        <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'templatetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'templatetheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'templatetheme' )); ?> </a></time>
+    <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
+        <article  class="cf">
+            <header class="comment-author vcard">
+            <?php
+            /*
+              this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
+              echo get_avatar($comment,$size='32',$default='<path_to_url>' );
+            */
+            ?>
+            <?php // custom gravatar call ?>
+            <?php
+              // create variable
+              $bgauthemail = get_comment_author_email();
+            ?>
+            <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/nothing.gif" />
+            <?php // end custom gravatar call ?>
+            <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'templatetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'templatetheme' ),'  ','') ) ?>
+            <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'templatetheme' )); ?> </a></time>
 
-      </header>
-      <?php if ($comment->comment_approved == '0') : ?>
-        <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'templatetheme' ) ?></p>
-        </div>
-      <?php endif; ?>
-      <section class="comment_content cf">
-        <?php comment_text() ?>
-      </section>
-      <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-    </article>
-  <?php // </li> is added by WordPress automatically ?>
+            </header>
+            <?php if ($comment->comment_approved == '0') : ?>
+                <div class="alert alert-info">
+                    <p><?php _e( 'Your comment is awaiting moderation.', 'templatetheme' ) ?></p>
+                </div>
+            <?php endif; ?>
+            <section class="comment_content cf">
+                <?php comment_text() ?>
+            </section>
+            <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        </article>
+    <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
 
@@ -266,26 +266,26 @@ need.
 *********************/
 
 function template_head_cleanup() {
-  // category feeds
-  remove_action( 'wp_head', 'feed_links_extra', 3 );
-  // post and comment feeds
-  remove_action( 'wp_head', 'feed_links', 2 );
-  // EditURI link
-  remove_action( 'wp_head', 'rsd_link' );
-  // windows live writer
-  remove_action( 'wp_head', 'wlwmanifest_link' );
-  // previous link
-  remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-  // start link
-  remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-  // links for adjacent posts
-  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-  // WP version
-  remove_action( 'wp_head', 'wp_generator' );
-  // remove WP version from css
-  add_filter( 'style_loader_src', 'template_remove_wp_ver_css_js', 9999 );
-  // remove WP version from scripts
-  add_filter( 'script_loader_src', 'template_remove_wp_ver_css_js', 9999 );
+    // category feeds
+    remove_action( 'wp_head', 'feed_links_extra', 3 );
+    // post and comment feeds
+    remove_action( 'wp_head', 'feed_links', 2 );
+    // EditURI link
+    remove_action( 'wp_head', 'rsd_link' );
+    // windows live writer
+    remove_action( 'wp_head', 'wlwmanifest_link' );
+    // previous link
+    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+    // start link
+    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+    // links for adjacent posts
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    // WP version
+    remove_action( 'wp_head', 'wp_generator' );
+    // remove WP version from css
+    add_filter( 'style_loader_src', 'template_remove_wp_ver_css_js', 9999 );
+    // remove WP version from scripts
+    add_filter( 'script_loader_src', 'template_remove_wp_ver_css_js', 9999 );
 
 } /* end template head cleanup */
 
@@ -295,29 +295,29 @@ function template_rss_version() { return ''; }
 
 // remove WP version from scripts
 function template_remove_wp_ver_css_js( $src ) {
-  if ( strpos( $src, 'ver=' ) )
-    $src = remove_query_arg( 'ver', $src );
-  return $src;
+    if ( strpos( $src, 'ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
 }
 
 // remove injected CSS for recent comments widget
 function template_remove_wp_widget_recent_comments_style() {
-  if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-    remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-  }
+    if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
+        remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
+    }
 }
 
 // remove injected CSS from recent comments widget
 function template_remove_recent_comments_style() {
-  global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
-  }
+    global $wp_widget_factory;
+        if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+        remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
+    }
 }
 
 // remove injected CSS from gallery
 function template_gallery_style($css) {
-  return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
+    return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
 
@@ -328,42 +328,42 @@ SCRIPTS & ENQUEUEING
 // loading modernizr and jquery, and reply script
 function template_scripts_and_styles() {
 
-  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+    global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
-  if (!is_admin()) {
+    if (!is_admin()) {
 
-    // modernizr (without media query polyfill)
-    wp_register_script( 'template-modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
+        // modernizr (without media query polyfill)
+        wp_register_script( 'template-modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
 
-    // register main stylesheet
-    wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
+        // register main stylesheet
+        wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
 
-    // ie-only style sheet
-    wp_register_style( 'template-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
+        // ie-only style sheet
+        wp_register_style( 'template-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
 
-    // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) {
-      wp_enqueue_script( 'comment-reply' );
+        // comment reply script for threaded comments
+        if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) {
+          wp_enqueue_script( 'comment-reply' );
+        }
+
+        //adding scripts file in the footer
+        wp_register_script( 'template-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+
+        // Template extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
+        // wp_register_script( 'template-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
+
+        // enqueue styles and scripts
+        wp_enqueue_script( 'template-modernizr' );
+        wp_enqueue_style( 'template-stylesheet' );
+        wp_enqueue_style( 'template-ie-only' );
+
+        $wp_styles->add_data( 'template-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+
+        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'template-js' );
+        // wp_enqueue_script( 'template-extra-js' );
+
     }
-
-    //adding scripts file in the footer
-    wp_register_script( 'template-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-
-    // Template extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
-    // wp_register_script( 'template-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
-
-    // enqueue styles and scripts
-    wp_enqueue_script( 'template-modernizr' );
-    wp_enqueue_style( 'template-stylesheet' );
-    wp_enqueue_style( 'template-ie-only' );
-
-    $wp_styles->add_data( 'template-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'template-js' );
-    // wp_enqueue_script( 'template-extra-js' );
-
-  }
 }
 
 /****************************************
@@ -378,25 +378,25 @@ add_action( 'init', 'disable_wp_emojicons' );
 
 function disable_wp_emojicons() {
 
-  // all actions related to emojis
-  remove_action( 'admin_print_styles', 'print_emoji_styles' );
-  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles', 'print_emoji_styles' );
-  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+    // all actions related to emojis
+    remove_action( 'admin_print_styles', 'print_emoji_styles' );
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
-  // filter to remove TinyMCE emojis
-  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    // filter to remove TinyMCE emojis
+    add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 
 function disable_emojicons_tinymce( $plugins ) {
-  if ( is_array( $plugins ) ) {
-    return array_diff( $plugins, array( 'wpemoji' ) );
-  } else {
-    return array();
-  }
+    if ( is_array( $plugins ) ) {
+        return array_diff( $plugins, array( 'wpemoji' ) );
+    } else {
+        return array();
+    }
 }
 
 
@@ -571,62 +571,57 @@ function template_theme_support() {
 * CUSTOMIZER *
 ****************************************/
 
-    add_action( 'customize_register', 'template_register_theme_customizer' );
+add_action( 'customize_register', 'template_register_theme_customizer' );
 
-    function template_register_theme_customizer( $wp_customize ) {
+function template_register_theme_customizer( $wp_customize ) {
 
-        // Uncomment this to see what's going on if you make a lot of changes
-        // echo '<pre>';
-        // var_dump( $wp_customize );  
-        // echo '</pre>';
+    // Uncomment this to see what's going on if you make a lot of changes
+    // echo '<pre>';
+    // var_dump( $wp_customize );  
+    // echo '</pre>';
 
-        // Customize title and tagline sections and labels
-        $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatetheme');  
-        $wp_customize->get_control('blogname')->label = __('Site Name', 'templatetheme');  
-        $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatetheme');  
-        $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-        $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+    // Customize title and tagline sections and labels
+    $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatetheme');  
+    $wp_customize->get_control('blogname')->label = __('Site Name', 'templatetheme');  
+    $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatetheme');  
+    $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
-        // Customize the Front Page Settings
-        $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatetheme');
-        $wp_customize->get_section('static_front_page')->priority = 20;
-        $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatetheme');  
-        $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatetheme');  
-        $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatetheme');  
+    // Customize the Front Page Settings
+    $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatetheme');
+    $wp_customize->get_section('static_front_page')->priority = 20;
+    $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatetheme');  
+    $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatetheme');  
+    $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatetheme');  
 
-        // Customize Background Settings
-        $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatetheme');  
-        $wp_customize->get_control('background_color')->section = 'background_image'; 
+    // Customize Background Settings
+    $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatetheme');  
+    $wp_customize->get_control('background_color')->section = 'background_image'; 
 
-        // Customize Header Image Settings  
-        $wp_customize->add_section( 'header_text_styles' , array(
-        'title'      => __('Header Text Styles','templatetheme'), 
-        'priority'   => 30    
-        ) );
-        $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
-        $wp_customize->get_control('header_textcolor')->section = 'header_text_styles'; 
-        $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
+    // Customize Header Image Settings  
+    $wp_customize->add_section( 'header_text_styles' , array(
+    'title'      => __('Header Text Styles','templatetheme'), 
+    'priority'   => 30    
+    ) );
+    $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
+    $wp_customize->get_control('header_textcolor')->section = 'header_text_styles'; 
+    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
 
-    }
+}
 
 
-    // Custom scripts + styles for theme customizer
-    add_action( 'customize_preview_init', 'template_customizer_scripts' );
+// Custom scripts + styles for theme customizer
+add_action( 'customize_preview_init', 'template_customizer_scripts' );
 
-    function template_customizer_scripts() {
-        wp_enqueue_script(
-        'template_theme_customizer',
-        get_template_directory_uri() . '/library/js/theme-customizer.js',
-        array( 'jquery', 'customize-preview' ),
-        '',
-        true
-    );
+function template_customizer_scripts() {
+    wp_enqueue_script( 'template_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js',
+    array( 'jquery', 'customize-preview' ), '', true);
 
-    // register customizer stylesheet
-    wp_register_style( 'template-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
-    wp_enqueue_style( 'template-customizer' );
+// register customizer stylesheet
+wp_register_style( 'template-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
+wp_enqueue_style( 'template-customizer' );
 
-    }
+}
 
 
 // Callback function for updating header styles
@@ -813,15 +808,15 @@ if ( ! function_exists( 'template_posted_on' ) ) :
  */
 function template_posted_on() {
 
-  // Get the author name; wrap it in a link.
-  $byline = sprintf(
+    // Get the author name; wrap it in a link.
+    $byline = sprintf(
     /* translators: %s: post author */
     __( 'by %s', 'templatetheme' ),
     '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
-  );
+    );
 
-  // Finally, let's write all of this to the page.
-  echo '<span class="posted-on">' . template_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+    // Finally, let's write all of this to the page.
+    echo '<span class="posted-on">' . template_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
 }
 endif;
 

@@ -10,9 +10,15 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+    line-height: 1.15;
+
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+
+    /* 2 */
 }
 
 /* Sections
@@ -23,7 +29,7 @@ html {
  */
 
 body {
-  margin: 0;
+    margin: 0;
 }
 
 /**
@@ -36,7 +42,7 @@ footer,
 header,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 /**
@@ -45,8 +51,8 @@ section {
  */
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+    margin: 0.67em 0;
+    font-size: 2em;
 }
 
 /* Grouping content
@@ -59,8 +65,9 @@ h1 {
 
 figcaption,
 figure,
-main { /* 1 */
-  display: block;
+main {
+    /* 1 */
+    display: block;
 }
 
 /**
@@ -68,7 +75,7 @@ main { /* 1 */
  */
 
 figure {
-  margin: 1em 40px;
+    margin: 1em 40px;
 }
 
 /**
@@ -77,9 +84,15 @@ figure {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+    overflow: visible;
+
+    /* 2 */
+    box-sizing: content-box;
+
+    /* 1 */
+    height: 0;
+
+    /* 1 */
 }
 
 /**
@@ -88,19 +101,28 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+    font-size: 1em;
+
+    /* 2 */
+    font-family: monospace, monospace;
+
+    /* 1 */
 }
 
 // below not part of normalize.css
 /* Normalize monospace sizing:
    en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
+pre, code, kbd, samp {
+    font-family: monospace, sans-serif;
+}
 
 pre {
-  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
-  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
-  padding: 15px;
+    padding: 15px;
+
+    /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 /* Text-level semantics
@@ -112,8 +134,12 @@ pre {
  */
 
 a {
-  background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
+    background-color: transparent;
+
+    /* 1 */
+    -webkit-text-decoration-skip: objects;
+
+    /* 2 */
 }
 
 /**
@@ -122,9 +148,15 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+    border-bottom: none;
+
+    /* 1 */
+    text-decoration: underline;
+
+    /* 2 */
+    text-decoration: underline dotted;
+
+    /* 2 */
 }
 
 /**
@@ -133,7 +165,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: inherit;
+    font-weight: inherit;
 }
 
 /**
@@ -142,7 +174,7 @@ strong {
 
 b,
 strong {
-  font-weight: bolder;
+    font-weight: bolder;
 }
 
 /**
@@ -153,8 +185,12 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+    font-size: 1em;
+
+    /* 2 */
+    font-family: monospace, monospace;
+
+    /* 1 */
 }
 
 /**
@@ -162,7 +198,7 @@ samp {
  */
 
 dfn {
-  font-style: italic;
+    font-style: italic;
 }
 
 /**
@@ -170,8 +206,8 @@ dfn {
  */
 
 mark {
-  background-color: #ff0;
-  color: #000;
+    background-color: #ff0;
+    color: #000;
 }
 
 /**
@@ -179,7 +215,7 @@ mark {
  */
 
 small {
-  font-size: 80%;
+    font-size: 80%;
 }
 
 /**
@@ -189,18 +225,18 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    position: relative;
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
 }
 
 sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+    top: -0.5em;
 }
 
 /* Embedded content
@@ -212,7 +248,7 @@ sup {
 
 audio,
 video {
-  display: inline-block;
+    display: inline-block;
 }
 
 /**
@@ -220,8 +256,8 @@ video {
  */
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+    display: none;
+    height: 0;
 }
 
 /**
@@ -229,7 +265,7 @@ audio:not([controls]) {
  */
 
 img {
-  border-style: none;
+    border-style: none;
 }
 
 /**
@@ -237,7 +273,7 @@ img {
  */
 
 svg:not(:root) {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* Forms
@@ -253,10 +289,18 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+    margin: 0;
+
+    /* 2 */
+    font-size: 100%;
+
+    /* 1 */
+    font-family: sans-serif;
+
+    /* 1 */
+    line-height: 1.15;
+
+    /* 1 */
 }
 
 /**
@@ -265,8 +309,9 @@ textarea {
  */
 
 button,
-input { /* 1 */
-  overflow: visible;
+input {
+    /* 1 */
+    overflow: visible;
 }
 
 /**
@@ -275,8 +320,9 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
-  text-transform: none;
+select {
+    /* 1 */
+    text-transform: none;
 }
 
 /**
@@ -286,10 +332,12 @@ select { /* 1 */
  */
 
 button,
-html [type="button"], /* 1 */
+html [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; /* 2 */
+    -webkit-appearance: button;
+
+    /* 2 */
 }
 
 /**
@@ -300,8 +348,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+    padding: 0;
+    border-style: none;
 }
 
 /**
@@ -312,7 +360,7 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+    outline: 1px dotted ButtonText;
 }
 
 /**
@@ -320,7 +368,7 @@ button:-moz-focusring,
  */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+    padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -331,12 +379,24 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+    display: table;
+
+    /* 1 */
+    box-sizing: border-box;
+
+    /* 1 */
+    padding: 0;
+
+    /* 3 */
+    max-width: 100%;
+
+    /* 1 */
+    color: inherit;
+
+    /* 2 */
+    white-space: normal;
+
+    /* 1 */
 }
 
 /**
@@ -345,8 +405,12 @@ legend {
  */
 
 progress {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+    display: inline-block;
+
+    /* 1 */
+    vertical-align: baseline;
+
+    /* 2 */
 }
 
 /**
@@ -354,7 +418,7 @@ progress {
  */
 
 textarea {
-  overflow: auto;
+    overflow: auto;
 }
 
 /**
@@ -364,8 +428,12 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+    box-sizing: border-box;
+
+    /* 1 */
+    padding: 0;
+
+    /* 2 */
 }
 
 /**
@@ -374,7 +442,7 @@ textarea {
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto;
+    height: auto;
 }
 
 /**
@@ -383,8 +451,12 @@ textarea {
  */
 
 [type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+    outline-offset: -2px;
+
+    /* 2 */
+    -webkit-appearance: textfield;
+
+    /* 1 */
 }
 
 /**
@@ -393,7 +465,7 @@ textarea {
 
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 /**
@@ -402,8 +474,12 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+    font: inherit;
+
+    /* 2 */
+    -webkit-appearance: button;
+
+    /* 1 */
 }
 
 /* Interactive
@@ -414,9 +490,9 @@ textarea {
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
 
-details, /* 1 */
+details,
 menu {
-  display: block;
+    display: block;
 }
 
 /*
@@ -424,7 +500,7 @@ menu {
  */
 
 summary {
-  display: list-item;
+    display: list-item;
 }
 
 /* Scripting
@@ -435,7 +511,7 @@ summary {
  */
 
 canvas {
-  display: inline-block;
+    display: inline-block;
 }
 
 /**
@@ -443,7 +519,7 @@ canvas {
  */
 
 template {
-  display: none;
+    display: none;
 }
 
 /* Hidden
@@ -454,28 +530,34 @@ template {
  */
 
 [hidden] {
-  display: none;
+    display: none;
 }
-
 
 // Contain floats: nicolasgallagher.com/micro-clearfix-hack/
 .clearfix, .cf {
-  zoom: 1;
-    &:before, &:after { content: ""; display: table; }
-    &:after { clear: both; }
+    zoom: 1;
+
+    &:before, &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
 }
 
 // BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
 * {
     -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    box-sizing:         border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 .image-replacement,
 .ir {
+    overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden;
 }

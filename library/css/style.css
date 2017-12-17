@@ -65,8 +65,8 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
+  margin: 0.67em 0;
+  font-size: 2em; }
 
 /* Grouping content
    ========================================================================== */
@@ -91,22 +91,23 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  overflow: visible;
+  /* 2 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */ }
+  /* 1 */ }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */ }
+  /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */ }
 
 /* Normalize monospace sizing:
    en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
@@ -114,11 +115,11 @@ pre, code, kbd, samp {
   font-family: monospace, sans-serif; }
 
 pre {
+  padding: 15px;
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
   white-space: pre;
   white-space: pre-wrap;
-  word-wrap: break-word;
-  padding: 15px; }
+  word-wrap: break-word; }
 
 /* Text-level semantics
    ========================================================================== */
@@ -141,7 +142,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */ }
 
 /**
@@ -165,10 +167,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */ }
+  /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */ }
 
 /**
  * Add the correct font style in Android 4.3-.
@@ -195,10 +197,10 @@ small {
  */
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0; }
 
 sub {
   bottom: -0.25em; }
@@ -245,14 +247,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
-  /* 1 */
+  margin: 0;
+  /* 2 */
   font-size: 100%;
   /* 1 */
-  line-height: 1.15;
+  font-family: sans-serif;
   /* 1 */
-  margin: 0;
-  /* 2 */ }
+  line-height: 1.15;
+  /* 1 */ }
 
 /**
  * Show the overflow in IE.
@@ -291,8 +293,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0; }
+  padding: 0;
+  border-style: none; }
 
 /**
  * Restore the focus styles unset by the previous rule.
@@ -316,16 +318,17 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
   display: table;
   /* 1 */
-  max-width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 3 */
+  max-width: 100%;
+  /* 1 */
+  color: inherit;
+  /* 2 */
   white-space: normal;
   /* 1 */ }
 
@@ -351,7 +354,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -368,10 +372,10 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
   outline-offset: -2px;
-  /* 2 */ }
+  /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */ }
 
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
@@ -385,10 +389,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
   font: inherit;
-  /* 2 */ }
+  /* 2 */
+  -webkit-appearance: button;
+  /* 1 */ }
 
 /* Interactive
    ========================================================================== */
@@ -431,19 +435,20 @@ template {
 .clearfix, .cf {
   zoom: 1; }
   .clearfix:before, .clearfix:after, .cf:before, .cf:after {
-    content: "";
-    display: table; }
+    display: table;
+    content: ""; }
   .clearfix:after, .cf:after {
     clear: both; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
 .ir {
+  overflow: hidden;
   text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden; }
+  white-space: nowrap; }
 
 /******************************************************************
 Site Name:
@@ -1007,7 +1012,6 @@ textarea {
 
 select {
   -webkit-appearance: none;
-  /* 1 */
   -moz-appearance: none;
   appearance: none; }
 
@@ -1122,10 +1126,10 @@ a, a:visited {
   /* mobile tap color */ }
   a:link, a:visited:link {
     /*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
+        this highlights links on iPhones/iPads.
+        so it basically works like the :hover selector
+        for mobile devices.
+        */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
 /******************************************************************
@@ -1147,9 +1151,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   line-height: 1.2;
   text-rendering: optimizelegibility;
   /*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
+    if you're going to use webfonts, be sure to check your weights
+    http://css-tricks.com/watch-your-font-weight/
+    */
   /* removing text decoration from all headline links */ }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
     text-decoration: none; }
@@ -1194,7 +1198,8 @@ if you need them.
 
 We almost always use the Responsive Menu plugin:
 https://wordpress.org/plugins/responsive-menu/ for mobile
-menus but those selectors are there if you need them.
+menus but those selectors are there if you want to use the
+default menu.
 
 For your main navigation, styles are in 768up.scss.
 */
@@ -1215,11 +1220,11 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content {
   /*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/ }
+    image alignment on a screen this size may be
+    a bit difficult. It's set to start aligning
+    and floating images at the next breakpoint,
+    but it's up to you. Feel free to change it up.
+    */ }
   .entry-content table {
     margin-bottom: 1.5em;
     width: 100%;
@@ -1272,7 +1277,8 @@ SCREEN READER STYLES
   height: auto;
   border-radius: 3px;
   background-color: #f1f1f1;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   color: #21759b;
   text-decoration: none;
   font-weight: bold;
@@ -1510,8 +1516,8 @@ NAVIGATION STYLES
       float: left;
       list-style: none;
       /*
-		plan your menus and drop-downs wisely.
-		*/
+        plan your menus and drop-downs wisely.
+        */
       /* showing sub-menus */ }
       .nav li a {
         display: block;
@@ -1519,9 +1525,9 @@ NAVIGATION STYLES
         border-bottom: 0;
         text-decoration: none;
         /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
+            you can use hover styles here even though this size
+            has the possibility of being a mobile device.
+            */ }
         .nav li a:hover, .nav li a:focus {
           text-decoration: underline; }
       .nav li ul.sub-menu,
@@ -1533,10 +1539,10 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li,
         .nav li ul.children li {
           /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
+                if you need to go deeper, go nuts
+                just remember deeper menus suck
+                for usability. k, bai.
+                */ }
           .nav li ul.sub-menu li:last-child a,
           .nav li ul.children li:last-child a {
             border-bottom: 0; }
@@ -1615,10 +1621,10 @@ mobile. Make sure to double check these!
 */
   .footer-links ul li {
     /*
-			be careful with the depth of your menus.
-			it's very rare to have multi-depth menus in
-			the footer.
-			*/ }
+            be careful with the depth of your menus.
+            it's very rare to have multi-depth menus in
+            the footer.
+            */ }
   /* end .footer-links */ }
 
 /*********************
@@ -1679,9 +1685,9 @@ though, go for it.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
+    -ms-filter: none !important;
     -webkit-filter: none !important;
-            filter: none !important;
-    -ms-filter: none !important; }
+            filter: none !important; }
   a, a:visited {
     color: #444 !important;
     text-decoration: underline; }

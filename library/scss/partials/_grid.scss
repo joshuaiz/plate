@@ -26,17 +26,15 @@ over your project's layout.
 
 // using a mixin since we can't use placeholder selectors
 @mixin grid-col {
-  float: left;
-  padding-right: 0.75em;
-
+    float: left;
+    padding-right: 0.75em;
 }
 
 // the last column
 .last-col {
-  float: right;
-  padding-right: 0 !important;
+    float: right;
+    padding-right: 0 !important;
 }
-
 
 /*
 Mobile Grid Styles
@@ -45,209 +43,246 @@ There are four types, but you can add or customize
 them however you see fit.
 */
 @media (max-width: 767px) {
+    .m-all {
+        @include grid-col;
 
-  .m-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
+        width: 100%;
+        padding-right: 0;
+    }
 
-  .m-1of2 {
-    @include grid-col;
-    width: 50%;
-  }
+    .m-1of2 {
+        @include grid-col;
 
-  .m-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
+        width: 50%;
+    }
 
-  .m-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
+    .m-1of3 {
+        @include grid-col;
 
-  .m-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
+        width: 33.33%;
+    }
 
-  .m-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
+    .m-2of3 {
+        @include grid-col;
 
-} // end mobile styles
+        width: 66.66%;
+    }
 
+    .m-1of4 {
+        @include grid-col;
+
+        width: 25%;
+    }
+
+    .m-3of4 {
+        @include grid-col;
+
+        width: 75%;
+    }
+}
+
+// end mobile styles
 
 /* Portrait tablet to landscape */
 @media (min-width: 768px) and (max-width: 1029px) {
+    .t-all {
+        @include grid-col;
 
-  .t-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
+        width: 100%;
+        padding-right: 0;
+    }
 
-  .t-1of2 {
-    @include grid-col;
-    width: 50%;
-  }
+    .t-1of2 {
+        @include grid-col;
 
-  .t-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
+        width: 50%;
+    }
 
-  .t-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
+    .t-1of3 {
+        @include grid-col;
 
-  .t-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
+        width: 33.33%;
+    }
 
-  .t-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
+    .t-2of3 {
+        @include grid-col;
 
-  .t-1of5 {
-    @include grid-col;
-    width: 20%;
-  }
+        width: 66.66%;
+    }
 
-  .t-2of5 {
-    @include grid-col;
-    width: 40%;
-  }
+    .t-1of4 {
+        @include grid-col;
 
-  .t-3of5 {
-    @include grid-col;
-    width: 60%;
-  }
+        width: 25%;
+    }
 
-  .t-4of5 {
-    @include grid-col;
-    width: 80%;
-  }
+    .t-3of4 {
+        @include grid-col;
 
-} // end tablet
+        width: 75%;
+    }
+
+    .t-1of5 {
+        @include grid-col;
+
+        width: 20%;
+    }
+
+    .t-2of5 {
+        @include grid-col;
+
+        width: 40%;
+    }
+
+    .t-3of5 {
+        @include grid-col;
+
+        width: 60%;
+    }
+
+    .t-4of5 {
+        @include grid-col;
+
+        width: 80%;
+    }
+}
+
+// end tablet
 
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
+    .d-all {
+        @include grid-col;
 
-  .d-all  {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
-  }
+        width: 100%;
+        padding-right: 0;
+    }
 
-  .d-1of2 {
-    @include grid-col;
-    width: 50%;
-  }
+    .d-1of2 {
+        @include grid-col;
 
-  .d-1of3 {
-    @include grid-col;
-    width: 33.33%;
-  }
+        width: 50%;
+    }
 
-  .d-2of3 {
-    @include grid-col;
-    width: 66.66%;
-  }
+    .d-1of3 {
+        @include grid-col;
 
-  .d-1of4 {
-    @include grid-col;
-    width: 25%;
-  }
+        width: 33.33%;
+    }
 
-  .d-3of4 {
-    @include grid-col;
-    width: 75%;
-  }
+    .d-2of3 {
+        @include grid-col;
 
-  .d-1of5 {
-    @include grid-col;
-    width: 20%;
-  }
+        width: 66.66%;
+    }
 
-  .d-2of5 {
-    @include grid-col;
-    width: 40%;
-  }
+    .d-1of4 {
+        @include grid-col;
 
-  .d-3of5 {
-    @include grid-col;
-    width: 60%;
-  }
+        width: 25%;
+    }
 
-  .d-4of5 {
-    @include grid-col;
-    width: 80%;
-  }
+    .d-3of4 {
+        @include grid-col;
 
-  .d-1of6 {
-    @include grid-col;
-    width: 16.6666666667%;
-  }
+        width: 75%;
+    }
 
-  .d-1of7 {
-    @include grid-col;
-    width: 14.2857142857%;
-  }
+    .d-1of5 {
+        @include grid-col;
 
-  .d-2of7 {
-    @include grid-col;
-    width: 28.5714286%;
-  }
+        width: 20%;
+    }
 
-  .d-3of7 {
-    @include grid-col;
-    width: 42.8571429%;
-  }
+    .d-2of5 {
+        @include grid-col;
 
-  .d-4of7 {
-    @include grid-col;
-    width: 57.1428572%;
-  }
+        width: 40%;
+    }
 
-  .d-5of7 {
-    @include grid-col;
-    width: 71.4285715%;
-  }
+    .d-3of5 {
+        @include grid-col;
 
-  .d-6of7 {
-    @include grid-col;
-    width: 85.7142857%;
-  }
+        width: 60%;
+    }
 
-  .d-1of8 {
-    @include grid-col;
-    width: 12.5%;
-  }
+    .d-4of5 {
+        @include grid-col;
 
-  .d-1of9 {
-    @include grid-col;
-    width: 11.1111111111%;
-  }
+        width: 80%;
+    }
 
-  .d-1of10 {
-    @include grid-col;
-    width: 10%;
-  }
+    .d-1of6 {
+        @include grid-col;
 
-  .d-1of11 {
-    @include grid-col;
-    width: 9.09090909091%;
-  }
+        width: 16.6666666667%;
+    }
 
-  .d-1of12 {
-    @include grid-col;
-    width: 8.33%;
-  }
+    .d-1of7 {
+        @include grid-col;
 
-} // end desktop styles
+        width: 14.2857142857%;
+    }
+
+    .d-2of7 {
+        @include grid-col;
+
+        width: 28.5714286%;
+    }
+
+    .d-3of7 {
+        @include grid-col;
+
+        width: 42.8571429%;
+    }
+
+    .d-4of7 {
+        @include grid-col;
+
+        width: 57.1428572%;
+    }
+
+    .d-5of7 {
+        @include grid-col;
+
+        width: 71.4285715%;
+    }
+
+    .d-6of7 {
+        @include grid-col;
+
+        width: 85.7142857%;
+    }
+
+    .d-1of8 {
+        @include grid-col;
+
+        width: 12.5%;
+    }
+
+    .d-1of9 {
+        @include grid-col;
+
+        width: 11.1111111111%;
+    }
+
+    .d-1of10 {
+        @include grid-col;
+
+        width: 10%;
+    }
+
+    .d-1of11 {
+        @include grid-col;
+
+        width: 9.09090909091%;
+    }
+
+    .d-1of12 {
+        @include grid-col;
+
+        width: 8.33%;
+    }
+}
+
+// end desktop styles
