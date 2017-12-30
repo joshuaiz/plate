@@ -1,7 +1,7 @@
 <?php
 /**
-* Plugin Name: Template Staff CPT
-* Description: Staff CPT sample for Template theme
+* Plugin Name: Plate Staff CPT
+* Description: Staff CPT sample for Plate theme
 * Version: 1.0
 * Author: Joshua Michaels for studio.bio
 * Author URI: https://studio.bio/
@@ -33,16 +33,16 @@ plugin. Sweetness.
 
 
 // Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'template_flush_rewrite_rules' );
+add_action( 'after_switch_theme', 'plate_flush_rewrite_rules' );
 
 // Flush your rewrite rules
-function template_flush_rewrite_rules() {
+function plate_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
 
 // Register Custom Post Type
-function template_staff_cpt() {
+function plate_staff_cpt() {
 
 	$labels = array(
 		'name'                  => _x( 'Staff', 'Post Type General Name', 'text_domain' ),
@@ -79,7 +79,7 @@ function template_staff_cpt() {
 	);
 	$args = array(
 		'label'                 => __( 'Staff', 'text_domain' ),
-		'description'           => __( 'TEMPLATE Staff', 'text_domain' ),
+		'description'           => __( 'Plate Staff', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'revisions', 'page-attributes', ),
 		'taxonomies'            => array( 'grouping' ),
@@ -102,14 +102,14 @@ function template_staff_cpt() {
 		//'rest_base'             => 'staff',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	);
-	register_post_type( 'template_staff', $args );
+	register_post_type( 'plate_staff', $args );
 
 }
-add_action( 'init', 'template_staff_cpt', 0 );
+add_action( 'init', 'plate_staff_cpt', 0 );
 
 
 // Register Custom Taxonomy
-function template_staff_grouping_tax() {
+function plate_staff_grouping_tax() {
 
 	$labels = array(
 		'name'                       => _x( 'Groupings', 'Taxonomy General Name', 'text_domain' ),
@@ -146,31 +146,31 @@ function template_staff_grouping_tax() {
 		//'rest_base'                  => 'grouping',
 		'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
-	register_taxonomy( 'grouping', array( 'template_staff' ), $args );
+	register_taxonomy( 'grouping', array( 'plate_staff' ), $args );
 
 }
 
-add_action( 'init', 'template_staff_grouping_tax', 0 );
+add_action( 'init', 'plate_staff_grouping_tax', 0 );
 
 
 // Change the 'Title' field text on edit screen
-function template_staff_change_title_text( $title ){
+function plate_staff_change_title_text( $title ){
      $screen = get_current_screen();
 
-     if  ( 'template_staff' == $screen->post_type ) {
+     if  ( 'plate_staff' == $screen->post_type ) {
           $title = 'Full Name (First Last)';
      }
 
      return $title;
 }
 
-add_filter( 'enter_title_here', 'template_staff_change_title_text' );
+add_filter( 'enter_title_here', 'plate_staff_change_title_text' );
 
 
 // Add sortable admin columns dopeness
-add_filter("manage_edit-template_staff_sortable_columns", 'template_staff_sort');
+add_filter("manage_edit-plate_staff_sortable_columns", 'plate_staff_sort');
 
-function template_staff_sort($columns) {
+function plate_staff_sort($columns) {
    $custom = array(
        'taxonomy-grouping' => 'taxonomy-grouping'
    );

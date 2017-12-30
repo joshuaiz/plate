@@ -1,10 +1,10 @@
 <?php if ( has_post_thumbnail() ) { ?>
 
-<div class="post-thumbnail">
+    <div class="post-thumbnail">
 
-	<?php the_post_thumbnail( 'template-thumb-300' ); ?>
+    	<?php the_post_thumbnail( 'plate-thumb-300' ); ?>
 
-</div>
+    </div>
 
 <?php } ?>
 

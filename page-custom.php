@@ -1,7 +1,7 @@
 <?php
 /*
  Template Name: Custom Page Example
- 
+ *
  * This is the base custom page template. 
  * 
  * Change the "Template Name" at the top and save as page-newname.php and it will

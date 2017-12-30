@@ -1054,7 +1054,9 @@ those viewpoints.
 
 ******************************************************************/
 /*********************
-GENERAL STYLES
+GLOBAL STYLES
+Use this section for
+site-wide stuffs.
 *********************/
 html {
   font-size: 1em; }
@@ -1071,45 +1073,6 @@ img {
   max-width: 100%;
   height: auto; }
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-/* for sites that are read right to left (i.e. hebrew) */
-/* home page */
-/* blog template page */
-/* archive page */
-/* date archive page */
-/* replace the number to the corresponding page number */
-/* search page */
-/* search result page */
-/* no results search page */
-/* individual paged search (i.e. body.search-paged-3) */
-/* 404 page */
-/* single post page */
-/* individual post page by id (i.e. body.postid-73) */
-/* individual paged single (i.e. body.single-paged-3) */
-/* attatchment page */
-/* individual attatchment page (i.e. body.attachmentid-763) */
-/* style mime type pages */
-/* author page */
-/* user nicename (i.e. body.author-samueladams) */
-/* paged author archives (i.e. body.author-paged-4) for page 4 */
-/* category page */
-/* individual category page (i.e. body.category-6) */
-/* replace the number to the corresponding page number */
-/* tag page */
-/* individual tag page (i.e. body.tag-news) */
-/* replace the number to the corresponding page number */
-/* custom page template page */
-/* individual page template (i.e. body.page-template-contact-php */
-/* replace the number to the corresponding page number */
-/* parent page template */
-/* child page template */
-/* replace the number to the corresponding page number */
-/* if user is logged in */
-/* paged items like search results or archives */
-/* individual paged (i.e. body.paged-3) */
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1190,6 +1153,22 @@ HEADER STYLES
   font-size: 2em; }
 
 /*********************
+LIST STYLES
+*********************/
+ul, ol {
+  -webkit-padding-start: 20px; }
+
+.list-square {
+  margin-bottom: 1.5em;
+  list-style-position: outside;
+  list-style-type: square; }
+
+.nostyle {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none; }
+
+/*********************
 NAVIGATION STYLES
 *********************/
 /* Where did the nav menu go?
@@ -1203,6 +1182,45 @@ default menu.
 
 For your main navigation, styles are in 768up.scss.
 */
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+/* for sites that are read right to left (i.e. hebrew) */
+/* home page */
+/* blog template page */
+/* archive page */
+/* date archive page */
+/* replace the number to the corresponding page number */
+/* search page */
+/* search result page */
+/* no results search page */
+/* individual paged search (i.e. body.search-paged-3) */
+/* 404 page */
+/* single post page */
+/* individual post page by id (i.e. body.postid-73) */
+/* individual paged single (i.e. body.single-paged-3) */
+/* attatchment page */
+/* individual attatchment page (i.e. body.attachmentid-763) */
+/* style mime type pages */
+/* author page */
+/* user nicename (i.e. body.author-samueladams) */
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+/* category page */
+/* individual category page (i.e. body.category-6) */
+/* replace the number to the corresponding page number */
+/* tag page */
+/* individual tag page (i.e. body.tag-news) */
+/* replace the number to the corresponding page number */
+/* custom page template page */
+/* individual page template (i.e. body.page-template-contact-php */
+/* replace the number to the corresponding page number */
+/* parent page template */
+/* child page template */
+/* replace the number to the corresponding page number */
+/* if user is logged in */
+/* paged items like search results or archives */
+/* individual paged (i.e. body.paged-3) */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -1491,7 +1509,7 @@ busy with more stylings.
 
 ******************************************************************/
   /*********************
-GENERAL STYLES
+GLOBAL STYLES
 *********************/
   /*********************
 LAYOUT & GRID STYLES

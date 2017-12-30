@@ -3,18 +3,18 @@
  * Theme: Plate by studio.bio 
  * File: Template dev functions file 
  * Author: Joshua Michaels
- * URI: https://studio.bio/template
+ * URI: https://studio.bio/themes/plate
  *------------------------------------
  */
 
 /* This is kind of meta to have functions that
  * tell you what template you are using in a 
  * theme based on Template and in a file called
- * template.php, but I digress.
+ * plate.php, but I digress.
 */
 
-add_filter( 'template_include', 'var_template_include', 1000 );
-function var_template_include( $t ){
+add_filter( 'plate_include', 'var_plate_include', 1000 );
+function var_plate_include( $t ){
     $GLOBALS['current_theme_template'] = basename($t);
     return $t;
 }

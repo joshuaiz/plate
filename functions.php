@@ -18,7 +18,7 @@
 /* LOAD TEMPLATE DEVELOPMENT FUNCTIONS
 (not required but helper stuff for debugging and development)
 */
-//require_once( 'library/template.php' );
+//require_once( 'library/plate.php' );
 
 /* CUSTOMIZE THE WORDPRESS ADMIN 
 (also not required so comment it out if you don't need it)
@@ -26,59 +26,59 @@
 require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH TEMPLATE
+LAUNCH PLATE
 Let's get everything up and running.
 *********************/
 
-function template_launch() {
+function plate_launch() {
 
     //Allow editor style.
     add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
     // let's get language support going, if you need it
-    //load_theme_textdomain( 'templatetheme', get_template_directory() . '/library/translation' );
+    //load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
 
     // launching operation cleanup
-    add_action( 'init', 'template_head_cleanup' );
+    add_action( 'init', 'plate_head_cleanup' );
     // A better title
     add_filter( 'wp_title', 'rw_title', 10, 3 );
     // remove WP version from RSS
-    add_filter( 'the_generator', 'template_rss_version' );
+    add_filter( 'the_generator', 'plate_rss_version' );
     // remove pesky injected css for recent comments widget
-    add_filter( 'wp_head', 'template_remove_wp_widget_recent_comments_style', 1 );
+    add_filter( 'wp_head', 'plate_remove_wp_widget_recent_comments_style', 1 );
     // clean up comment styles in the head
-    add_action( 'wp_head', 'template_remove_recent_comments_style', 1 );
+    add_action( 'wp_head', 'plate_remove_recent_comments_style', 1 );
     // clean up gallery output in wp
-    add_filter( 'gallery_style', 'template_gallery_style' );
+    add_filter( 'gallery_style', 'plate_gallery_style' );
 
     // enqueue base scripts and styles
-    add_action( 'wp_enqueue_scripts', 'template_scripts_and_styles', 999 );
+    add_action( 'wp_enqueue_scripts', 'plate_scripts_and_styles', 999 );
     // ie conditional wrapper
 
     // launching this stuff after theme setup
-    template_theme_support();
+    plate_theme_support();
 
     // adding sidebars to Wordpress (these are created in functions.php)
-    add_action( 'widgets_init', 'template_register_sidebars' );
+    add_action( 'widgets_init', 'plate_register_sidebars' );
 
     // cleaning up random code around images
-    add_filter( 'the_content', 'template_filter_ptags_on_images' );
+    add_filter( 'the_content', 'plate_filter_ptags_on_images' );
     // cleaning up excerpt
-    add_filter( 'excerpt_more', 'template_excerpt_more' );
+    add_filter( 'excerpt_more', 'plate_excerpt_more' );
 
 } /* end template ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'template_launch' );
+add_action( 'after_setup_theme', 'plate_launch' );
 
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'template-image-600', 600, 600, true );
-add_image_size( 'template-image-300', 300, 300, true );
-add_image_size( 'template-image-300', 150, 150, true );
+add_image_size( 'plate-image-600', 600, 600, true );
+add_image_size( 'plate-image-300', 300, 300, true );
+add_image_size( 'plate-image-300', 150, 150, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -92,21 +92,21 @@ inside the thumbnail function.
 
 For example, to call the 300 x 100 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'template-image-300' ); ?>
+<?php the_post_thumbnail( 'plate-image-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'template-image-600' ); ?>
+<?php the_post_thumbnail( 'pplate-image-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
-add_filter( 'image_size_names_choose', 'template_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'plate_custom_image_sizes' );
 
-function template_custom_image_sizes( $sizes ) {
+function plate_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'template-image-600' => __('600px by 600px', 'templatetheme'),
-        'template-image-300' => __('300px by 300px', 'templatetheme'),
-        'template-image-150' => __('150px by 150px', 'templatetheme'),
+        'plate-image-600' => __('600px by 600px', 'platetheme'),
+        'plate-image-300' => __('300px by 300px', 'platetheme'),
+        'plate-image-150' => __('150px by 150px', 'platetheme'),
     ) );
 }
 
@@ -122,11 +122,11 @@ new image size.
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function template_register_sidebars() {
+function plate_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'templatetheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'templatetheme' ),
+		'name' => __( 'Sidebar 1', 'platetheme' ),
+		'description' => __( 'The first (primary) sidebar.', 'platetheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -143,8 +143,8 @@ function template_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'templatetheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'templatetheme' ),
+		'name' => __( 'Sidebar 2', 'platetheme' ),
+		'description' => __( 'The second (secondary) sidebar.', 'platetheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -179,7 +179,7 @@ function new_default_avatar ( $avatar_defaults ) {
 
 
 // Comment Layout
-function template_comments( $comment, $args, $depth ) {
+function plate_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
     <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
         <article  class="cf">
@@ -197,13 +197,13 @@ function template_comments( $comment, $args, $depth ) {
             ?>
             <img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_theme_file_uri(); ?>/library/images/nothing.gif" />
             <?php // end custom gravatar call ?>
-            <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'templatetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'templatetheme' ),'  ','') ) ?>
-            <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'templatetheme' )); ?> </a></time>
+            <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'platetheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'platetheme' ),'  ','') ) ?>
+            <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'platetheme' )); ?> </a></time>
 
             </header>
             <?php if ($comment->comment_approved == '0') : ?>
                 <div class="alert alert-info">
-                    <p><?php _e( 'Your comment is awaiting moderation.', 'templatetheme' ) ?></p>
+                    <p><?php _e( 'Your comment is awaiting moderation.', 'platetheme' ) ?></p>
                 </div>
             <?php endif; ?>
             <section class="comment_content cf">
@@ -220,10 +220,10 @@ function template_comments( $comment, $args, $depth ) {
 Use this to add Google or other web fonts.
 */
 // function template_fonts() {
-//   wp_enqueue_style('templateFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,');
+//   wp_enqueue_style('plateFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,');
 // }
 
-// add_action('wp_enqueue_scripts', 'template_fonts');
+// add_action('wp_enqueue_scripts', 'plate_fonts');
 
 
 /****************************************
@@ -257,15 +257,14 @@ function html_schema() {
 
 
 
-/*********************
+/*********************************
 WP_HEAD GOODNESS
-The default wordpress head is
-a mess. Let's clean it up by
-removing all the junk we don't
-need.
-*********************/
+The default wordpress head is a mess. 
+Let's clean it up by removing all 
+the junk we don't need.
+**********************************/
 
-function template_head_cleanup() {
+function plate_head_cleanup() {
     // category feeds
     remove_action( 'wp_head', 'feed_links_extra', 3 );
     // post and comment feeds
@@ -283,32 +282,32 @@ function template_head_cleanup() {
     // WP version
     remove_action( 'wp_head', 'wp_generator' );
     // remove WP version from css
-    add_filter( 'style_loader_src', 'template_remove_wp_ver_css_js', 9999 );
+    add_filter( 'style_loader_src', 'plate_remove_wp_ver_css_js', 9999 );
     // remove WP version from scripts
-    add_filter( 'script_loader_src', 'template_remove_wp_ver_css_js', 9999 );
+    add_filter( 'script_loader_src', 'plate_remove_wp_ver_css_js', 9999 );
 
 } /* end template head cleanup */
 
 
 // remove WP version from RSS
-function template_rss_version() { return ''; }
+function plate_rss_version() { return ''; }
 
 // remove WP version from scripts
-function template_remove_wp_ver_css_js( $src ) {
+function plate_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
         $src = remove_query_arg( 'ver', $src );
     return $src;
 }
 
 // remove injected CSS for recent comments widget
-function template_remove_wp_widget_recent_comments_style() {
+function plate_remove_wp_widget_recent_comments_style() {
     if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
         remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
     }
 }
 
 // remove injected CSS from recent comments widget
-function template_remove_recent_comments_style() {
+function plate_remove_recent_comments_style() {
     global $wp_widget_factory;
         if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
         remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
@@ -316,7 +315,7 @@ function template_remove_recent_comments_style() {
 }
 
 // remove injected CSS from gallery
-function template_gallery_style($css) {
+function plate_gallery_style($css) {
     return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
@@ -326,20 +325,20 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
-function template_scripts_and_styles() {
+function plate_scripts_and_styles() {
 
     global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
     if (!is_admin()) {
 
         // modernizr (without media query polyfill)
-        wp_register_script( 'template-modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
+        wp_register_script( 'plate-modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
 
         // register main stylesheet
-        wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
+        wp_register_style( 'plate-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
 
         // ie-only style sheet
-        wp_register_style( 'template-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
+        wp_register_style( 'plate-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
 
         // comment reply script for threaded comments
         if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) {
@@ -347,21 +346,21 @@ function template_scripts_and_styles() {
         }
 
         //adding scripts file in the footer
-        wp_register_script( 'template-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+        wp_register_script( 'plate-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
         // Template extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
-        // wp_register_script( 'template-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
+        // wp_register_script( 'plate-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
 
         // enqueue styles and scripts
-        wp_enqueue_script( 'template-modernizr' );
-        wp_enqueue_style( 'template-stylesheet' );
-        wp_enqueue_style( 'template-ie-only' );
+        wp_enqueue_script( 'plate-modernizr' );
+        wp_enqueue_style( 'plate-stylesheet' );
+        wp_enqueue_style( 'plate-ie-only' );
 
-        $wp_styles->add_data( 'template-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+        $wp_styles->add_data( 'plate-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
         wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'template-js' );
-        // wp_enqueue_script( 'template-extra-js' );
+        wp_enqueue_script( 'plate-js' );
+        // wp_enqueue_script( 'plate-extra-js' );
 
     }
 }
@@ -405,8 +404,8 @@ function disable_emojicons_tinymce( $plugins ) {
 * for some forms functions to work...***eye roll***. 
 * 
 */
-// add_action( 'wp_default_scripts', 'template_dequeue_jquery_migrate' );
-// function template_dequeue_jquery_migrate( $scripts ) {
+// add_action( 'wp_default_scripts', 'plate_dequeue_jquery_migrate' );
+// function plate_dequeue_jquery_migrate( $scripts ) {
 //   if (! empty( $scripts->registered['jquery'] ) ) {
 //     $jquery_dependencies = $scripts->registered['jquery']->deps;
 //     $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
@@ -434,17 +433,17 @@ function disable_emojicons_tinymce( $plugins ) {
 
 
 // Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-// Not sure if this actually works anymore.
-function template_filter_ptags_on_images($content){
+function filter_ptags_on_images($content){
     return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
+add_filter('the_content', 'filter_ptags_on_images');
 
 
 // This removes the annoying […] to a Read More link
-function template_excerpt_more($more) {
+function plate_excerpt_more($more) {
     global $post;
      // edit here if you like
-    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'templatetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'templatetheme' ) .'</a>';
+    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
 }
 
 
@@ -453,7 +452,7 @@ THEME SUPPORT
 *********************/
 
 // Adding WP 3+ Functions & Theme Support
-function template_theme_support() {
+function plate_theme_support() {
 
     // wp thumbnails (sizes handled in functions.php)
     add_theme_support( 'post-thumbnails' );
@@ -479,7 +478,7 @@ function template_theme_support() {
         'default-text-color'     => 'ffffff',
         'header-text'            => true,
         'uploads'                => true,
-        'wp-head-callback'       => 'template_style_header'
+        'wp-head-callback'       => 'plate_style_header'
         ) 
     );
 
@@ -504,8 +503,8 @@ function template_theme_support() {
     // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
     register_nav_menus(
         array(
-          'main-nav' => __( 'The Main Menu', 'templatetheme' ),   // main nav in header
-          // 'footer-links' => __( 'Footer Links', 'templatetheme' ) // secondary nav in footer. Uncomment to use or edit.
+          'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
+          // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
         )
     );
 
@@ -552,7 +551,7 @@ function template_theme_support() {
         )
     );
 
-    } /* end template theme support */
+    } /* end plate theme support */
 
 
     /* Add WooCommerce support. This function only removes the warning 
@@ -571,9 +570,9 @@ function template_theme_support() {
 * CUSTOMIZER *
 ****************************************/
 
-add_action( 'customize_register', 'template_register_theme_customizer' );
+add_action( 'customize_register', 'plate_register_theme_customizer' );
 
-function template_register_theme_customizer( $wp_customize ) {
+function plate_register_theme_customizer( $wp_customize ) {
 
     // Uncomment this to see what's going on if you make a lot of changes
     // echo '<pre>';
@@ -581,26 +580,26 @@ function template_register_theme_customizer( $wp_customize ) {
     // echo '</pre>';
 
     // Customize title and tagline sections and labels
-    $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'templatetheme');  
-    $wp_customize->get_control('blogname')->label = __('Site Name', 'templatetheme');  
-    $wp_customize->get_control('blogdescription')->label = __('Site Description', 'templatetheme');  
+    $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'platetheme');  
+    $wp_customize->get_control('blogname')->label = __('Site Name', 'platetheme');  
+    $wp_customize->get_control('blogdescription')->label = __('Site Description', 'platetheme');  
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
     // Customize the Front Page Settings
-    $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'templatetheme');
+    $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'platetheme');
     $wp_customize->get_section('static_front_page')->priority = 20;
-    $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'templatetheme');  
-    $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'templatetheme');  
-    $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'templatetheme');  
+    $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'platetheme');  
+    $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'platetheme');  
+    $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'platetheme');  
 
     // Customize Background Settings
-    $wp_customize->get_section('background_image')->title = __('Background Styles', 'templatetheme');  
+    $wp_customize->get_section('background_image')->title = __('Background Styles', 'platetheme');  
     $wp_customize->get_control('background_color')->section = 'background_image'; 
 
     // Customize Header Image Settings  
     $wp_customize->add_section( 'header_text_styles' , array(
-    'title'      => __('Header Text Styles','templatetheme'), 
+    'title'      => __('Header Text Styles','platetheme'), 
     'priority'   => 30    
     ) );
     $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
@@ -611,21 +610,21 @@ function template_register_theme_customizer( $wp_customize ) {
 
 
 // Custom scripts + styles for theme customizer
-add_action( 'customize_preview_init', 'template_customizer_scripts' );
+add_action( 'customize_preview_init', 'plate_customizer_scripts' );
 
-function template_customizer_scripts() {
-    wp_enqueue_script( 'template_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js',
+function plate_customizer_scripts() {
+    wp_enqueue_script( 'plate_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js',
     array( 'jquery', 'customize-preview' ), '', true);
 
 // register customizer stylesheet
-wp_register_style( 'template-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
-wp_enqueue_style( 'template-customizer' );
+wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
+wp_enqueue_style( 'plate-customizer' );
 
 }
 
 
 // Callback function for updating header styles
-function template_style_header() {
+function plate_style_header() {
 
     $text_color = get_header_textcolor();
   
@@ -661,9 +660,9 @@ function template_style_header() {
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using template_related_posts(); )
-function template_related_posts() {
-    echo '<ul id="template-related-posts">';
+// Related Posts Function (call using plate_related_posts(); )
+function plate_related_posts() {
+    echo '<ul id="plate-related-posts">';
     global $post;
     $tags = wp_get_post_tags( $post->ID );
     if( $tags ) {
@@ -681,19 +680,19 @@ function template_related_posts() {
             <li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
             <?php endforeach; 
         } else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'templatetheme' ) . '</li>'; ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'platetheme' ) . '</li>'; ?>
         <?php }
     } /* end if ($tags) */
     wp_reset_postdata();
     echo '</ul>';
-} /* end template related posts function */
+} /* end plate related posts function */
 
 /*********************
 PAGE NAVI
 *********************/
 
 // Numeric Page Navi (built into the theme by default)
-function template_page_navi() {
+function plate_page_navi() {
     global $wp_query;
     $bignum = 999999999;
     if ( $wp_query->max_num_pages <= 1 )
@@ -717,16 +716,16 @@ function template_page_navi() {
 
 /*
 ****************************************
-*      TEMPLATE SPECIAL FUNCTIONS      *
+*        PLATE SPECIAL FUNCTIONS       *
 ****************************************
 */
 
 // Body Class functions
 // Adds more slugs to body class so we can style individual pages + posts.
 // Page Slug Body Class
-add_filter( 'body_class', 'template_body_class' );
+add_filter( 'body_class', 'plate_body_class' );
 
-function template_body_class( $classes ) {
+function plate_body_class( $classes ) {
     global $post;
     if ( isset( $post ) ) {
         /* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
@@ -773,9 +772,9 @@ function template_body_class( $classes ) {
 // Let's add some extra Quicktags
 // These come in handy especially for clients who aren't HTML masters
 // Hook into the 'admin_print_footer_scripts' action
-add_action( 'admin_print_footer_scripts', 'template_custom_quicktags' );
+add_action( 'admin_print_footer_scripts', 'plate_custom_quicktags' );
 
-function template_custom_quicktags() {
+function plate_custom_quicktags() {
 
     if ( wp_script_is( 'quicktags' ) ) { ?>
         <script type="text/javascript">
@@ -802,30 +801,31 @@ function template_custom_quicktags() {
   
 // Post Author function (from WP Twenty Seventeen theme)
 // We use this in the byline template part but included here in case you want to use it elsewhere.
-if ( ! function_exists( 'template_posted_on' ) ) :
+if ( ! function_exists( 'plate_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function template_posted_on() {
+function plate_posted_on() {
 
     // Get the author name; wrap it in a link.
     $byline = sprintf(
     /* translators: %s: post author */
-    __( 'by %s', 'templatetheme' ),
+    __( 'by %s', 'platetheme' ),
     '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
     );
 
     // Finally, let's write all of this to the page.
-    echo '<span class="posted-on">' . template_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+    echo '<span class="posted-on">' . plate_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
 }
 endif;
 
+
 // Post Time function (from WP Twenty Seventeen theme)
-if ( ! function_exists( 'template_time_link' ) ) :
+if ( ! function_exists( 'plate_time_link' ) ) :
 /**
  * Gets a nicely formatted string for the published date.
  */
-function template_time_link() {
+function plate_time_link() {
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
     // if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
     //   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -841,7 +841,7 @@ function template_time_link() {
     // Wrap the time string in a link, and preface it with 'Posted on'.
     return sprintf(
     /* translators: %s: post date */
-    __( '<span class="screen-reader-text">Posted on</span> %s', 'templatetheme' ),
+    __( '<span class="screen-reader-text">Posted on</span> %s', 'platetheme' ),
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
     );
 }

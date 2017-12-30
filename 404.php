@@ -18,7 +18,7 @@
 
 						<div class="404-txt">
 
-							<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'templatetheme' ); ?></h3>
+							<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'platetheme' ); ?></h3>
 							<p>We couldn't find what you are looking for, please try searching.</p>
 
 						</div>
@@ -27,7 +27,7 @@
 
 					<section class="search">
 
-							<p><?php get_search_form(); ?></p>
+							<div class="search-form-outer"><?php get_search_form(); ?></div>
 
 					</section>
 

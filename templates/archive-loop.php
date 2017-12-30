@@ -21,7 +21,7 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 			<div class="post-thumbnail">
 
-				<?php the_post_thumbnail( 'template-thumb-300' ); ?>
+				<?php the_post_thumbnail( 'plate-thumb-300' ); ?>
 
 			</div>
 

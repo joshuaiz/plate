@@ -7,6 +7,17 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+###1.1 2017-12-30
+####Semi-major update.
+We've been using Plate almost exclusively so I went ahead and
+namespaced all of the functions and enqueues with plate which
+makes it less confusing dealing with template parts.
+- Reordered sections in _base.scss
+- Removed custom-post-type-icon.png (not needed with Dashicons)
+- Removed nothing.gif and nothumb.gif (I've never used those)
+- updated and formatted page-html.php (finally)
+- General cleanup stuff
+
 ###1.0.4 2017-12-17
 Replaced parallax script in extras.js
 Updated all files to 4 spaces per tab
