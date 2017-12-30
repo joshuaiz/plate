@@ -7,8 +7,8 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
-###1.1 2017-12-30
-####Semi-major update.
+### 1.1 2017-12-30
+#### Semi-major update.
 We've been using Plate almost exclusively so I went ahead and
 namespaced all of the functions and enqueues with plate which
 makes it less confusing dealing with template parts.
@@ -18,13 +18,13 @@ makes it less confusing dealing with template parts.
 - updated and formatted page-html.php (finally)
 - General cleanup stuff
 
-###1.0.4 2017-12-17
+### 1.0.4 2017-12-17
 Replaced parallax script in extras.js
 Updated all files to 4 spaces per tab
 Formatting updates
 
 
-###1.0.3 2017-09-08
+### 1.0.3 2017-09-08
 Added Grunt support (thanks @micahmills)
 Added REST API support in the custom post type plugin template
 Added extras in /library/extras (brilliant I know)
