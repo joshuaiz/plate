@@ -53,6 +53,8 @@ Plate strips everything down even further for those who want to build from scrat
 
 ...and much, much more.
 
+See the changelog: https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md
+
 This is the beginning for Plate (and Template) so we welcome improvements, comments, criticism and general feedback. I've probably made a ton of mistakes so as with anything open source, it is a work in progress.
 
 ## Recommended Plugins
