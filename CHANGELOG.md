@@ -19,19 +19,19 @@ makes it less confusing dealing with template parts.
 - General cleanup stuff
 
 ### 1.0.4 2017-12-17
-Replaced parallax script in extras.js
-Updated all files to 4 spaces per tab
-Formatting updates
+- Replaced parallax script in extras.js
+- Updated all files to 4 spaces per tab
+- Formatting updates
 
 
 ### 1.0.3 2017-09-08
-Added Grunt support (thanks @micahmills)
-Added REST API support in the custom post type plugin template
-Added extras in /library/extras (brilliant I know)
+- Added Grunt support (thanks @micahmills)
+- Added REST API support in the custom post type plugin template
+- Added extras in /library/extras (brilliant I know)
 
 
 ### 1.0.2 2017-08-31
-Updated a few functions and calls with get_theme_file_uri(); which
+- Updated a few functions and calls with get_theme_file_uri(); which
 was added in 4.7 to replace get_template_directory_uri();
 
 
@@ -40,12 +40,12 @@ To be honest, I've been using Plate way more than Template in my
 projects as of late. Because of this, I've added back a few 
 of the default scripts from Template back in.
 
-	- updated scripts.js with the following defaults:
-		+ user agent detect script
-		+ jQuery Nearest
-		+ Retina.js 1.4.0 (the last simple version)
-	- updated functions.php
-	- updated admin.php (new admin css enqueue that works)
+- updated scripts.js with the following defaults:
+	+ user agent detect script
+	+ jQuery Nearest
+	+ Retina.js 1.4.0 (the last simple version)
+- updated functions.php
+- updated admin.php (new admin css enqueue that works)
 
 
 ### 1.0 2017-06-22
