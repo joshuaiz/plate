@@ -20,7 +20,7 @@ For Plate, we've stripped everything down to the bare minimums so you can build 
 Edit this, fork it, change it, delete it - whatever. As Eddie might say: it's your world. But I hope you make something cool with it.
 
 ## A Little History
-My introduction to Bones came five years ago after trying out just about every starter theme out there. Once I found Bones I was hooked and have used it ever since on hundreds of projects. Bones got me to use Sass/SCSS, taught me a ton about WordPress, how themes *really* work, and made me a better developer.
+My introduction to Bones came seven years ago after trying out just about every starter theme out there. Once I found Bones I was hooked and have used it ever since on hundreds of projects. Bones got me to use Sass/SCSS, taught me a ton about WordPress, how themes *really* work, and made me a better developer.
 
 Yet, over time I found I was making the same changes to Bones at the start of every project and this was taking up valuable time. Thus, I created the predecessor to this theme called 'Osseous' which included some of the changes found in Template. Osseous literally means: 'of, relating to, or composed of bone' and was a good departure point.
 
