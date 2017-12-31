@@ -15,6 +15,8 @@ With that in mind, we've removed some things I never used in Bones (like Link Pa
 
 We've also included some extras and goodies that developers may find useful but kept those out of the main files.
 
+For example, check out the page-html.php template. It has every HTML element hardcoded so just create a page called HTML and select that template and view to check out and test all of your styles in one place. Yeah, it's kind of dope.
+
 For Plate, we've stripped everything down to the bare minimums so you can build it up how you like. If you want, you can copy things over from Template as you need.
 
 Edit this, fork it, change it, delete it - whatever. As Eddie might say: it's your world. But I hope you make something cool with it.
