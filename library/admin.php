@@ -26,7 +26,7 @@ to have any of these back, comment them out.
 
 add_action('wp_dashboard_setup', 'plate_remove_dashboard_widgets');
 
-function template_remove_dashboard_widgets() {
+function plate_remove_dashboard_widgets() {
 
     remove_meta_box('dashboard_quick_press','dashboard','side'); // Quick Press widget
     remove_meta_box('dashboard_recent_drafts','dashboard','side'); // Recent Drafts
@@ -52,15 +52,15 @@ Customize it, we don't criticize it.
 
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-function template_login_css() {
+function plate_login_css() {
 	wp_enqueue_style( 'plate_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function template_login_url() {  return home_url(); }
+function plate_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function template_login_title() { return get_option( 'blogname' ); }
+function plate_login_title() { return get_option( 'blogname' ); }
 
 // calling it only on the login page
 add_action( 'login_enqueue_scripts', 'plate_login_css', 10 );
@@ -80,7 +80,7 @@ are a few funtions which you can choose to use if
 you like.
 */
 
-function template_admin_css() {
+function plate_admin_css() {
     wp_enqueue_style( 'plate_admin_css', get_template_directory_uri() . '/library/css/admin.css', false );
 }
 add_action( 'admin_enqueue_scripts', 'plate_admin_css', 10 );
@@ -91,7 +91,7 @@ add_action( 'admin_enqueue_scripts', 'plate_admin_css', 10 );
 // adding it to the admin area
 add_filter( 'admin_footer_text', 'plate_custom_admin_footer' );
 
-function template_custom_admin_footer() {
+function plate_custom_admin_footer() {
 	_e( '<span id="footer-thankyou">Developed by <a href="https://studio.bio" target="_blank">studio.bio</a></span>. Built using <a href="https://studio.bio/template" target="_blank">Plate</a>.', 'platetheme' );
 }
 
