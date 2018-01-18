@@ -4,11 +4,17 @@ For more information, please visit: https://studio.bio/themes/plate
 
 Author: Joshua Michaels for studio.bio with help from Jon Iler
 
-
 *******************************************************************
 
+### 1.1.2 2018-01-18
+- added r-debug class in plate.php for debugging
+- changed theme init function to plate_lunch()
+- formatted functions.php so it's a lot easier to read
+- updated the Windows tile image - you're already asleep, aren't you?
+- addressed an issue where my bourbon supply was at critical levels
+
 ### 1.1.1 2018-01-17
-- Added page-custom-loop.php in case you want a page template without template parts like I do
+- added page-custom-loop.php in case you want a page template without template parts like I do
 - fixed single-custom_type.php as it still had archive.php code and that was not the jam
 - reformatted some of the template parts so they don't look like crap
 - fixed an issue where I was watching way too much tennis

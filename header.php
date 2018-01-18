@@ -29,9 +29,9 @@
 			<link rel="shortcut icon" href="<?php echo get_theme_file_uri(); ?>/favicon.ico">
 		<![endif]-->
 		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#f01d4f">
+		<meta name="msapplication-TileColor" content="#F05A28">
 		<meta name="msapplication-TileImage" content="<?php echo get_theme_file_uri(); ?>/library/images/win8-tile-icon.png">
-        <meta name="theme-color" content="#121212">
+        <meta name="theme-color" content="#111111">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -76,12 +76,14 @@
 					<!-- <div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.png" /></a></div> -->
 
 					<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
 					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
+
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
     					         'menu' => __( 'The Main Menu', 'platetheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav main-menu cf',               // adding custom nav class
+    					         'menu_class' => 'nav top-nav main-menu cf',     // adding custom nav class
     					         'theme_location' => 'main-nav',                 // where it's located in the theme
 						)); ?>
 
