@@ -1,6 +1,8 @@
 # Plate by studio.bio
-https://github.com/joshuaiz/plate/
 
+See changelog.md for the most recent updates.
+
+https://github.com/joshuaiz/plate/
 https://studio.bio/themes/plate/
 
 ## A super stripped-down starter WordPress theme for developers. Based on Template, which is based on Bones.
