@@ -7,6 +7,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.1.1 2018-01-17
+- Added page-custom-loop.php in case you want a page template without template parts like I do
+- fixed single-custom_type.php as it still had archive.php code and that was not the jam
+- reformatted some of the template parts so they don't look like crap
+- fixed an issue where I was watching way too much tennis
+
 ### 1.1 2017-12-30
 #### Semi-major update.
 We've been using Plate almost exclusively so I went ahead and
