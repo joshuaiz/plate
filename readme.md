@@ -1,6 +1,6 @@
 # Plate by studio.bio
 
-See changelog.md for the most recent updates.
+See https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md for the most recent updates.
 
 https://github.com/joshuaiz/plate/
 https://studio.bio/themes/plate/
