@@ -269,11 +269,14 @@ function plate_comments( $comment, $args, $depth ) {
 /*
 Use this to add Google or other web fonts.
 */
-// function template_fonts() {
-//   wp_enqueue_style( 'plateFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,' );
-// }
 
 // add_action( 'wp_enqueue_scripts', 'plate_fonts' );
+
+// function plate_fonts() {
+
+//     wp_enqueue_style( 'plate-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,' );
+
+// }
 
 
 /****************************************
@@ -289,14 +292,17 @@ function html_schema() {
     if( is_single()) {
         $type = "Article";
     }
+
     // Is blog home, archive or category
     else if( is_home() || is_archive() || is_category() ) {
         $type = "Blog";
     }
+
     // Is static front page
     else if( is_front_page()) {
         $type = "Website";
     }
+
     // Is a general page
      else {
         $type = 'WebPage';
@@ -352,7 +358,7 @@ function plate_head_cleanup() {
 // remove WP version from RSS
 function plate_rss_version() {
 
-    return ''; 
+    return ''; // it's as if it is not even there
 
 }
 
@@ -415,11 +421,7 @@ function plate_scripts_and_styles() {
         wp_register_style( 'plate-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
 
         // comment reply script for threaded comments
-        if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) {
-
-            wp_enqueue_script( 'comment-reply' );
-
-        }
+        if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) { wp_enqueue_script( 'comment-reply' ); }
 
         //adding scripts file in the footer
         wp_register_script( 'plate-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
@@ -434,7 +436,7 @@ function plate_scripts_and_styles() {
         wp_enqueue_script( 'jquery' );
         wp_enqueue_script( 'plate-js' );
 
-        // Template extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
+        // Plate extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
         // wp_register_script( 'plate-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
 
         // wp_enqueue_script( 'plate-extra-js' );
@@ -446,9 +448,11 @@ function plate_scripts_and_styles() {
 * REMOVE WP EXTRAS & DEQUEUEING STUFFS *
 ****************************************/
 
-// Remove emojis: because WordPress is serious business.
-// But, if you want emojis, don't let me stop you from having a good time. 
-// To enable emojis, comment these functions out or just delete them.
+/* 
+* Remove emojis: because WordPress is serious business.
+* But, if you want emojis, don't let me stop you from having a good time. 
+* To enable emojis, comment these functions out or just delete them.
+*/
 
 add_action( 'init', 'disable_wp_emojicons' );
 
@@ -482,25 +486,24 @@ function disable_emojicons_tinymce( $plugins ) {
 }
 
 
-/* Dequeue jQuery Migrate
+/* 
+* Dequeue jQuery Migrate
 * I'm commenting this out by default. Why? Because Gravity Forms *requires* it
 * for some forms functions to work...***eye roll***. 
-* 
 */
 // add_action( 'wp_default_scripts', 'plate_dequeue_jquery_migrate' );
 
 // function plate_dequeue_jquery_migrate( $scripts ) {
 
-//   if (! empty( $scripts->registered['jquery'] ) ) {
+//     if (! empty( $scripts->registered['jquery'] ) ) {
 
-//     $jquery_dependencies = $scripts->registered['jquery']->deps;
+//         $jquery_dependencies = $scripts->registered['jquery']->deps;
 
-//     $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
+//         $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
 
-//   }
+//     }
 
 // }
-
 
 // Remove wp-embed.min.js from the front end. Commented out by default as you may need it.
 // See here: https://wordpress.stackexchange.com/questions/211701/what-does-wp-embed-min-js-do-in-wordpress-4-4
@@ -622,19 +625,21 @@ function plate_theme_support() {
         ) 
     );
 
-    /* Post Formats
-    Ahhhh yes, the wild and wonderful world of Post Formats. 
-    I've never really gotten into them but I could see some
-    situations where they would come in handy. Here's a few
-    examples: https://www.competethemes.com/blog/wordpress-post-format-examples/
-
-    This theme doesn't use post formats per se but we need this 
-    to pass the theme check.
-
-    We may add better support for post formats in the future.
-
-    If you want to use them in your project, do so by all means. 
-    We won't judge you.
+    /* 
+    * POST FORMATS
+    * Ahhhh yes, the wild and wonderful world of Post Formats. 
+    * I've never really gotten into them but I could see some
+    * situations where they would come in handy. Here's a few
+    * examples: https://www.competethemes.com/blog/wordpress-post-format-examples/
+    * 
+    * This theme doesn't use post formats per se but we need this 
+    * to pass the theme check.
+    * 
+    * We may add better support for post formats in the future.
+    * 
+    * If you want to use them in your project, do so by all means. 
+    * We won't judge you. Ok, maybe a little bit.
+    *
     */
 
     add_theme_support( 'post-formats', array(
@@ -655,11 +660,17 @@ function plate_theme_support() {
 } /* end plate theme support */
 
 
-/* Add WooCommerce support. This function only removes the warning 
-in the WP admin when WooCommerce is installed. To fully support
-WooCommerce you will need to add some stuff to your product loops.
-See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+/* 
+* WooCommerce Support
+*
+* This function only removes the warning in the WP admin when 
+* WooCommerce is installed. To fully support WooCommerce you 
+* will need to add some stuff to your product loops.
+* 
+* See here: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+*
 */
+
 add_action( 'after_setup_theme', 'woocommerce_support' );
 
 function woocommerce_support() {
@@ -683,34 +694,34 @@ function plate_register_theme_customizer( $wp_customize ) {
     // echo '</pre>';
 
     // Customize title and tagline sections and labels
-    $wp_customize->get_section('title_tagline')->title = __('Site Name and Description', 'platetheme');  
-    $wp_customize->get_control('blogname')->label = __('Site Name', 'platetheme');  
-    $wp_customize->get_control('blogdescription')->label = __('Site Description', 'platetheme');  
+    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Name and Description', 'platetheme' );  
+    $wp_customize->get_control( 'blogname' )->label = __( 'Site Name', 'platetheme' );  
+    $wp_customize->get_control( 'blogdescription' )->label = __( 'Site Description', 'platetheme' );  
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
     // Customize the Front Page Settings
-    $wp_customize->get_section('static_front_page')->title = __('Homepage Preferences', 'platetheme');
-    $wp_customize->get_section('static_front_page')->priority = 20;
-    $wp_customize->get_control('show_on_front')->label = __('Choose Homepage Preference:', 'platetheme');  
-    $wp_customize->get_control('page_on_front')->label = __('Select Homepage:', 'platetheme');  
-    $wp_customize->get_control('page_for_posts')->label = __('Select Blog Homepage:', 'platetheme');  
+    $wp_customize->get_section( 'static_front_page' )->title = __( 'Homepage Preferences', 'platetheme' );
+    $wp_customize->get_section( 'static_front_page' )->priority = 20;
+    $wp_customize->get_control( 'show_on_front' )->label = __( 'Choose Homepage Preference:', 'platetheme' );  
+    $wp_customize->get_control( 'page_on_front' )->label = __( 'Select Homepage:', 'platetheme' );  
+    $wp_customize->get_control( 'page_for_posts' )->label = __( 'Select Blog Homepage:', 'platetheme' );  
 
     // Customize Background Settings
-    $wp_customize->get_section('background_image')->title = __('Background Styles', 'platetheme');  
-    $wp_customize->get_control('background_color')->section = 'background_image'; 
+    $wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'platetheme' );  
+    $wp_customize->get_control( 'background_color' )->section = 'background_image'; 
 
     // Customize Header Image Settings  
     $wp_customize->add_section( 'header_text_styles' , array(
 
-        'title'      => __('Header Text Styles','platetheme'), 
+        'title'      => __( 'Header Text Styles', 'platetheme' ), 
         'priority'   => 30
 
         ) 
     );
 
-    $wp_customize->get_control('display_header_text')->section = 'header_text_styles';  
-    $wp_customize->get_control('header_textcolor')->section = 'header_text_styles'; 
+    $wp_customize->get_control( 'display_header_text' )->section = 'header_text_styles';  
+    $wp_customize->get_control( 'header_textcolor' )->section = 'header_text_styles'; 
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
 
 }
@@ -721,8 +732,7 @@ add_action( 'customize_preview_init', 'plate_customizer_scripts' );
 
 function plate_customizer_scripts() {
 
-    wp_enqueue_script( 'plate_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js',
-    array( 'jquery', 'customize-preview' ), '', true);
+    wp_enqueue_script( 'plate_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js', array( 'jquery', 'customize-preview' ), '', true);
 
     // register customizer stylesheet
     wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
@@ -744,7 +754,7 @@ function plate_style_header() {
           color: #<?php echo esc_attr( $text_color ); ?>;
         }
       
-        <?php if(display_header_text() != true): ?>
+        <?php if( display_header_text() != true ): ?>
         .site-title, .site-description {
           display: none;
         } 
@@ -811,7 +821,7 @@ function plate_related_posts() {
 
     } /* end if ($tags) */
 
-    wp_reset_postdata();
+    wp_reset_postdata(); // always reset your loops
 
     echo '</ul>';
 
@@ -837,9 +847,9 @@ function plate_page_navi() {
 
     echo paginate_links( array(
 
-        'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
+        'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
         'format'       => '',
-        'current'      => max( 1, get_query_var('paged') ),
+        'current'      => max( 1, get_query_var( 'paged' ) ),
         'total'        => $wp_query->max_num_pages,
         'prev_text'    => '&larr;',
         'next_text'    => '&rarr;',
@@ -891,7 +901,7 @@ function plate_body_class( $classes ) {
             $classes[] = $parent->post_name;
 
             # Parent template name
-            $parent_template = get_post_meta( $parent->ID, '_wp_page_template', true);
+            $parent_template = get_post_meta( $parent->ID, '_wp_page_template', true );
             
             if ( !empty($parent_template) )
                 $classes[] = 'template-'.sanitize_html_class( str_replace( '.', '-', $parent_template ), '' );
@@ -900,12 +910,12 @@ function plate_body_class( $classes ) {
         
         // If we *do* have an ancestors list, process it
         // http://codex.wordpress.org/Function_Reference/get_post_ancestors
-        if ($parents = get_post_ancestors($post->ID)) {
+        if ($parents = get_post_ancestors( $post->ID )) {
 
-            foreach ((array)$parents as $parent) {
+            foreach ( (array)$parents as $parent ) {
 
                 // As the array contains IDs only, we need to get each page
-                if ($page = get_page($parent)) {
+                if ( $page = get_page($parent) ) {
                     // Add the current ancestor to the body class array
                     $classes[] = "{$page->post_type}-{$page->post_name}";
                 }
@@ -1015,7 +1025,7 @@ endif;
 
 // Live Reload for Grunt during development
 //If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
-if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
+if ( in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')) ) {
 
     function livereload_script() {
 
