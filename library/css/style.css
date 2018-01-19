@@ -1010,11 +1010,6 @@ input[type="password"] {
 textarea {
   max-width: 100%; }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
-
 fieldset {
   border: 1px solid #ccc; }
   fieldset label {

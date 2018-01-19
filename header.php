@@ -7,7 +7,7 @@
 
 	<head>
         
-		<meta charset="utf-8">
+		<meta charset='<?php bloginfo( 'charset' ); ?>'>
 
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +33,10 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_theme_file_uri(); ?>/library/images/win8-tile-icon.png">
         <meta name="theme-color" content="#111111">
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+        <?php // updated pingback. Thanks @HardeepAsrani https://github.com/HardeepAsrani ?>
+        <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+            <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <?php endif; ?>
 
 		<?php // put font scripts like Typekit here ?>
 		<?php // end fonts ?>
@@ -58,7 +61,7 @@
 
             		<div id="banner">                
             			
-            			<img class="header-image" src="<?php header_image(); ?>" alt="Header graphic" />                
+            			<img class="header-image" src="<?php header_image(); ?>" />                
             			
             		</div>
 

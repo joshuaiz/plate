@@ -86,12 +86,13 @@ textarea {
     max-width: 100%;
 }
 
-// selects
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
+// selects 
+// Commented out as this was making drop-downs wonky. I may remove it
+// select {
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+// }
 
 fieldset {
     border: 1px solid #ccc;

@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.1.3 2018-01-19
+- implemented a bunch of contributed updates (thanks @HardeepAsrani)
+- cleaned up some legacy code (functions.php)
+- commented out select styles in forms.scss as they were making drop-downs wonky
+- added random semi-colons throughout (I didn't actually do this)
+
 ### 1.1.2 2018-01-18
 - added r-debug class in plate.php for debugging
 - changed theme init function to plate_lunch()

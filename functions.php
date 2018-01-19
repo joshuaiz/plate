@@ -274,7 +274,7 @@ Use this to add Google or other web fonts.
 
 // function plate_fonts() {
 
-//     wp_enqueue_style( 'plate-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,' );
+//     wp_enqueue_style( 'plate-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,' );
 
 // }
 
@@ -409,37 +409,27 @@ function plate_scripts_and_styles() {
 
     global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
-    if (!is_admin()) {
+    if ( !is_admin() ) {
 
         // modernizr (without media query polyfill)
-        wp_register_script( 'plate-modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
+        wp_enqueue_script( 'modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom.js', array(), '3.5.0', false );
 
         // register main stylesheet
-        wp_register_style( 'plate-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
+        wp_enqueue_style( 'plate-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
 
         // ie-only style sheet
-        wp_register_style( 'plate-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
+        wp_enqueue_style( 'plate-ie-only', get_theme_file_uri() . '/library/css/ie.css', array(), '' );
 
         // comment reply script for threaded comments
         if ( is_singular() AND comments_open() AND ( get_option('thread_comments') == 1 )) { wp_enqueue_script( 'comment-reply' ); }
 
-        //adding scripts file in the footer
-        wp_register_script( 'plate-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-
-        // enqueue styles and scripts
-        wp_enqueue_script( 'plate-modernizr' );
-        wp_enqueue_style( 'plate-stylesheet' );
-        wp_enqueue_style( 'plate-ie-only' );
+        // adding scripts file in the footer
+        wp_enqueue_script( 'plate-js', get_theme_file_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
         $wp_styles->add_data( 'plate-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
-        wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'plate-js' );
-
-        // Plate extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
-        // wp_register_script( 'plate-extra-js', get_stylesheet_directory_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
-
-        // wp_enqueue_script( 'plate-extra-js' );
+        // plate extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
+        // wp_enqueue_script( 'plate-extra-js', get_theme_file_uri() . '/library/js/extras/extra-scripts.js', array( 'jquery' ), '', true );
 
     }
 }
@@ -489,7 +479,7 @@ function disable_emojicons_tinymce( $plugins ) {
 /* 
 * Dequeue jQuery Migrate
 * I'm commenting this out by default. Why? Because Gravity Forms *requires* it
-* for some forms functions to work...***eye roll***. 
+* for some form functions to work...***eye roll***. 
 */
 // add_action( 'wp_default_scripts', 'plate_dequeue_jquery_migrate' );
 
@@ -549,7 +539,7 @@ function plate_excerpt_more( $more ) {
 THEME SUPPORT
 *********************/
 
-// Adding WP 3+ Functions & Theme Support
+// support all of the theme things
 function plate_theme_support() {
 
     // wp thumbnails (sizes handled in functions.php)
@@ -597,10 +587,6 @@ function plate_theme_support() {
     // rss thingy
     add_theme_support( 'automatic-feed-links' );
 
-    // wp menus
-    add_theme_support( 'menus' );
-
-    // registering wp3+ menus
     // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
     register_nav_menus( array(
 
@@ -671,11 +657,15 @@ function plate_theme_support() {
 *
 */
 
-add_action( 'after_setup_theme', 'woocommerce_support' );
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
-function woocommerce_support() {
+    add_action( 'after_setup_theme', 'woocommerce_support' );
 
-    add_theme_support( 'woocommerce' );
+    function woocommerce_support() {
+
+        add_theme_support( 'woocommerce' );
+
+    }
 
 }
 
@@ -934,9 +924,15 @@ function plate_body_class( $classes ) {
 }
 
 
-// Let's add some extra Quicktags
-// These come in handy especially for clients who aren't HTML masters
-// Hook into the 'admin_print_footer_scripts' action
+/* 
+* QUICKTAGS
+*
+* Let's add some extra Quicktags for clients who aren't HTML masters
+* They are pretty handy for HTML masters too.
+*
+* Hook into the 'admin_print_footer_scripts' action
+*
+*/
 add_action( 'admin_print_footer_scripts', 'plate_custom_quicktags' );
 
 function plate_custom_quicktags() {
@@ -962,9 +958,13 @@ function plate_custom_quicktags() {
 // Load dashicons on the front end
 // To use, go here and copy the css/html for the dashicon you want: https://developer.wordpress.org/resource/dashicons/
 // Example: <span class="dashicons dashicons-wordpress"></span>
+
 // add_action( 'wp_enqueue_scripts', 'template_load_dashicons' );
+
 // function template_load_dashicons() {
+
 //     wp_enqueue_style( 'dashicons' );
+
 // }
 
   
