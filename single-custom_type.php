@@ -23,7 +23,7 @@
 				<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
 					<?php // Edit the loop in /templates/archive-loop. Or roll your own. ?>
-					<?php get_template_part( 'templates/archive', 'loop'); ?>
+					<?php get_template_part( 'templates/single', 'loop'); ?>
 
 			</main>
 

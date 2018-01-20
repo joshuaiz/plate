@@ -9,9 +9,9 @@ https://studio.bio/themes/plate/
 
 Plate evolved from Template which is based on the amazing Bones starter theme by Eddie Machado: http://themble.com/bones.
 
-If you're not familiar with Bones, I highly suggest you check it out before using Template. Bones is exquisitely commented and meant to be a learning tool.
+If you're not familiar with Bones, I highly suggest you check it out before using Plate. Bones is exquisitely commented and meant to be a learning tool.
 
-I make no Bones (pun definitely intended) about Template copying a lot of what was included in Bones but wanted to customize it for my studio's workflow. This may or may not work for you.
+I make no Bones (pun definitely intended) about Plate copying a lot of what was included in Bones but wanted to customize it for my studio's workflow. This may or may not work for you.
 
 With that in mind, we've removed some things I never used in Bones (like Link Pages, tags on pages and IE8 grids amongst others) and added some things in that we use often: more page templates, updated default font stack, a custom post type plugin template, and some custom functions.
 
@@ -26,11 +26,9 @@ Edit this, fork it, change it, delete it - whatever. As Eddie might say: it's yo
 ## A Little History
 My introduction to Bones came seven years ago after trying out just about every starter theme out there. Once I found Bones I was hooked and have used it ever since on hundreds of projects. Bones got me to use Sass/SCSS, taught me a ton about WordPress, how themes *really* work, and made me a better developer.
 
-Yet, over time I found I was making the same changes to Bones at the start of every project and this was taking up valuable time. Thus, I created the predecessor to this theme called 'Osseous' which included some of the changes found in Template. Osseous literally means: 'of, relating to, or composed of bone' and was a good departure point.
+Yet, over time I found I was making the same changes to Bones at the start of every project and this was taking up valuable time. Thus, I created the predecessor to this theme called 'Osseous' which included some of the changes found in Plate (and Template). Osseous literally means: 'of, relating to, or composed of bone' and was a good departure point.
 
-Template picks up where Osseous left off and takes things a bit further with 'Template'. It includes namespaced functions and customized defaults along with a lot of other stuff I like and use for my development. Your mileage may vary.
-
-Plate strips everything down even further for those who want to build from scratch (although with a few key defaults left in).
+Template picked up where Osseous left off and took things a bit further. It included namespaced functions and customized defaults along with a lot of other stuff I like and use for my development. Plate strips everything down even further for those who want to build from scratch (although with a few key defaults left in).
 
 2017 Update: we've gone through and done a major rewrite, adding and updating the following:
 - updated to normalize.css 7.0
