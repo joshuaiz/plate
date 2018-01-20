@@ -60,7 +60,7 @@ See the changelog: https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md
 This is the beginning for Plate (and Template) so we welcome improvements, comments, criticism and general feedback. I've probably made a ton of mistakes so as with anything open source, it is a work in progress.
 
 ## Recommended Plugins
-Some of the stuff in Template references plugins that I use with just about every site and I recommend:
+Some of the stuff in Plate references plugins that I use with just about every site and I recommend:
 - Advanced Custom Fields (Pro): https://www.advancedcustomfields.com. A must-have.
 - WP Retina 2x: https://wordpress.org/plugins/wp-retina-2x/. Works with WP built-in retina support. Just install and forget it.
 - EWWW Image Optimizer: https://wordpress.org/plugins/ewww-image-optimizer/. Smush all of the images. Automagically.
