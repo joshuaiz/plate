@@ -37,6 +37,16 @@ function get_current_template( $echo = false ) {
 }
 
 
+/**
+* Debug Stuffs
+* 
+* To see all of the hooks being called in your theme and where,
+* I highly recommend checking out the Query Monitor plugin. It's 
+* great for tracking down issues in your code or errant plugins:
+* https://wordpress.org/plugins/query-monitor/
+*/
+
+
 
 /*
 *****************

@@ -340,7 +340,13 @@ http://sachagreif.com/useful-sass-mixins/
 http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
 http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
+
+
 ******************************************************************/
+  /*********************
+TINTS/SHADES
+https://css-tricks.com/snippets/sass/tint-shade-functions/
+*********************/
   /*********************
 TRANSITION
 *********************/
@@ -369,6 +375,8 @@ https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
 
 Checkout this Flexbox guide for more info:
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+2018: probably can remove these with autoprefixer(?)
 ---------------------------------------------------*/
   /*@include flexbox(); */
   /*********************

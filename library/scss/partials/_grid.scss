@@ -22,6 +22,9 @@ your client projects. The idea is you learn how to roll your
 own grids. It's better in the long run and allows you full control
 over your project's layout.
 
+2018: Need to implement CSS Grid. Haven't seen anything that has 
+nailed it yet and browser support is still lacking.
+
 ******************************************************************/
 
 // using a mixin since we can't use placeholder selectors
@@ -46,8 +49,8 @@ them however you see fit.
     .m-all {
         @include grid-col;
 
-        width: 100%;
         padding-right: 0;
+        width: 100%;
     }
 
     .m-1of2 {
@@ -88,8 +91,8 @@ them however you see fit.
     .t-all {
         @include grid-col;
 
-        width: 100%;
         padding-right: 0;
+        width: 100%;
     }
 
     .t-1of2 {
@@ -154,8 +157,8 @@ them however you see fit.
     .d-all {
         @include grid-col;
 
-        width: 100%;
         padding-right: 0;
+        width: 100%;
     }
 
     .d-1of2 {

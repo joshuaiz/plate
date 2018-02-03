@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.1.4 2018-02-02
+- added additional breakpoint stylesheets for tweener and extra large devices
+- fixed single-custom_type, archive-custom_type taxonomy-custom_cat which had extra title calls
+- added tint/shade mixins (cool and simple to use)
+- added more insightful comments in functions.php
+- fixed an issue where I ran out of Topo Chico
+
 ### 1.1.3 2018-01-19
 - implemented a bunch of contributed updates (thanks @HardeepAsrani)
 - cleaned up some legacy code (functions.php)

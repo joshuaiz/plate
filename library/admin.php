@@ -80,6 +80,8 @@ are a few funtions which you can choose to use if
 you like.
 */
 
+
+// Load admin-specific styles. Edit in admin.scss.
 function plate_admin_css() {
     wp_enqueue_style( 'plate_admin_css', get_template_directory_uri() . '/library/css/admin.css', false );
 }

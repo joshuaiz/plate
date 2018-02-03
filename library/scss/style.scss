@@ -79,11 +79,11 @@ larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
 *********************/
 @media only screen and (min-width: 481px) {
+    // styles in 481up.scss
+    @import "breakpoints/481up";
+}
 
-	// styles in 481up.scss
-	@import "breakpoints/481up";
-
-} // end of media query
+// end of media query
 
 /*********************
 BELOW TABLET
@@ -92,11 +92,11 @@ phones. This way we can keep mobile styles separate and not
 compete with the base styles.
 *********************/
 @media only screen and (max-width: 767px) {
+    // styles in 767down.scss
+    @import "breakpoints/767down";
+}
 
-	// styles in 767down.scss
-	@import "breakpoints/767down";
-
-} // end of media query
+// end of media query
 
 /*********************
 TABLET & SMALLER LAPTOPS
@@ -105,11 +105,37 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 768px) {
+    // styles in 768up.scss
+    @import "breakpoints/768up";
+}
 
-	// styles in 768up.scss
-	@import "breakpoints/768up";
+// end of media query
 
-} // end of media query
+@media only screen and (max-width: 899px) {
+    // styles in 899down.scss
+    @import "breakpoints/899down";
+}
+
+// end of media query
+
+@media only screen and (max-width: 1029px) {
+    // styles in 1029down.scss
+    @import "breakpoints/1029down";
+}
+
+// end of media query
+
+/*********************
+TWEENER
+This targets some trickier 'tweener' devices like large
+tablets. You probably won't need to add too much to this stylesheet.
+If you're not using it, delete it.
+*********************/
+
+@media only screen and (min-width: 900px) {
+    // styles in 900up.scss
+    @import "breakpoints/900up";
+}
 
 /*********************
 DESKTOP
@@ -118,22 +144,22 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 1030px) {
+    // styles in 1030up.scss
+    @import "breakpoints/1030up";
+}
 
-	// styles in 1030up.scss
-	@import "breakpoints/1030up";
-
-} // end of media query
+// end of media query
 
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 *********************/
 @media only screen and (min-width: 1240px) {
+    // styles in 1240up.scss
+    @import "breakpoints/1240up";
+}
 
-	// styles in 1240up.scss
-	@import "breakpoints/1240up";
-
-} // end of media query
+// end of media query
 
 /*********************
 PRINT STYLESHEET
@@ -142,8 +168,6 @@ sense to print at the bottom. Things like nav, ads, and forms should
 be set to display none.
 *********************/
 @media print {
-
-	// styles in print.scss
-	@import "partials/print";
-
+    // styles in print.scss
+    @import "partials/print";
 }

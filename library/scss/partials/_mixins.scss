@@ -18,7 +18,32 @@ http://sachagreif.com/useful-sass-mixins/
 http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
 http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
+
+
 ******************************************************************/
+
+/*********************
+TINTS/SHADES
+https://css-tricks.com/snippets/sass/tint-shade-functions/
+*********************/
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
 
 /*********************
 TRANSITION
@@ -77,6 +102,8 @@ https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
 
 Checkout this Flexbox guide for more info:
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+2018: probably can remove these with autoprefixer(?)
 ---------------------------------------------------*/
 
 /*@include flexbox(); */

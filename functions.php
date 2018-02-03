@@ -515,6 +515,7 @@ function disable_emojicons_tinymce( $plugins ) {
 
 
 // Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+// Not sure if this still works?
 add_filter('the_content', 'plate_filter_ptags_on_images');
 
 function plate_filter_ptags_on_images( $content ) {
@@ -674,6 +675,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 * CUSTOMIZER *
 ****************************************/
 
+// Needs updating as of WP 4.9.X
+
 add_action( 'customize_register', 'plate_register_theme_customizer' );
 
 function plate_register_theme_customizer( $wp_customize ) {
@@ -770,6 +773,7 @@ RELATED POSTS FUNCTION
 *********************/
 
 // Related Posts Function (call using plate_related_posts(); )
+// Not sure if this still works.
 function plate_related_posts() {
 
     echo '<ul id="plate-related-posts">';
@@ -817,11 +821,13 @@ function plate_related_posts() {
 
 } /* end plate related posts function */
 
+
 /*********************
 PAGE NAVI
 *********************/
 
-// Numeric Page Navi (built into the theme by default)
+// Numeric Page Navi (built into the theme by default).
+// 2018: probably needs updating
 function plate_page_navi() {
 
     global $wp_query;
@@ -864,7 +870,6 @@ function plate_page_navi() {
 
 // Body Class functions
 // Adds more slugs to body class so we can style individual pages + posts.
-// Page Slug Body Class
 add_filter( 'body_class', 'plate_body_class' );
 
 function plate_body_class( $classes ) {

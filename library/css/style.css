@@ -623,7 +623,13 @@ http://sachagreif.com/useful-sass-mixins/
 http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
 http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
+
+
 ******************************************************************/
+/*********************
+TINTS/SHADES
+https://css-tricks.com/snippets/sass/tint-shade-functions/
+*********************/
 /*********************
 TRANSITION
 *********************/
@@ -652,6 +658,8 @@ https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
 
 Checkout this Flexbox guide for more info:
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+2018: probably can remove these with autoprefixer(?)
 ---------------------------------------------------*/
 /*@include flexbox(); */
 /******************************************************************
@@ -678,6 +686,9 @@ your client projects. The idea is you learn how to roll your
 own grids. It's better in the long run and allows you full control
 over your project's layout.
 
+2018: Need to implement CSS Grid. Haven't seen anything that has 
+nailed it yet and browser support is still lacking.
+
 ******************************************************************/
 .last-col {
   float: right;
@@ -693,8 +704,8 @@ them however you see fit.
   .m-all {
     float: left;
     padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
+    padding-right: 0;
+    width: 100%; }
   .m-1of2 {
     float: left;
     padding-right: 0.75em;
@@ -721,8 +732,8 @@ them however you see fit.
   .t-all {
     float: left;
     padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
+    padding-right: 0;
+    width: 100%; }
   .t-1of2 {
     float: left;
     padding-right: 0.75em;
@@ -765,8 +776,8 @@ them however you see fit.
   .d-all {
     float: left;
     padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
+    padding-right: 0;
+    width: 100%; }
   .d-1of2 {
     float: left;
     padding-right: 0.75em;
@@ -1640,6 +1651,55 @@ mobile. Make sure to double check these!
             */ }
   /* end .footer-links */ }
 
+@media only screen and (max-width: 899px) {
+  /******************************************************************
+Site Name: 
+Author:
+
+Stylesheet: Below Tweener
+
+This stylesheet will show on devices smaller than large tablets but
+below desktops.
+
+Use this to add styles that will *only* show on mobile devices.
+
+I find it easier to do it this way than to have to override base styles.
+
+******************************************************************/ }
+
+@media only screen and (max-width: 1029px) {
+  /******************************************************************
+Site Name: 
+Author:
+
+Stylesheet: Smaller Desktops + Tablets
+
+This stylesheet affects desktops and some tablets but often I find
+that 1029px and below is a good breakpoint for showing a mobile 
+hamburger menu so you can add styles for that here.
+
+I find it easier to do it this way than to have to override base styles.
+
+******************************************************************/ }
+
+/*********************
+TWEENER
+This targets some trickier 'tweener' devices like large
+tablets. You probably won't need to add too much to this stylesheet.
+If you're not using it, delete it.
+*********************/
+@media only screen and (min-width: 900px) {
+  /******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tweener Stylsheet
+
+This is for some trickier in-between 'tweener' sizes like larger 
+tablets.
+
+******************************************************************/ }
+
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
@@ -1669,10 +1729,9 @@ This is for the larger monitors and possibly full screen viewers.
 Site Name: 
 Author: 
 
-Stylesheet: Super Large Monitor Stylesheet
+Stylesheet: Larger Laptop + Desktop
 
-You can add some advanced styles here if you like. This kicks in
-on larger screens like the 4K or 5K iMac.
+You can add some advanced styles for larger devices here if you like. 
 
 ******************************************************************/ }
 
