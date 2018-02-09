@@ -1,10 +1,10 @@
-## bones / languages
+## Plate / languages
 
-**This folder contains the language-files for the bones framework.**
+Herein resides translation files for Plate.
 
-A function in `functions.php` identifies the LOCALE (e.g. da_DK) of your WordPress installation. If there is a language-file in `languages/` named accordingly (e.g. `da_DK.mo`), bones will use it. Fallback is English.
+A function in `functions.php` identifies the LOCALE (e.g. da_DK) of your WordPress installation. If there is a language-file in `languages/` named accordingly (e.g. `da_DK.mo`), Plate will use it. Fallback is English.
 
-### How to translate bones to your language
+### How to translate Plate to your language
 
   1 Make a copy of `default.po` an change the filename to your LOCALE.po (e.g. `da_DK.mo`)
   2 Use [poedit](http://www.poedit.net/ "home of poedit") to edit your po-file.

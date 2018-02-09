@@ -43,7 +43,7 @@ function plate_lunch() {
     add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
     // let's get language support going, if you need it
-    //load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
+    load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
 
     // launching operation cleanup
     add_action( 'init', 'plate_head_cleanup' );
