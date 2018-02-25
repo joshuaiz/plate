@@ -18,8 +18,7 @@ if ( post_password_required() ) {
 
         <section class="commentlist">
 
-          <?php
-            wp_list_comments( array(
+          <?php wp_list_comments( array(
                 'style'             => 'div',
                 'short_ping'        => true,
                 'avatar_size'       => 40,

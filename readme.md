@@ -7,6 +7,8 @@ https://studio.bio/themes/plate/
 
 ## A super stripped-down starter WordPress theme for developers. Based on Template, which is based on Bones.
 
+Check out our own fork of Plate: Grate with CSS Grid: https://github.com/joshuaiz/grate
+
 Plate evolved from Template which is based on the amazing Bones starter theme by Eddie Machado: http://themble.com/bones.
 
 If you're not familiar with Bones, I highly suggest you check it out before using Plate. Bones is exquisitely commented and meant to be a learning tool.
