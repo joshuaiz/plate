@@ -9,7 +9,7 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 ### 1.1.5 2018-03-18
 - initial Gutenberg support (subject to change)
 - added initial Gutenberg styles (.alignwide + others)
-- cleaned up <head> a lot
+- cleaned up the head a lot
 - removed Customizer header image call in header.php
 - fixed an issue where I couldn't get past Alto's Odyssey level 29
 
