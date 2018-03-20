@@ -863,6 +863,16 @@ them however you see fit.
     padding-right: 0.75em;
     width: 8.33%; } }
 
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Gutenberg Stylesheet
+
+Place all of your styles in the .edit-post-visual-editor block 
+below so they *only* apply to the Gutenberg editor.
+
+******************************************************************/
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1156,7 +1166,9 @@ HEADER STYLES
   background: #efefef; }
 
 #site-title {
-  font-size: 2em; }
+  margin-bottom: 0;
+  font-size: 2em;
+  line-height: inherit; }
 
 /*********************
 LIST STYLES
@@ -1517,6 +1529,20 @@ busy with more stylings.
   /*********************
 GLOBAL STYLES
 *********************/
+  .edit-post-visual-editor .alignfull {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    max-width: 1000%;
+    width: auto; }
+  .edit-post-visual-editor .alignwide {
+    margin-right: calc(25% - 25vw);
+    margin-left: calc(25% - 25vw);
+    max-width: 1000%;
+    width: auto; }
+  .edit-post-visual-editor .alignwide img,
+  .edit-post-visual-editor .alignfull img {
+    display: block;
+    margin: 0 auto; }
   /*********************
 LAYOUT & GRID STYLES
 *********************/

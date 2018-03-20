@@ -6,95 +6,85 @@
 <!--[if gt IE 8]><!--> <html <?php html_schema(); ?> <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 	<head>
-        
-		<meta charset='<?php bloginfo( 'charset' ); ?>'>
+        <?php // See everything you need to know about the <head> here: https://github.com/joshbuchea/HEAD ?>
+        <meta charset='<?php bloginfo( 'charset' ); ?>'>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<?php // force Internet Explorer to use the latest rendering engine available ?>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <?php // favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
+        <link rel="icon" href="<?php echo get_theme_file_uri(); ?>/favicon.png">
+        <!--[if IE]>
+            <link rel="shortcut icon" href="<?php echo get_theme_file_uri(); ?>/favicon.ico">
+        <![endif]-->
 
-		<?php // mobile meta (hooray!) ?>
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<meta name=viewport content="width=device-width, initial-scale=1">
+        <!-- Apple Touch Icon -->
+        <link rel="apple-touch-icon" href="<?php echo get_theme_file_uri(); ?>/library/images/apple-touch-icon.png">
 
-		<?php // https://sympli.io/blog/2017/02/15/heres-everything-you-need-to-know-about-favicons-in-2017/ ?>
-		<link rel="apple-touch-icon" href="older-iPhone.png"> <?php // 120px ?>  
-		<link rel="apple-touch-icon" sizes="180x180" href="iPhone-6-Plus.png">  
-		<link rel="apple-touch-icon" sizes="152x152" href="iPad-Retina.png">  
-		<link rel="apple-touch-icon" sizes="167x167" href="iPad-Pro.png">
-
-		<?php // favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="icon" href="<?php echo get_theme_file_uri(); ?>/favicon.png">
-		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_theme_file_uri(); ?>/favicon.ico">
-		<![endif]-->
-		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#F05A28">
-		<meta name="msapplication-TileImage" content="<?php echo get_theme_file_uri(); ?>/library/images/win8-tile-icon.png">
-        <meta name="theme-color" content="#111111">
+        <!-- Safari Pinned Tab Icon -->
+        <link rel="mask-icon" href="<?php echo get_theme_file_uri(); ?>/library/images/icon.svg" color="#0088cc">
 
         <?php // updated pingback. Thanks @HardeepAsrani https://github.com/HardeepAsrani ?>
         <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
             <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php endif; ?>
 
-		<?php // put font scripts like Typekit here ?>
-		<?php // end fonts ?>
+        <?php // put font scripts like Typekit here ?>
+        <?php // end fonts ?>
 
-		<?php // wordpress head functions ?>
-		<?php wp_head(); ?>
-		<?php // end of wordpress head ?>
+        <?php // wordpress head functions ?>
+        <?php wp_head(); ?>
+        <?php // end of wordpress head ?>
 
-		<?php // drop Google Analytics Here ?>
-		<?php // end analytics ?>
+        <?php // drop Google Analytics Here ?>
+        <?php // end analytics ?>
 
-	</head>
+    </head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
 
-			<?php // Customizer Header Image section. Uncomment to use. ?>
-				<!-- <?php if( get_header_image() != "" ) { 
+			<header class="header" id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-					if ( is_front_page() ) { ?>
+                <div id="inner-header" class="wrap">
 
-            		<div id="banner">                
-            			
-            			<img class="header-image" src="<?php header_image(); ?>" />                
-            			
-            		</div>
+                    <?php // updated with proper markup and wrapping div for organization ?>
+                    <div id="bloginfo" itemscope itemtype="http://schema.org/Organization">
 
-            	<?php }
 
-            	} ?> -->
+                        <?php // You can use text or a logo (or both) in your header. Uncomment the below to use a logo. ?>
+                        <!-- <div id="logo" itemprop="logo">
+                            <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
+                                <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo_sm.svg" itemprop="logo" />
+                            </a>
+                        </div> -->
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+                        
+                        <h1 id="site-title" class="h1" itemprop="name">
+                            <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
+                                <?php bloginfo('name'); ?>
+                            </a>
+                        </h1>
 
-				<div id="inner-header" class="wrap cf">
+                    </div>
 
-					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
-					<div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div>
+                    <nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-					<!-- <div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.png" /></a></div> -->
+                    <?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 
-					<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <?php wp_nav_menu( array(
 
-					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
+                                 'container' => false,                           // remove nav container
+                                 'container_class' => 'menu',                 // class of container (should you choose to use it)
+                                 'menu' => __( 'The Main Menu', 'platetheme' ),  // nav name
+                                 'menu_class' => 'nav top-nav main-menu',     // adding custom nav class
+                                 'theme_location' => 'main-nav',                 // where it's located in the theme
 
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'platetheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav main-menu cf',     // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-						)); ?>
+                            )
+                        ); ?>
 
-					</nav>
+                    </nav>
 
-					<?php // if you'd like to use the site description un-comment the below <p></p>. If not, leave as-is or delete it. ?>
-					<!-- <p class="site-description"><?php bloginfo('description'); ?></p> -->
+                </div>
 
-				</div>
-
-			</header>
+            </header>

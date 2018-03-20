@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.1.5 2018-03-18
+- initial Gutenberg support (subject to change)
+- added initial Gutenberg styles (.alignwide + others)
+- cleaned up <head> a lot
+- removed Customizer header image call in header.php
+- fixed an issue where I couldn't get past Alto's Odyssey level 29
+
 ### 1.1.4 2018-02-02
 - added additional breakpoint stylesheets for tweener and extra large devices
 - fixed single-custom_type, archive-custom_type taxonomy-custom_cat which had extra title calls

@@ -543,7 +543,7 @@ THEME SUPPORT
 // support all of the theme things
 function plate_theme_support() {
 
-    // wp thumbnails (sizes handled in functions.php)
+    // wp thumbnails (see sizes above)
     add_theme_support( 'post-thumbnails' );
 
     // default thumb size
@@ -600,6 +600,10 @@ function plate_theme_support() {
     // Title tag
     add_theme_support( 'title-tag' );
 
+    // Add theme support for selective refresh for widgets.
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
+
     // Enable support for HTML5 markup.
     add_theme_support( 'html5', array(
 
@@ -643,6 +647,42 @@ function plate_theme_support() {
 
         )
     );
+
+    // Gutenberg support: https://www.billerickson.net/getting-your-theme-ready-for-gutenberg/
+    // https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+    // .alignwide styles added to _768up
+    add_theme_support( 'align-wide' );
+
+    /**
+    * Add support for Gutenberg.
+    *
+    * @link https://wordpress.org/gutenberg/handbook/reference/theme-support/
+    */
+    add_theme_support( 'gutenberg', array(
+         
+            // Theme supports wide images, galleries and videos.
+            'wide-images' => true, // might be duplicative of 'align-wide' - will need to update when final spec is out
+         
+            // Make specific theme colors available in the editor.
+            'colors' => array(
+                '#ffffff',
+                '#000000',
+                '#cccccc',
+            ),
+     
+        )
+    );
+
+    add_theme_support( 'editor-color-palette',
+        // Change to your colors
+        '#a156b4',
+        '#d0a5db',
+        '#eee',
+        '#444'
+    );
+
+    // To limit the Gutenberg editor to your theme colors, uncomment this
+    // add_theme_support( 'disable-custom-colors' );
 
 } /* end plate theme support */
 
