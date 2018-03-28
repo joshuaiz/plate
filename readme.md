@@ -10,13 +10,11 @@ https://studio.bio/themes/plate/
 ![Plate Home Page](https://studio.bio/images/plate_home.png)
 _Plate default page. It's almost as if it is not even there._
 
-Check out our own fork of Plate: Grate with CSS Grid: https://github.com/joshuaiz/grate
-
 Plate evolved from Template which is based on the amazing Bones starter theme by Eddie Machado: http://themble.com/bones.
 
 If you're not familiar with Bones, I highly suggest you check it out before using Plate. Bones is exquisitely commented and meant to be a learning tool.
 
-I make no Bones (pun definitely intended) about Plate copying a lot of what was included in Bones but wanted to customize it for my studio's workflow. This may or may not work for you. In the spirit of Bones, we've tried to add useful (and sometimes snarky) comments throughout the theme to help developers of all levels.
+I make no Bones (pun definitely intended) about Plate copying a lot of what was included in Bones but wanted to customize it for my studio's workflow. This may or may not work for you. In the spirit of Bones, we've tried to add useful comments throughout the theme to help developers of all levels.
 
 ![plate_lunch() function from functions.php](https://studio.bio/images/plate_lunch.png)
 
