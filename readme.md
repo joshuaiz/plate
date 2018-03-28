@@ -8,7 +8,7 @@ https://studio.bio/themes/plate/
 ## A super stripped-down starter WordPress theme for developers. Based on Template, which is based on Bones.
 
 ![Plate Home Page](https://studio.bio/images/plate_home.png)
-Plate default page. It's almost as if it is not even there.
+_Plate default page. It's almost as if it is not even there._
 
 Check out our own fork of Plate: Grate with CSS Grid: https://github.com/joshuaiz/grate
 
