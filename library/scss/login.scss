@@ -13,24 +13,27 @@ http://codex.wordpress.org/Creating_Admin_Themes
 
 ******************************************************************/
 
-
-body.login {}
-
+body.login {
+	h1 {
+		margin: 0 auto;
+	}
+}
 
 #login {} /* the form box */
 
 /*
 Add a custom logo to the WordPress login. Clients really like their logo here.
-Just create image at 320x84px and replace images/login-logo.png (add a @2x image for retina - the function is below).
+Just create image at least 400x400 and replace images/login-logo@2x.png.
+Now with square image and retina by default.
 */
 .login h1 a {
 	display: block;
 	overflow: hidden;
-	padding-bottom: 15px;
-	width: 320px;
-	height: 84px;
-	background: url(../images/login-logo.png) no-repeat top center; /* make sure to replace this! */
-	background-size: 320px 84px;
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	background: url(../images/login-logo@2x.png) no-repeat top center; /* make sure to replace this! */
+	background-size: 200px 200px;
 	text-indent: -9999px;
 }
 
@@ -64,22 +67,3 @@ You'll have to override some of the default styles
 but since we're referencing the id, it should be easy.
 */
 #wp-submit {} /* login button*/
-
-
-/*
-retina login logo
-*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min--moz-device-pixel-ratio: 1.5),
-       only screen and (min-device-pixel-ratio: 1.5) {
-
-  // you can put your 2x logo in here
-  .login h1 a {
-		width: 320px;
-		height: 84px;
-		background: url(../images/login-logo@2x.png) no-repeat top center; /* make sure to replace this! */
-		background-size: 320px 84px;
-	}
-
-} // end retina media query
-

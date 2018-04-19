@@ -12,20 +12,24 @@ For more info, check out the codex:
 http://codex.wordpress.org/Creating_Admin_Themes
 
 ******************************************************************/
+body.login h1 {
+  margin: 0 auto; }
+
 /* the form box */
 /*
 Add a custom logo to the WordPress login. Clients really like their logo here.
-Just create image at 320x84px and replace images/login-logo.png (add a @2x image for retina - the function is below).
+Just create image at least 400x400 and replace images/login-logo@2x.png.
+Now with square image and retina by default.
 */
 .login h1 a {
   display: block;
   overflow: hidden;
-  padding-bottom: 15px;
-  width: 320px;
-  height: 84px;
-  background: url(../images/login-logo.png) no-repeat top center;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  background: url(../images/login-logo@2x.png) no-repeat top center;
   /* make sure to replace this! */
-  background-size: 320px 84px;
+  background-size: 200px 200px;
   text-indent: -9999px; }
 
 form {
@@ -34,7 +38,8 @@ form {
   border: 1px solid #E5E5E5;
   border-radius: 3px;
   background: white;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   font-weight: normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important; }
 
@@ -47,7 +52,8 @@ body form .input {
   outline: none;
   border: 1px solid #E5E5E5;
   background: #FBFBFB;
-  box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
+          box-shadow: inset 1px 1px 2px rgba(200, 200, 200, 0.2);
   font-size: 24px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important; }
 
@@ -56,14 +62,4 @@ You'll have to override some of the default styles
 but since we're referencing the id, it should be easy.
 */
 /* login button*/
-/*
-retina login logo
-*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  .login h1 a {
-    width: 320px;
-    height: 84px;
-    background: url(../images/login-logo@2x.png) no-repeat top center;
-    /* make sure to replace this! */
-    background-size: 320px 84px; } }
 /*# sourceMappingURL=login.css.map */
