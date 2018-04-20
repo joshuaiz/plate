@@ -20,9 +20,7 @@ site-wide stuffs.
 *********************/
 
 html {
-    font-size: 1em;
-
-    // 1em = 16px; Adjust if you want a different baseline.
+    font-size: 1em; // 1em = 16px; Adjust if you want a different baseline.
 }
 
 body {
@@ -37,6 +35,7 @@ body {
 }
 
 img {
+    display: block; // removes added default margin
     // responsive images by default
     max-width: 100%;
     height: auto;
@@ -77,14 +76,14 @@ a, a:visited {
 HEADING STYLES
 ******************************************************************/
 
-/* While there are several frameworks for Sass web typography and
+/* 
+While there are several frameworks for Sass web typography and
 baselines like Sassline, Megatype and Gutenberg, those all seemed
 overly complex. What I wanted was simple defaults that looked good
 out of the box without a lot of calculations and segmented mixins.
 
 After searching far and wide, I came across this:
 http://type-scale.com which we used to get our base sizes.
-
 */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -185,7 +184,8 @@ ul, ol {
 NAVIGATION STYLES
 *********************/
 
-/* Where did the nav menu go?
+/* 
+Where did the nav menu go?
 Navigation styles for mobile are now in 767down.scss
 if you need them.
 
@@ -201,6 +201,16 @@ For your main navigation, styles are in 768up.scss.
 WORDPRESS BODY CLASSES
 style a page via class
 ********************/
+
+/*
+As you add pages, add your own body classes below if you 
+need page-specific styles.
+
+It's good practice to use .page-yourpage {} syntax here so 
+that you don't conflict with other classes. That's what
+the cool kids do.
+
+*/
 
 .rtl {}
 
@@ -428,6 +438,7 @@ POSTS & CONTENT STYLES
 /* gallery caption styles */
 .gallery-caption {}
 
+/* default WP image classes */
 .size-full {}
 
 .size-large {}
@@ -690,7 +701,5 @@ FOOTER STYLES
         li {}
     }
 }
-
-/* end .footer-links */
 
 .copyright {}
