@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.1.7 2018-04-18
+- updated custom Modernizr build (3.6.0)
+- fixed issue with Google page scoring thingy so you can get 100
+- removed superfluous comments; updated other comments
+- re-discovered an issue where it snows 2" in April in Chicago
+
 ### 1.1.6 2018-03-27
 - fixed Gutenberg theme_support
 - header styles fix for new correct schema markup in header.php
