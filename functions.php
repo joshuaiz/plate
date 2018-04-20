@@ -412,7 +412,7 @@ function plate_scripts_and_styles() {
     if ( !is_admin() ) {
 
         // modernizr (3.6.0 2018-04-17)
-        wp_enqueue_script( 'modernizr', get_theme_file_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '3.6.0', false );
+        wp_enqueue_script( 'modernizr', get_theme_file_uri() . '/library/js/libs/modernizr-custom-min.js', array(), '3.6.0', false );
 
         // register main stylesheet
         wp_enqueue_style( 'plate-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '', 'all' );
