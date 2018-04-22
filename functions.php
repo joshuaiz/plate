@@ -28,27 +28,27 @@ require_once( 'library/admin.php' );
 /*
 *-------------------------------------------------
 * PLATE LUNCH
-* Let's get everything up and running.
+*
+* Let's get everything on the plate and eat!
 * 
-* (changed from launch to lunch because why not?)
 *-------------------------------------------------
 */
 
-// let's eat!
+// mmmmmmmmmmmmm action baby!
 add_action( 'after_setup_theme', 'plate_lunch' );
 
 function plate_lunch() {
 
-    // Allow editor style.
+    // editor stylee
     add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
     // let's get language support going, if you need it
     load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
 
-    // launching operation cleanup
+    // cleanup the <head>
     add_action( 'init', 'plate_head_cleanup' );
 
-    // A better title
+    // a better title
     add_filter( 'wp_title', 'rw_title', 10, 3 );
 
     // remove WP version from RSS
@@ -63,19 +63,19 @@ function plate_lunch() {
     // clean up gallery output in wp
     add_filter( 'gallery_style', 'plate_gallery_style' );
 
-    // enqueue base scripts and styles
+    // enqueue the styles and scripts
     add_action( 'wp_enqueue_scripts', 'plate_scripts_and_styles', 999 );
 
-    // launching this stuff after theme setup
+    // support the theme stuffs
     plate_theme_support();
 
     // adding sidebars to Wordpress
     add_action( 'widgets_init', 'plate_register_sidebars' );
 
-    // cleaning up random code around images
+    // cleaning up <p> tags around images
     add_filter( 'the_content', 'plate_filter_ptags_on_images' );
 
-    // cleaning up excerpt
+    // clean up the default WP excerpt
     add_filter( 'excerpt_more', 'plate_excerpt_more' );
 
 } /* end plate lunch */
@@ -102,7 +102,7 @@ For example, to call the 300 x 100 sized image,
 we would use the function:
 <?php the_post_thumbnail( 'plate-image-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'pplate-image-600' ); ?>
+<?php the_post_thumbnail( 'plate-image-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
@@ -208,7 +208,7 @@ function plate_comments( $comment, $args, $depth ) {
 
     <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
 
-        <article  class="cf">
+        <article class="cf">
 
             <header class="comment-author vcard">
 
