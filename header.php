@@ -6,6 +6,7 @@
 <!--[if gt IE 8]><!--> <html <?php html_schema(); ?> <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 	<head>
+
         <?php // See everything you need to know about the <head> here: https://github.com/joshbuchea/HEAD ?>
         <meta charset='<?php bloginfo( 'charset' ); ?>'>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,7 +52,6 @@
                     <?php // updated with proper markup and wrapping div for organization ?>
                     <div id="bloginfo" itemscope itemtype="http://schema.org/Organization">
 
-
                         <?php // You can use text or a logo (or both) in your header. Uncomment the below to use a logo. ?>
                         <!-- <div id="logo" itemprop="logo">
                             <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
@@ -59,7 +59,6 @@
                             </a>
                         </div> -->
 
-                        
                         <h1 id="site-title" class="h1" itemprop="name">
                             <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
                                 <?php bloginfo('name'); ?>
@@ -74,11 +73,11 @@
 
                         <?php wp_nav_menu( array(
 
-                                 'container' => false,                           // remove nav container
-                                 'container_class' => 'menu',                 // class of container (should you choose to use it)
-                                 'menu' => __( 'The Main Menu', 'platetheme' ),  // nav name
-                                 'menu_class' => 'nav top-nav main-menu',     // adding custom nav class
-                                 'theme_location' => 'main-nav',                 // where it's located in the theme
+                                 'container' => false,                          // remove nav container
+                                 'container_class' => 'menu',                   // class of container (should you choose to use it)
+                                 'menu' => __( 'The Main Menu', 'platetheme' ), // nav name
+                                 'menu_class' => 'nav top-nav main-menu',       // adding custom nav class
+                                 'theme_location' => 'main-nav',                // where it's located in the theme
 
                             )
                         ); ?>

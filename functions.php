@@ -24,7 +24,6 @@
 */
 require_once( 'library/admin.php' );
 
-
 /*
 *-------------------------------------------------
 * PLATE LUNCH
@@ -127,7 +126,6 @@ duplicate one of the lines in the array and name it according to your
 new image size.
 */
 
-
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -196,7 +194,6 @@ function new_default_avatar ( $avatar_defaults ) {
 
     return $avatar_defaults;
 }
-
 
 // Comment Layout
 function plate_comments( $comment, $args, $depth ) {
@@ -311,7 +308,7 @@ function html_schema() {
 
 
 /*********************************
-WP_HEAD GOODNESS
+WP_HEAD CLEANUP
 The default wordpress head is a mess. 
 Let's clean it up by removing all 
 the junk we don't need.
@@ -349,7 +346,7 @@ function plate_head_cleanup() {
     // remove WP version from scripts
     add_filter( 'script_loader_src', 'plate_remove_wp_ver_css_js', 9999 );
 
-} /* end template head cleanup */
+} /* end plate head cleanup */
 
 
 // remove WP version from RSS
@@ -512,7 +509,8 @@ function disable_emojicons_tinymce( $plugins ) {
 
 
 // Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-// Not sure if this still works?
+// This only works for the main content box, not using ACF or other page builders.
+// Added small bit of javascript in scripts.js that will work everywhere. 
 add_filter('the_content', 'plate_filter_ptags_on_images');
 
 function plate_filter_ptags_on_images( $content ) {
@@ -911,11 +909,11 @@ function plate_body_class( $classes ) {
 
         if ( $post->post_parent ) {
 
-            # Parent post name/slug
+            // Parent post name/slug
             $parent = get_post( $post->post_parent );
             $classes[] = $parent->post_name;
 
-            # Parent template name
+            // Parent template name
             $parent_template = get_post_meta( $parent->ID, '_wp_page_template', true );
             
             if ( !empty($parent_template) )

@@ -6,6 +6,11 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.1.8 2018-04-29
+- added jQuery to remove `<p>` tags from images
+- small formatting/spacing updates
+- fixed an issue where I ran out of oily coffee beans
+
 ### 1.1.7 2018-04-18
 - updated custom Modernizr build (3.6.0)
 - fixed issue with Google page scoring thingy so you can get 100

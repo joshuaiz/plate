@@ -25,7 +25,7 @@
 * This is by far the best detection script I've found. 
 * Using javascript means that this will work with caching. W00t.
 *
-* Adds user agent classes to the html element on your page including OS
+* Adds user agent classes to the <html> element on your page including OS
 * and browser version.
 * 
 * This script has support for about every device imaginable so if you
@@ -68,7 +68,7 @@ w.exec(b)?(a.mobile=RegExp.$1,s.exec(b)&&(delete a[a.mobile],a.blackberry=a.vers
 (function(a,b){a.fn.nearest=function(c){var d,g,f,e,h,i=b.querySelectorAll;function j(k){g=g?g.add(k):a(k)}this.each(function(){d=this;a.each(c.split(","),function(){e=a.trim(this);if(!e.indexOf("#")){j((i?b.querySelectorAll(e):a(e)))}else{h=d.parentNode;while(h){f=i?h.querySelectorAll(e):a(h).find(e);if(f.length){j(f);break}h=h.parentNode}}})});return g||a()}}(jQuery,document));
 
 
-/*!
+/*
  * Retina.js v1.4.0
  *
  * Copyright 2016 Imulus, LLC
@@ -180,14 +180,14 @@ var timeToWaitForLast = 100;
  * then we can swap out those images since they are located in a data attribute.
 */
 function loadGravatars() {
-  // set the viewport using the function above
-  viewport = updateViewportDimensions();
-  // if the viewport is tablet or larger, we load in the gravatars
-  if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
-	}
+    // set the viewport using the function above
+    viewport = updateViewportDimensions();
+    // if the viewport is tablet or larger, we load in the gravatars
+    if (viewport.width >= 768) {
+        jQuery('.comment img[data-gravatar]').each(function(){
+            jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+        });
+    }
 } // end function
 
 
@@ -196,16 +196,20 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
+    /*
+    * Let's fire off the gravatar function
+    * You can remove this if you don't need it
+    */
+    loadGravatars();
 
-viewport = updateViewportDimensions();
+    viewport = updateViewportDimensions();
 
-if (viewport.width >= 768) {
+    if (viewport.width >= 768) {
 
-}
+    }
+
+    // remove <p> tags around images everywhere
+    $('p > img').unwrap();
+
 
 }); /* end of as page load scripts */
