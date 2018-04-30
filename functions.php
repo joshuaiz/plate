@@ -48,9 +48,6 @@ function plate_lunch() {
     // cleanup the <head>
     add_action( 'init', 'plate_head_cleanup' );
 
-    // a better title
-    add_filter( 'wp_title', 'rw_title', 10, 3 );
-
     // remove WP version from RSS
     add_filter( 'the_generator', 'plate_rss_version' );
 
