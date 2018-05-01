@@ -146,8 +146,6 @@ http://sachagreif.com/useful-sass-mixins/
 http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
 http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
-
-
 ******************************************************************/
 /*********************
 TINTS/SHADES
@@ -274,11 +272,28 @@ busy with more stylings.
 /*********************
 GLOBAL STYLES
 *********************/
+.edit-post-visual-editor .alignfull {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  max-width: 1000%;
+  width: auto; }
+
+.edit-post-visual-editor .alignwide {
+  margin-right: calc(25% - 25vw);
+  margin-left: calc(25% - 25vw);
+  max-width: 1000%;
+  width: auto; }
+
+.edit-post-visual-editor .alignwide img,
+.edit-post-visual-editor .alignfull img {
+  display: block;
+  margin: 0 auto; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
 .wrap {
-  width: 760px; }
+  padding: 1.5em; }
 
 /*********************
 HEADER STYLES
@@ -379,9 +394,6 @@ so we've copied them here.
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.sidebar {
-  margin-top: 2.2em; }
-
 .widget ul li {
   /* deep nesting */ }
 
@@ -422,8 +434,9 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-.wrap {
-  width: 1040px; }
+#inner-header, #inner-footer {
+  margin: 0 auto;
+  max-width: 1170px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

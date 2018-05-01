@@ -9,6 +9,7 @@ be seen on the Desktop.
 
 ******************************************************************/
 
-.wrap {
-    width: 1040px;
+#inner-header, #inner-footer {
+    margin: 0 auto;
+    max-width: 1170px;
 }

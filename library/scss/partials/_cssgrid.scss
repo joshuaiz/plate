@@ -1,0 +1,224 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+Now with CSS Grid!
+
+CSS Grid is ready. And you should use it. It's time.
+
+Watch this if you are not convinced:
+https://www.youtube.com/watch?v=7kVeCqQCxlk&ab_channel=CodingTech
+
+More CSS Grid stuffs:
+https://gridbyexample.com (definitely go through this)
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+http://labs.jensimmons.com
+
+We're going to use really simple defaults for grate so there's a few
+bits you need to know:
+
+fr = fractional unit
+
+So here's a simple example setup using fr:
+
+.grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    header, footer {
+        grid-column: span 2;
+    }
+}
+
+For columns we have:
+
+grid-template-columns: 2fr 1fr;
+
+we get two tracks (columns), one 2/3 and the other 1/3 (of a total of 1).
+
+No floats, no calc, no need to calculate the percentages at all.
+CSS Grid does all the work. It even accounts for your grid gap (gutters)
+and fills the remaining space. 
+
+For rows we have this:
+
+grid-template-rows: auto 1fr auto;
+
+which gives us 3 rows with 2 content columns:
+
+header
+content | aside (sidebar)
+footer
+
+The 'auto' property assigns the row height to the height of the content.
+Thus, the middle row which contains our content + sidebar is set to 1fr
+which means it will fill the container as 1fr of an entire row is the
+container width.
+
+Not only that, the header and footer are anchored to the top and bottom,
+respectively, no matter what the height of the content/sidebar row. This
+has long been considered the 'Holy Grail' layout in CSS and we did it with
+just a few lines of code.
+
+We set grid-column: span 2; on the header and footer to span the full
+width of the two columns. 
+
+This is just a really simple default setup and the possibilities are
+endless so check some examples:
+
+https://rachelandrew.co.uk/archives/2016/04/12/flexible-sized-grids-with-auto-fill-and-minmax
+https://gridbyexample.com/examples/
+https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/
+
+Soon we will be able to utilize subgrids to further layout items within the main
+semantic layout sections. More on the subgrids property:
+
+https://rachelandrew.co.uk/archives/2017/07/20/why-display-contents-is-not-css-grid-layout-subgrid/
+
+Subgrids have been pushed to CSS Grid v2 so we can't use them yet but we 
+can have nested grid layouts (e.g. grid within a grid).
+
+There are many ways to set up your grid so there are a few options below.
+Use one of those or develop your own - each project might need a different
+setup. 
+
+I've kept in the now unnecessary #content and #inner-content divs
+for backwards compatibility but check out our Grate theme for a 
+more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
+
+******************************************************************/
+
+// Flexbox fallback for IE10 and Edge
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// Let's target browsers who support the latest CSS Grid spec only
+// (!) don't use @supports(display: grid) {} as this will still return true for IE10 and Edge
+@supports( grid-area: auto ) {
+    
+    // Base media queries on layouts, not devices:
+    // https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/
+    // Let's use a simple base 10 grid.
+    @media only screen and (min-width: 768px) {
+
+        .grid-aside {
+            // create 10 columns of max-width 10em. Simple.
+            grid-template-columns: repeat(10, minmax(auto, 10em));
+            // create 3 rows: header | content/aside | footer; 'auto' makes header and footer the height of the content
+            grid-template-rows: auto 1fr auto;
+            // make the header and footer span the full width
+            #header, #footer {
+                grid-column: span 10; 
+            }
+            // span our main content from columns 1-6 (7 is the start of the new column)
+            #content {
+                grid-column: 1/7;
+            }
+            // span our aside content from columns 7-10 (can use 11 or -1 for the second value; -1 is the end of the grid)
+            aside {
+                grid-column: 7/-1;
+            }
+        }
+
+        // grid for full-width page
+        .grid-full {
+            grid-template-columns: 1fr;
+        }
+
+    } // end of media query
+
+    @media only screen and (min-width: 1170px)   {
+
+        .grid-aside {
+            // adjust the grid areas for higher viewports, keeping the content at manageable widths
+            #content {
+                grid-column: 2/7;
+            }
+            aside {
+                grid-column: 7/10;
+            }
+        }
+        
+    } // end of media query
+
+    // grid defaults. If you don't want to use CSS Grid, remove the .grid class from #container.
+    .grid {
+        display: grid;
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+        grid-gap: 1em;
+    }
+
+    .grid-aside {
+        grid-template-rows: auto 1fr auto;
+    }
+   
+    // add colors just to show what's going on. Comment the colors out when you've sorted your layouts.
+    #content {
+        flex: 1; // fallback
+        background: yellow;
+    }
+    aside {
+        background: red;
+    }
+    footer {
+        background: blue;
+    }
+
+}
+
+/**
+ * 
+ * Other CSS Grid examples
+ * 
+ * You can use these or come up with your own. Once CSS Grid clicks,
+ * it's really easy and there's no limit to what you can do!
+ * 
+ * The main takeaway here is that you don't need a predefined system.
+ * Just define a grid, add your columns and rows, and go.
+ * 
+ * Uncomment to use.
+ * 
+ * */
+
+// grid for page with sidebar
+// .grid-aside {
+//     grid-template-columns: 2fr 1fr; // two columns: 2/3 | 1/3
+//     grid-template-rows: auto 1fr auto; // 3 rows: header | content/sidebar | footer
+//     #header, #footer {
+//         grid-column: span 2; // make the header and footer span the full width
+//     }
+// }
+
+// grid for sidebar page using grid template areas
+// If you use template areas, you probably don't want a base 10 grid.
+// .grid-aside {
+//     grid-template-columns: 2fr 1fr; // two columns: 2/3 | 1/3
+//     grid-template-rows: auto 1fr auto; // 3 rows: header | content/sidebar | footer
+//     grid-template-areas: // assign our grid template areas
+//             "header header"
+//             "main aside"
+//             "footer footer";
+            
+//     // This is a perfect time to use ids in our markup and target them here.
+//     #header {
+//         grid-area: header;
+//     }
+//     #main {
+//         grid-area: main;
+//     }
+//     #aside {
+//         grid-area: aside;
+//     }
+//     #footer {
+//         grid-area: footer;
+//     }
+// }

@@ -1,6 +1,6 @@
-			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+			<footer id="footer" class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="wrap cf">
+				<div id="inner-footer" class="wrap">
 
 					<?php /* Uncomment this and the 'Footer Links' menu registration in template.php to use. 
 					Or delete it if you're not using it.

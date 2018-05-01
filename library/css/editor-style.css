@@ -11,6 +11,9 @@ and placed in the root theme directory folder as editor-style.css
 For more info, check out the codex:
 http://codex.wordpress.org/Editor_Style
 
+1.2.0 NOTE: This is pretty much deprecated with Gutenberg coming
+so this will get a revamp soon!
+
 ******************************************************************/
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
 here http://codex.wordpress.org/Function_Reference/add_editor_style */
@@ -339,8 +342,6 @@ Helpful:
 http://sachagreif.com/useful-sass-mixins/
 http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
 http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
-
-
 
 ******************************************************************/
   /*********************

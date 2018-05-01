@@ -7,12 +7,16 @@
 */
 ?>
 
-<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
+<aside id="sidebar1" class="sidebar" role="complementary">
 
-	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+    <div class="inner-sidebar wrap">
 
-		<?php dynamic_sidebar( 'sidebar1' ); ?>
+    	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
-	<?php endif; ?>
+    		<?php dynamic_sidebar( 'sidebar1' ); ?>
 
-</div>
+    	<?php endif; ?>
+
+    </div>
+
+</aside>

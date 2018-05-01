@@ -25,9 +25,9 @@
 
     <div id="content">
 
-        <div id="inner-content" class="wrap cf">
+        <div id="inner-content" class="wrap">
 
-            <main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+            <main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -52,13 +52,13 @@
 
                         </header> <?php // end article header ?>
 
-                        <section class="entry-content cf" itemprop="articleBody">
+                        <section class="entry-content" itemprop="articleBody">
 
                             <?php the_content(); ?>
 
                         </section> <?php // end article section ?>
 
-                        <footer class="article-footer cf">
+                        <footer class="article-footer">
 
                         </footer>
 
@@ -70,10 +70,10 @@
 
             </main>
 
-            <?php get_sidebar(); ?>
-
         </div>
 
     </div>
+
+    <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

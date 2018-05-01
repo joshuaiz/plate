@@ -42,21 +42,15 @@ textarea,
 
     // a focused input (or hovered on)
     &:focus,
-    &:active {}
-
-    // end hover or focus
+    &:active {} // end hover or focus
 
     // error notification
     &.error,
-    &.is-invalid {}
-
-    // end invalid input
+    &.is-invalid {} // end invalid input
 
     // success notification
     &.success,
-    &.is-valid {}
-
-    // end valid input
+    &.is-valid {} // end valid input
 
     // a disabled input
     &[disabled],
@@ -65,16 +59,10 @@ textarea,
         cursor: not-allowed;
 
         &:focus,
-        &:active {}
-
-        // end disabled focus
+        &:active {} // end disabled focus
    
-    }
-
-    // end disabled input
-}
-
-// end input defaults
+    } // end disabled input
+} // end input defaults
 
 // spacing out the password (thx @murtaugh)
 input[type="password"] {
@@ -85,14 +73,6 @@ input[type="password"] {
 textarea {
     max-width: 100%;
 }
-
-// selects 
-// Commented out as this was making drop-downs wonky. I may remove it
-// select {
-//     -webkit-appearance: none;
-//     -moz-appearance: none;
-//     appearance: none;
-// }
 
 fieldset {
     border: 1px solid #ccc;

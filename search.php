@@ -2,9 +2,9 @@
 
 	<div id="content">
 
-		<div id="inner-content" class="wrap cf">
+		<div id="inner-content" class="wrap">
 
-			<main id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+			<main id="main" class="main" role="main">
 
 				<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'platetheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
@@ -40,10 +40,10 @@
 
 			</main>
 
-			<?php get_sidebar(); ?>
-
 		</div>
 
 	</div>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

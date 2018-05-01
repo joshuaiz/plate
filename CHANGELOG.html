@@ -13,6 +13,19 @@
 
 <hr />
 
+<h3 id="1.2.02018-04-30">1.2.0 2018&#8211;04&#8211;30</h3>
+
+<h3 id="majorupdatetocssgrid">Major update to CSS Grid!</h3>
+
+<p><em>Note: you should not pull these changes down if you use the old-style grid from v1.1.8 and before as it might break things. Try on a test site first.</em></p>
+
+<ul>
+<li>Added full CSS Grid support (yay!)</li>
+<li>removed all clearfix/cf calls (not necessary with CSS Grid + Flexbox)</li>
+<li>Moved <code>get_sidebar()</code> calls outside of #content to accomodate Grid
+<strong>More Notes: if you have not already made the move to CSS Grid, it&#8217;s time. Plate will default to using CSS Grid via the _cssgrid.scss stylesheet. There&#8217;s a ton of info there to get you started. I&#8217;ve also left some colors around the main content sections within the Grid so you can see what&#8217;s going on. I&#8217;ve left the old _grid.scss stylesheet here so you can use that if you need to but I&#8217;ve removed all of the classes for that grid style in the template. Thus, if you need that grid, it&#8217;s probably better to download the earlier v1.1.8 Plate release.</strong></li>
+</ul>
+
 <h3 id="1.1.82018-04-29">1.1.8 2018&#8211;04&#8211;29</h3>
 
 <ul>

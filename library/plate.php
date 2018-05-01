@@ -14,8 +14,8 @@
 *
 * Pretty self-explanatory.
 *
-* To use, add this in your header (wrapped in php tags):
-* echo '<!-- ' . get_current_template() . ' -->'; 
+* To use, add this in your header:
+* <?php echo '<!-- ' . get_current_template() . ' -->' ?>; 
 *
 *
 */
@@ -45,7 +45,6 @@ function get_current_template( $echo = false ) {
 * great for tracking down issues in your code or errant plugins:
 * https://wordpress.org/plugins/query-monitor/
 */
-
 
 
 /*

@@ -6,6 +6,14 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.0 2018-04-30
+### Major update to CSS Grid!
+*Note: you should not pull these changes down if you use the old-style grid from v1.1.8 and before as it might break things. Try on a test site first.*
+- Added full CSS Grid support (yay!)
+- removed all clearfix/cf calls (not necessary with CSS Grid + Flexbox)
+- Moved `get_sidebar()` calls outside of #content to accomodate Grid
+**More Notes: if you have not already made the move to CSS Grid, it's time. Plate will default to using CSS Grid via the _cssgrid.scss stylesheet. There's a ton of info there to get you started. I've also left some colors around the main content sections within the Grid so you can see what's going on. I've left the old _grid.scss stylesheet here so you can use that if you need to but I've removed all of the classes for that grid style in the template. Thus, if you need that grid, it's probably better to download the earlier v1.1.8 Plate release.**
+
 ### 1.1.8 2018-04-29
 - added jQuery to remove `<p>` tags from images
 - small formatting/spacing updates

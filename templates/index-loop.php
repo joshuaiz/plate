@@ -1,6 +1,6 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 		<header class="article-header">
 
@@ -16,7 +16,7 @@
 
 		</section>
 
-		<footer class="article-footer cf">
+		<footer class="article-footer">
 
 			<?php get_template_part( 'templates/comment', 'count'); ?>
 

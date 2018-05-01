@@ -42,8 +42,17 @@ the whole project.
 // import mixins
 @import "partials/mixins";
 
-// the grid
-@import "partials/grid";
+// CSS Grid...it's time
+@import "partials/cssgrid";
+
+/* Bones grid
+* This is the old style grid, now commented out
+* You *should* make the move to css grid now but
+* if you need this or can't let go, it's still here
+* so uncomment to use (and comment the cssgrid out).
+* Just know that Rachel Andrew is watching.
+*/
+// @import "partials/grid";
 
 // Gutenberg styles
 @import "partials/gutenberg";

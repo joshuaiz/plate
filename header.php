@@ -43,7 +43,7 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container">
+		<div id="container" class="grid grid-aside">
 
 			<header class="header" id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
@@ -73,11 +73,11 @@
 
                         <?php wp_nav_menu( array(
 
-                                 'container' => false,                          // remove nav container
-                                 'container_class' => 'menu',                   // class of container (should you choose to use it)
-                                 'menu' => __( 'The Main Menu', 'platetheme' ), // nav name
-                                 'menu_class' => 'nav top-nav main-menu',       // adding custom nav class
-                                 'theme_location' => 'main-nav',                // where it's located in the theme
+                            'container' => false,                          // remove nav container
+                            'container_class' => 'menu',                   // class of container (should you choose to use it)
+                            'menu' => __( 'The Main Menu', 'platetheme' ), // nav name
+                            'menu_class' => 'nav top-nav main-menu',       // adding custom nav class
+                            'theme_location' => 'main-nav',                // where it's located in the theme
 
                             )
                         ); ?>

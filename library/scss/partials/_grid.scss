@@ -4,6 +4,11 @@ Author:
 
 Stylesheet: Grid Stylesheet
 
+NOTE: this theme uses CSS Grid by default but this old grid
+still works so feel free to use it. To do that comment out
+the cssgrid import and uncomment out this file import in 
+style.scss. But you should move to CSS Grid. It's like way cool.
+
 I've seperated the grid so you can swap it out easily. It's
 called at the top the style.scss stylesheet.
 
