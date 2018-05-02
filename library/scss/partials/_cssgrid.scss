@@ -4,7 +4,7 @@ Author:
 
 Stylesheet: Grid Stylesheet
 
-Now with CSS Grid!
+Now with CSS Grid! (scroll down for active styles)
 
 CSS Grid is ready. And you should use it. It's time.
 
@@ -153,7 +153,7 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
         display: grid;
         margin: 0 auto;
         width: 100%;
-        height: 100vh;
+        height: 100vh; // set to be full viewport height; remove if you need to
         grid-gap: 1em;
     }
 
@@ -205,15 +205,15 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
 //     grid-template-rows: auto 1fr auto; // 3 rows: header | content/sidebar | footer
 //     grid-template-areas: // assign our grid template areas
 //             "header header"
-//             "main aside"
+//             "content aside"
 //             "footer footer";
             
 //     // This is a perfect time to use ids in our markup and target them here.
 //     #header {
 //         grid-area: header;
 //     }
-//     #main {
-//         grid-area: main;
+//     #content {
+//         grid-area: content;
 //     }
 //     #aside {
 //         grid-area: aside;

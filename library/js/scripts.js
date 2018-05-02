@@ -211,5 +211,4 @@ jQuery(document).ready(function($) {
     // remove <p> tags around images everywhere
     $('p > img').unwrap();
 
-
 }); /* end of as page load scripts */
