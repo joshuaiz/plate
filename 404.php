@@ -27,7 +27,7 @@
 
 					<section class="search">
 
-							<div class="search-form-outer"><?php get_search_form(); ?></div>
+						<div class="search-form-outer"><?php get_search_form(); ?></div>
 
 					</section>
 
