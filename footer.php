@@ -2,7 +2,7 @@
 
 				<div id="inner-footer" class="wrap">
 
-					<?php /* Uncomment this and the 'Footer Links' menu registration in template.php to use. 
+					<?php /* Uncomment this and the 'Footer Links' menu registration in functions.php to use. 
 					Or delete it if you're not using it.
 
 					<nav role="navigation">
@@ -31,7 +31,7 @@
 
 		</div>
 
-		<?php // all js scripts are loaded in library/bones.php ?>
+		<?php // all js scripts are loaded in library/functions.php ?>
 		<?php wp_footer(); ?>
 
 	</body>

@@ -11,6 +11,9 @@
 
 			</main>
 
+			<?php // related posts function; uncomment below to use ?>
+			<?php // plate_related_posts(); ?>
+
 		</div>
 
 	</div>

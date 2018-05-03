@@ -33,7 +33,7 @@ require_once( 'library/admin.php' );
 *-------------------------------------------------
 */
 
-// mmmmmmmmmmmmm action baby!
+// mmmmmmmmmmmmm dig in!
 add_action( 'after_setup_theme', 'plate_lunch' );
 
 function plate_lunch() {
@@ -133,15 +133,15 @@ function plate_register_sidebars() {
 
 	register_sidebar( array(
 
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'platetheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'platetheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+            'id' => 'sidebar1',
+            'name' => __( 'Sidebar 1', 'platetheme' ),
+            'description' => __( 'The first (primary) sidebar.', 'platetheme' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widgettitle">',
+            'after_title' => '</h4>',
 
-	   )
+        )
     );
 
 	/*
@@ -398,7 +398,7 @@ function plate_gallery_style($css) {
 SCRIPTS & ENQUEUEING
 *********************/
 
-// loading modernizr and jquery, and reply script
+// loading modernizr and jquery, comment reply and custom scripts
 function plate_scripts_and_styles() {
 
     global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
@@ -790,54 +790,93 @@ function plate_style_header() {
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using plate_related_posts(); )
-// Not sure if this still works.
-function plate_related_posts() {
+/**
+ * Plate Related Posts.
+ * 
+ * Replaced old related posts function from Bones.
+ * Added: 2018-05-03
+ *
+ * Usage:
+ * To show related by categories:
+ * Add in single.php <?php plate_related_posts(); ?>.
+ * To show related by tags:
+ * Add in single.php <?php plate_related_posts('tag'); ?>.
+ *
+ * @global array $post
+ *   WP global post.
+ * @param string $display
+ *   Set category or tag.
+ * @param int $qty
+ *   Number of posts to be displayed.
+ * @param bool $images
+ *   Enable or disable displaying images.
+ * @param string $title
+ *   Set the widget title.
+ */
 
-    echo '<ul id="plate-related-posts">';
-
+function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Related Posts') {
     global $post;
-
-    $tags = wp_get_post_tags( $post->ID );
-
-    if( $tags ) {
-
-        foreach( $tags as $tag ) {
-            $tag_arr .= $tag->slug . ',';
+    $show = false;
+    $post_qty = (int) $qty;
+    switch ($display) :
+        case 'tag':
+            $tags = wp_get_post_tags($post->ID);
+            if ($tags) {
+                $show = true;
+                $tag_ids = array();
+                foreach ($tags as $individual_tag) {
+                    $tag_ids[] = $individual_tag->term_id;
+                }
+                $args = array(
+                    'tag__in' => $tag_ids,
+                    'post__not_in' => array($post->ID),
+                    'posts_per_page' => $post_qty,
+                    'ignore_sticky_posts' => 1
+                );
+            }
+            break;
+        default :
+            $categories = get_the_category($post->ID);
+            if ($categories) {
+                $show = true;
+                $category_ids = array();
+                foreach ($categories as $individual_category) {
+                    $category_ids[] = $individual_category->term_id;
+                }
+                $args = array(
+                    'category__in' => $category_ids,
+                    'post__not_in' => array($post->ID),
+                    'showposts' => $post_qty,
+                    'ignore_sticky_posts' => 1
+                );
+            }
+    endswitch;
+    if ($show == true) {
+        $related = new wp_query($args);
+        if ($related->have_posts()) {
+            $layout = '<div class="related-posts">';
+            $layout .= '<h3>' . strip_tags($title) . '</h3>';
+            $layout .= '<ul class="nostyle related-posts-list">';
+            while ($related->have_posts()) {
+                $related->the_post();
+                $layout .= '<li class="related-post">';
+                if ($images == true) {
+                    $layout .= '<span class="related-thumb">';
+                    $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail() . '</a>';
+                    $layout .= '</span>';
+                }
+                $layout .= '<span class="related-title">';
+                $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a>';
+                $layout .= '</span>';
+                $layout .= '</li>';
+            }
+            $layout .= '</ul>';
+            $layout .= '</div>';
+            echo $layout;
         }
-
-        $args = array(
-            'tag' => $tag_arr,
-            'numberposts' => 5, /* you can change this to show more */
-            'post__not_in' => array($post->ID)
-        );
-
-        $related_posts = get_posts( $args );
-
-        if( $related_posts ) {
-
-            foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
-            <li class="related_post">
-
-                <a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-
-            </li>
-
-            <?php endforeach; 
-
-        } else { ?>
-
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'platetheme' ) . '</li>'; ?>
-
-        <?php }
-
-    } /* end if ($tags) */
-
-    wp_reset_postdata(); // always reset your loops
-
-    echo '</ul>';
-
-} /* end plate related posts function */
+        wp_reset_query();
+    }
+}
 
 
 /*********************

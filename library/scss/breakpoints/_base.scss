@@ -45,11 +45,7 @@ img {
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
-    // margin: 0 auto;
-    // width: 96%;
-    padding: 1em;
-}
+.wrap {}
 
 /*********************
 LINK STYLES
@@ -179,6 +175,10 @@ ul, ol {
     margin-left: 0;
     padding-left: 0;
     list-style-type: none;
+}
+
+.related-posts-list {
+    display: flex;
 }
 
 /*********************

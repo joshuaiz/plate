@@ -292,9 +292,6 @@ GLOBAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
-  padding: 1.5em; }
-
 /*********************
 HEADER STYLES
 *********************/
@@ -435,8 +432,8 @@ be seen on the Desktop.
 
 ******************************************************************/
 #inner-header, #inner-footer {
-  margin: 0 auto;
-  max-width: 1170px; }
+  max-width: 1200px;
+  margin: 0 auto; }
 
 /*
 you can call the larger styles if you want, but there's really no need

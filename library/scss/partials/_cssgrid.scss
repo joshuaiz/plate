@@ -115,7 +115,7 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
             grid-template-rows: auto 1fr auto;
             // make the header and footer span the full width
             #header, #footer {
-                grid-column: span 10; 
+                grid-column: span 10;
             }
             // span our main content from columns 1-6 (7 is the start of the new column)
             #content {
@@ -169,7 +169,7 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
     aside {
         background: red;
     }
-    footer {
+    #footer {
         background: blue;
     }
 
