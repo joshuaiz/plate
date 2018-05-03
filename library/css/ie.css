@@ -292,6 +292,9 @@ GLOBAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+.wrap {
+  padding: 1.5em; }
+
 /*********************
 HEADER STYLES
 *********************/
@@ -432,7 +435,7 @@ be seen on the Desktop.
 
 ******************************************************************/
 #inner-header, #inner-footer {
-  max-width: 1200px;
+  max-width: 1216px;
   margin: 0 auto; }
 
 /*

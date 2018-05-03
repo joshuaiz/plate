@@ -117,6 +117,7 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
             #header, #footer {
                 grid-column: span 10;
             }
+
             // span our main content from columns 1-6 (7 is the start of the new column)
             #content {
                 grid-column: 1/7;
