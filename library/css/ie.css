@@ -10,6 +10,8 @@ to IE, we're going to use SASS to create an easily readable css file.
 Here, we import all the styles the standard stylesheet gets, only
 without the media queries. No need to worry about editing anything!
 
+2018 Note: can we get rid of this yet? Probably not. Le sigh.
+
 ******************************************************************/
 /******************************************************************
 IMPORTS & DEPENDENCIES
@@ -199,16 +201,9 @@ so you still want to keep it pretty light and simply expand
 upon your base.scss styles.
 
 ******************************************************************/
-/*
-IMPORTANT NOTE ABOUT SASS 3.3 & UP
-You can't use @extend within media queries
-anymore, so just be aware that if you drop
-them in here, they won't work.
-*/
 /*********************
 NAVIGATION STYLES
 *********************/
-/* .menu is clearfixed inside mixins.scss */
 .menu {
   /* end .menu ul */ }
   .menu ul {
@@ -435,7 +430,7 @@ be seen on the Desktop.
 
 ******************************************************************/
 #inner-header, #inner-footer {
-  max-width: 1216px;
+  max-width: 1200px;
   margin: 0 auto; }
 
 /*

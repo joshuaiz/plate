@@ -50,8 +50,8 @@ Customize it, we don't criticize it.
 
 // calling your own login css so you can style it
 
-//Updated to proper 'enqueue' method
-//http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
+// Updated to proper 'enqueue' method
+// http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function plate_login_css() {
 	wp_enqueue_style( 'plate_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
@@ -86,7 +86,6 @@ function plate_admin_css() {
     wp_enqueue_style( 'plate_admin_css', get_template_directory_uri() . '/library/css/admin.css', false );
 }
 add_action( 'admin_enqueue_scripts', 'plate_admin_css', 10 );
-
 
 
 // Custom Backend Footer

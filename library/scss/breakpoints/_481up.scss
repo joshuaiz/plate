@@ -15,21 +15,11 @@ upon your base.scss styles.
 
 ******************************************************************/
 
-/*
-IMPORTANT NOTE ABOUT SASS 3.3 & UP
-You can't use @extend within media queries
-anymore, so just be aware that if you drop
-them in here, they won't work.
-*/
-
-
 /*********************
 NAVIGATION STYLES
 *********************/
 
 .nav {}
-
-	/* .menu is clearfixed inside mixins.scss */
 	.menu {
 		ul {
 			li {
