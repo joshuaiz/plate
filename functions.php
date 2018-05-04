@@ -793,6 +793,9 @@ RELATED POSTS FUNCTION
 /**
  * Plate Related Posts.
  * 
+ * Adapted from this gist:
+ * https://gist.github.com/claudiosanches/3167825
+ * 
  * Replaced old related posts function from Bones.
  * Added: 2018-05-03
  *
