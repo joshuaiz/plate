@@ -17,7 +17,7 @@ https://css-tricks.com/snippets/css/complete-guide-grid/
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
 http://labs.jensimmons.com
 
-We're going to use really simple defaults for grate so there's a few
+We're going to use really simple defaults for Plate so there's a few
 bits you need to know:
 
 fr = fractional unit
@@ -102,15 +102,41 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
 // Let's target browsers who support the latest CSS Grid spec only
 // (!) don't use @supports(display: grid) {} as this will still return true for IE10 and Edge
 @supports( grid-area: auto ) {
+
+    // grid defaults. If you don't want to use CSS Grid, remove the .grid class from #container.
+    .grid {
+        display: grid;
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh; // set to be full viewport height; remove if you need to
+        grid-gap: 12px;
+
+        // add colors just to show what's going on. Comment the colors out when you've sorted your layouts.
+        #content {
+            flex: 1; // fallback
+            background: yellow;
+        }
+        aside {
+            background: red;
+            min-height: 80px; // just to make sure it is visible on mobile; 
+        }
+        #footer {
+            background: blue;
+        }
+    }
+
+    .grid-aside {
+        grid-template-rows: auto 1fr auto;
+    }
     
     // Base media queries on layouts, not devices:
     // https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/
     // Let's use a simple base 12 grid.
     @media only screen and (min-width: 768px) {
-
+        
         .grid-aside {
-            // create 12 columns of max-width 108px. Simple.
-            grid-template-columns: repeat(12, [col] 1fr);
+            // create 12 equal columns of 1fr unit. Simple.
+            grid-template-columns: repeat(12, minmax(0, 1fr));
             // create 3 rows: header | content/aside | footer; 'auto' makes header and footer the height of the content
             grid-template-rows: auto 1fr auto;
             // make the header and footer span the full width
@@ -122,7 +148,7 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
             #content {
                 grid-column: 1/8;
             }
-            // span our aside content from columns 8-12 (can use 12 or -1 for the second value; -1 is the end of the grid)
+            // span our aside from columns 8-12 (can use 12 or -1 for the second value; -1 is the end of the grid)
             aside {
                 grid-column: 8/-1;
             }
@@ -130,9 +156,21 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
 
         // grid for full-width page
         .grid-full {
-            grid-template-columns: 1fr;
+            // create 12 columns of 1fr unit. Simple.
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            // create 3 rows: header | content/aside | footer; 'auto' makes header and footer the height of the content
+            grid-template-rows: auto 1fr auto;
+            // make the header and footer span the full width
+            #header, #footer {
+                grid-column: span 12;
+            }
+            #content {
+                grid-column: 1/-1;
+            }
+            aside {
+                display: none;
+            }
         }
-
     } // end of media query
 
     @media only screen and (min-width: 1170px)   {
@@ -146,34 +184,16 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
                 grid-column: 8/12;
             }
         }
+
+        .grid-full {
+            #content {
+                grid-column: 2/12;
+            }
+        }
         
     } // end of media query
 
-    // grid defaults. If you don't want to use CSS Grid, remove the .grid class from #container.
-    .grid {
-        display: grid;
-        margin: 0 auto;
-        width: 100%;
-        height: 100vh; // set to be full viewport height; remove if you need to
-        grid-gap: 15.88px;
-    }
-
-    .grid-aside {
-        grid-template-rows: auto 1fr auto;
-    }
-   
-    // add colors just to show what's going on. Comment the colors out when you've sorted your layouts.
-    #content {
-        flex: 1; // fallback
-        background: yellow;
-    }
-    aside {
-        background: red;
-        min-height: 80px; // just to make sure it is visible on mobile; 
-    }
-    #footer {
-        background: blue;
-    }
+    
 
 }
 
@@ -217,7 +237,7 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
 //     #content {
 //         grid-area: content;
 //     }
-//     #aside {
+//     aside {
 //         grid-area: aside;
 //     }
 //     #footer {

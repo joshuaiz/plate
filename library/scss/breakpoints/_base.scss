@@ -148,11 +148,18 @@ HEADER STYLES
     line-height: inherit;
 }
 
-#banner {
-    .header-image {}
+#bloginfo {
+    display: flex;
 }
 
-#logo {}
+#logo {
+    margin-right: 8px;
+    img {
+        // replace /library/images/logo.svg and adjust for your logo size
+        width: 50px;
+        height: 50px;
+    }
+}
 
 /*********************
 LIST STYLES

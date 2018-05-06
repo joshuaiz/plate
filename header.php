@@ -52,10 +52,10 @@
                     <?php // updated with proper markup and wrapping div for organization ?>
                     <div id="bloginfo" itemscope itemtype="http://schema.org/Organization">
 
-                        <?php // You can use text or a logo (or both) in your header. Uncomment the below to use a logo. ?>
+                        <?php // You can use text or a logo (or both) in your header. Uncomment below to use a logo ?>
                         <!-- <div id="logo" itemprop="logo">
                             <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
-                                <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo_sm.svg" itemprop="logo" />
+                                <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.svg" itemprop="logo" />
                             </a>
                         </div> -->
 

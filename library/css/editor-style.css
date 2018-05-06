@@ -642,12 +642,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     color: #303030;
     font-weight: 500;
     line-height: 1.2;
-    text-rendering: optimizelegibility;
-    /*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-    /* removing text decoration from all headline links */ }
+    text-rendering: optimizelegibility; }
     body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a, body#tinymce.wp-editor h6 a, body#tinymce.wp-editor .h6 a {
       text-decoration: none; }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
@@ -692,4 +687,25 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor .size-thumbnail {
     max-width: 100%;
     height: auto; }
+
+/*********************
+LIST STYLES
+*********************/
+ul, ol {
+  -webkit-padding-start: 20px; }
+
+.list-square {
+  margin-bottom: 1.5em;
+  list-style-position: outside;
+  list-style-type: square; }
+
+.nostyle {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none; }
+
+.related-posts-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 /*# sourceMappingURL=editor-style.css.map */
