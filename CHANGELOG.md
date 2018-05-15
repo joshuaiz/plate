@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.1 2018-05-14
+- Formatting fixes in 768up.scss
+- updated screenshot images
+- removed errant `cf` class from page-custom-loop.php
+- fixed an issue where I accidentally listened to a commercial
+
 ### 1.2.0 2018-04-30
 ### Major update to CSS Grid!
 *Note: you should not pull these changes down if you use the old-style grid from v1.1.8 and before as it might break things. Try on a test site first.*
