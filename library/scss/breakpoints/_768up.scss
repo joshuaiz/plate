@@ -69,8 +69,7 @@ nav {}
     // class on the main navigation nav element
 }
 
-.nav {
-    // the ul element
+.nav { // the ul element
     margin: 0;
     padding: 0;
     border: 0;
@@ -130,36 +129,29 @@ nav {}
                 for usability. k, bai.
                 */
                 ul {}
-            }
 
-            /* highlight sub-menu current page */
+            } /* highlight sub-menu current page */
             li.current-menu-item,
             li.current_page_item,
             li.current_page_ancestor {
                 a {}
             }
-        }
-
-        /* showing sub-menus */
+        } /* showing sub-menus */
         &:hover > ul {
             top: auto;
             visibility: visible;
         }
-    }
-
-    /* end .menu ul li */
+    } /* end .menu ul li */
 
     /* highlight current page */
     li.current-menu-item,
     li.current_page_item,
     li.current_page_ancestor {
         a {}
-    }
+    } /* end current highlighters */
 
-    /* end current highlighters */
-}
-
-/* end .nav */
+    
+} /* end .nav */
 
 /********************
 WORDPRESS BODY CLASSES

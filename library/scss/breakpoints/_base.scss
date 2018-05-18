@@ -290,6 +290,11 @@ the cool kids do.
 
 .paged-1 {}
 
+/**
+ * put all your custom page classes here  
+ * e.g. .page-yourpage {}
+ */
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -421,6 +426,7 @@ POSTS & CONTENT STYLES
     pre {}
 
     code {}
+    
 } /* end .entry-content */
 
 .wp-caption {

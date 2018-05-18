@@ -15,7 +15,7 @@
  * not required. It's your world baby, you can do whatever you want.
  * 
  * Added a few things back in from Template like the Detect User Agent
- * script and a few others that I still use all the time. 
+ * script and a few others that we use all the time. 
 */
 
 /*---------------------------------------
@@ -66,36 +66,6 @@ w.exec(b)?(a.mobile=RegExp.$1,s.exec(b)&&(delete a[a.mobile],a.blackberry=a.vers
  */
 
 (function(a,b){a.fn.nearest=function(c){var d,g,f,e,h,i=b.querySelectorAll;function j(k){g=g?g.add(k):a(k)}this.each(function(){d=this;a.each(c.split(","),function(){e=a.trim(this);if(!e.indexOf("#")){j((i?b.querySelectorAll(e):a(e)))}else{h=d.parentNode;while(h){f=i?h.querySelectorAll(e):a(h).find(e);if(f.length){j(f);break}h=h.parentNode}}})});return g||a()}}(jQuery,document));
-
-
-/*
- * Retina.js v1.4.0
- *
- * Copyright 2016 Imulus, LLC
- * Released under the MIT license
- *
- * Retina.js is an open source script that makes it easy to serve
- * high-resolution images to devices with retina displays.
- *
- * Note: 1.4.0 is the last "simple" version that just works using the
- * old "@2x" syntax with no extra steps. The 2.0  and later versions
- * made things lots more complex without any good reason. This version
- * still works like a charm.
- *
- * Just add a @2x image at twice the resolution in the same directory
- * as your original file and this will swap it out automagically.
- *
- * Example: myimage.jpg (300x300px), myimage@2x.jpg (600x600px).
- *
- * With srcset/retina image support built-in to WordPress, why would
- * you need this? WP srcset/retina support misses any image(s) you don't 
- * upload through the Media Library like images from your theme. And 
- * some plugins don't support it: Soliloquy, I'm looking at you.
- * 
- * Commented out by default. If you don't need/want this, remove it.
- */
-
-// !function(){function a(){}function b(a){return f.retinaImageSuffix+a}function c(a,c){if(this.path=a||"","undefined"!=typeof c&&null!==c)this.at_2x_path=c,this.perform_check=!1;else{if(void 0!==document.createElement){var d=document.createElement("a");d.href=this.path,d.pathname=d.pathname.replace(g,b),this.at_2x_path=d.href}else{var e=this.path.split("?");e[0]=e[0].replace(g,b),this.at_2x_path=e.join("?")}this.perform_check=!0}}function d(a){this.el=a,this.path=new c(this.el.getAttribute("src"),this.el.getAttribute("data-at2x"));var b=this;this.path.check_2x_variant(function(a){a&&b.swap()})}var e="undefined"==typeof exports?window:exports,f={retinaImageSuffix:"@2x",check_mime_type:!0,retinaImgTagSelector:"body img",force_original_dimensions:!0};e.Retina=a,a.configure=function(a){null===a&&(a={});for(var b in a)a.hasOwnProperty(b)&&(f[b]=a[b])},a.init=function(a){null===a&&(a=e),a.addEventListener("load",function(){var a,b,c=document.querySelectorAll(f.retinaImgTagSelector),e=[];for(a=0;a<c.length;a+=1)b=c[a],b.getAttributeNode("data-no-retina")||b.src&&e.push(new d(b))})},a.isRetina=function(){var a="(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";return e.devicePixelRatio>1?!0:!(!e.matchMedia||!e.matchMedia(a).matches)};var g=/\.[\w\?=]+$/;e.RetinaImagePath=c,c.confirmed_paths=[],c.prototype.is_external=function(){return!(!this.path.match(/^(https?\:|\/\/)/i)||this.path.match("//"+document.domain))},c.prototype.check_2x_variant=function(a){var b,d=this;return this.perform_check||"undefined"==typeof this.at_2x_path||null===this.at_2x_path?this.at_2x_path in c.confirmed_paths?a(!0):this.is_external()?a(!1):(b=new XMLHttpRequest,b.open("HEAD",this.at_2x_path),b.onreadystatechange=function(){if(4!==b.readyState)return a(!1);if(b.status>=200&&b.status<=399){if(f.check_mime_type){var e=b.getResponseHeader("Content-Type");if(null===e||!e.match(/^image/i))return a(!1)}return c.confirmed_paths.push(d.at_2x_path),a(!0)}return a(!1)},b.send(),void 0):a(!0)},e.RetinaImage=d,d.prototype.swap=function(a){function b(){c.el.complete?(f.force_original_dimensions&&(0===c.el.offsetWidth&&0===c.el.offsetHeight?(c.el.setAttribute("width",c.el.naturalWidth),c.el.setAttribute("height",c.el.naturalHeight)):(c.el.setAttribute("width",c.el.offsetWidth),c.el.setAttribute("height",c.el.offsetHeight))),c.el.setAttribute("src",a)):setTimeout(b,5)}"undefined"==typeof a&&(a=this.path.at_2x_path);var c=this;b()},a.isRetina()&&a.init(e)}();
 
 
 
