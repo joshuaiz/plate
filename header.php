@@ -43,6 +43,7 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
+        <?php // remove grid classes below if you aren't using CSS Grid (but you should) ?>
 		<div id="container" class="grid grid-aside">
 
 			<header class="header" id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">

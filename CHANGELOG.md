@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.2 2018-05-17
+- updated page navigation function
+- cleaned up theme folder
+- updated header.php
+- no "collusion"!
+
 ### 1.2.1 2018-05-14
 - Formatting fixes in 768up.scss
 - updated screenshot images

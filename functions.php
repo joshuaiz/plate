@@ -886,40 +886,47 @@ function plate_related_posts($display = 'category', $qty = 5, $images = true, $t
 PAGE NAVI
 *********************/
 
-// Numeric Page Navi (built into the theme by default).
-// 2018: probably needs updating
-function plate_page_navi() {
+/* 
+* Numeric Page Navi (built into the theme by default).
+* (Updated 2018-05-17)
+* 
+* If you're using this with a custom WP_Query, make sure 
+* to add your query variable as an argument and this 
+* function will play nice. Example:
+* 
+* plate_page_navi( $query );
+•
+• Also make sure your query has pagination set, e.g.:
+* $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+* (or something similar)
+• See the codex: https://codex.wordpress.org/Pagination
 
-    global $wp_query;
+*/
 
-    $bignum = 999999999;
+function plate_page_navi( $query_wp ) {
+    $pages = $query_wp->max_num_pages;
+    $big = 999999999; // need an unlikely integer
 
-    if ( $wp_query->max_num_pages <= 1 ) {
+    if ($pages > 1) {
+        $page_current = max(1, get_query_var('paged'));
 
-        return;
+        echo '<nav class="pagination">';
+
+        echo paginate_links(array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current'       => $page_current,
+            'total'         => $pages,
+            'prev_text'     => '&larr;',
+            'next_text'     => '&rarr;',
+            'type'          => 'list',
+            'end_size'      => 3,
+            'mid_size'      => 3
+        ));
+
+        echo '</nav>';
     }
-
-    echo '<nav class="pagination">';
-
-    echo paginate_links( array(
-
-        'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
-        'format'       => '',
-        'current'      => max( 1, get_query_var( 'paged' ) ),
-        'total'        => $wp_query->max_num_pages,
-        'prev_text'    => '&larr;',
-        'next_text'    => '&rarr;',
-        'type'         => 'list',
-        'end_size'     => 3,
-        'mid_size'     => 3
-
-        )
-
-    );
-
-  echo '</nav>';
-
-} /* end page navi */
+}
 
 
 /*
