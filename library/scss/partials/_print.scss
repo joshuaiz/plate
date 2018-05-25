@@ -4,77 +4,160 @@ Author:
 
 Stylesheet: Print Stylesheet
 
-This is the print stylesheet. There's probably not a lot
-of reasons to edit this stylesheet. If you want to
-though, go for it.
+This is the print stylesheet. You probably don't need to edit much
+in here but if you want to, do your thang.
+
+Adapted from here:
+https://www.noupe.com/design/css-perfect-print-stylesheet-98272.html
+
+Updated 2018-05-25
 
 ******************************************************************/
 
-* {
-    background: transparent !important;
-    color: black !important;
-    text-shadow: none !important;
-    -ms-filter: none !important;
-    filter: none !important;
-}
+@media print {
 
-a, a:visited {
-    color: #444 !important;
-    text-decoration: underline;
-
-    // show links on printed pages
-    &:after {
-        content: " (" attr(href) ")";
+    * {
+        background: transparent !important;
+        color: black !important;
+        text-shadow: none !important;
+        -ms-filter: none !important;
+        filter: none !important;
     }
 
-    // show title too
-    abbr[title]:after {
-        content: " (" attr(title) ")";
+    /* Setting content width, unsetting floats and margins */
+    /* Attention: the classes and IDs vary from theme to theme. Thus, set own classes here */
+    #content {
+        width: 100%; 
+        margin: 0; 
+        float: none;
     }
-}
+        
+    /** Setting margins */       
+    @page { 
+        margin: 2cm 
+    }
+    
+    /* Or: */
+    @page :left {
+        margin: 1cm;
+    }
+    
+    @page :right {
+        margin: 1cm;
+    }
+    
+    /* The first page of a print can be manipulated as well */
+    @page :first {
+        margin: 1cm 2cm;
+    }
 
-.ir a:after,
-a[href^="javascript:"]:after,
-a[href^="#"]:after {
-    content: "";
-}
+    /* Set font to 16px/13pt, set background to white and font to black.*/
+    /* This saves ink */
+    body {
+        font-size: 13pt;
+        line-height: 1.3;
+        background: #fff !important;
+        color: #000;
+    }
+        
+    h1 {
+        font-size: 24pt;
+    }
+        
+    h2, h3, h4 {
+        font-size: 14pt;
+        margin-top: 25px;
+    }
 
-pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-}
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-thead {
-    display: table-header-group;
-}
+    /* Defining all page breaks */
+    a {
+        page-break-inside:avoid
+    }
 
-tr, img {
-    page-break-inside: avoid;
-}
+    blockquote {
+        page-break-inside: avoid;
+    }
 
-img {
-    max-width: 100% !important;
-}
+    h1, h2, h3, h4, h5, h6 { 
+        page-break-after:avoid; 
+        page-break-inside:avoid 
+    }
 
-@page {
-    margin: 0.5cm;
-}
+    img { 
+        page-break-inside:avoid; 
+        page-break-after:avoid; 
+    }
 
-p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-}
+    table, pre { 
+        page-break-inside:avoid 
+    }
 
-h2,
-h3 {
-    page-break-after: avoid;
-}
+    ul, ol, dl  { 
+        page-break-before:avoid 
+    }
 
-// hide content people who print don't need to see
-.sidebar,
-.page-navigation,
-.wp-prev-next,
-.respond-form,
-nav {
-    display: none;
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    
+    thead {
+        display: table-header-group;
+    }
+
+    /* Displaying link color and link behaviour */
+    a:link, a:visited, a {
+        background: transparent;
+        color: #0088cc;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: left;
+    }
+    
+    a[href^=http]:after {
+          content:" < " attr(href) "> ";
+    }
+    
+    article a[href^="#"]:after {
+       content: "";
+    }
+    
+    a:not(:local-link):after {
+       content:" < " attr(href) "> ";
+    }
+
+    /**
+    * Making intergated videos disappear, and removing the iframes' whitespace to zero. 
+    */
+    .entry-content iframe, ins {
+        display: none;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        line-height: 0pt !important;
+        white-space: nowrap;
+    }
+
+    .embed-youtube, .embed-responsive, .embed-container {
+        display: none;
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+    }
+
+    /* Hiding unnecessary elements for the print */
+    #header-widgets, nav, aside, 
+    .sidebar, .content-ads, .make-comment, .author-bio, 
+    .heading, .related-posts, #decomments-form-add-comment, 
+    #breadcrumbs, #footer, .post-byline, .byline, .meta-single, 
+    .site-title img, .post-tags, .readability, .sidebar, .page-navigation, .wp-prev-next,
+    .respond-form {
+        display: none;
+    }
+
 }

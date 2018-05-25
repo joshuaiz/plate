@@ -14,3 +14,5 @@ How to use with Gravity Forms (for example with the Stripe CC field block):
 	background-position: 0 0 !important;
 	background-size: 36px 32px;
 }
+
+Repeat for each card. Maybe one day, Gravity Forms will get their act together. Sheeeeesh.

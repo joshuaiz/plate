@@ -5,8 +5,8 @@ Author:
 Stylesheet: Tablet & Small Desktop Stylesheet
 
 This stylesheet will be used for tablets and larger devices
-like desktops. The grid starts working here and you can get
-busy with more stylings.
+like desktops. CSS Grid starts working its magic here so you
+can start to have fun with your layout(s).
 
 ******************************************************************/
 
@@ -111,12 +111,10 @@ nav {}
                 a {
                     &:hover,
                     &:focus {}
-
                     &:link {}
                 }
 
                 &:first-child {}
-
                 &:last-child {
                     a {
                         border-bottom: 0;
@@ -136,11 +134,14 @@ nav {}
             li.current_page_ancestor {
                 a {}
             }
+
         } /* showing sub-menus */
+
         &:hover > ul {
             top: auto;
             visibility: visible;
         }
+
     } /* end .menu ul li */
 
     /* highlight current page */
@@ -150,7 +151,6 @@ nav {}
         a {}
     } /* end current highlighters */
 
-    
 } /* end .nav */
 
 /********************
@@ -199,7 +199,6 @@ so we've copied them here.
 .paged {}
 .paged-1 {}
 
-
 /*********************
 SIDEBARS & ASIDES
 *********************/
@@ -223,6 +222,13 @@ SIDEBARS & ASIDES
         }
     }
 }
+
+/*!
+ *
+ * We rarely use these widget classes but they
+ * do come in handy sometimes. Know your widgets.
+ *
+ */
 
 /* links widget */
 .widget_links {}
@@ -389,6 +395,4 @@ mobile. Make sure to double check these!
             ul {}
         }
     }
-}
-
-/* end .footer-links */
+} /* end .footer-links */

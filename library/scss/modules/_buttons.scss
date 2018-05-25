@@ -23,7 +23,14 @@ See here on placeholder selectors and why you should
 use @extend instead of @include:
 http://thesassway.com/intermediate/understanding-placeholder-selectors
 
+Also, don't use cursor: pointer; for buttons as they already should 
+signify that they are clickable:
+
+https://medium.com/simple-human/buttons-shouldnt-have-a-hand-cursor-b11e99ca374b
+
 *********************/
+
+
 
 %button {
     position: relative;
@@ -33,7 +40,6 @@ http://thesassway.com/intermediate/understanding-placeholder-selectors
     border: 0;
     border-radius: 2px;
     text-decoration: none;
-    cursor: pointer;
     &:hover, &:focus {}
     &:active {
         top: 1px; // adds a tiny hop to the click

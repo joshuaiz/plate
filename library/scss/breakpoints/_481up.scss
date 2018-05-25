@@ -9,9 +9,9 @@ This stylesheet is loaded for larger devices. It's set to
 This isn't ideal because then you would be loading all those
 extra styles on that same mobile connection.
 
-A word of warning. This size COULD be a larger mobile device,
-so you still want to keep it pretty light and simply expand
-upon your base.scss styles.
+Not sure if people use this breakpoint much anymore. We don't.
+I can't remember the last time I used this stylesheet but keeping
+it in for now.
 
 ******************************************************************/
 
@@ -24,14 +24,11 @@ NAVIGATION STYLES
 		ul {
 			li {
 				a {
-
 					/*
 					you can use hover styles here even though this size
 					has the possibility of being a mobile device.
 					*/
-					&:hover, &:focus {
-
-					}
+					&:hover, &:focus {}
 				}
 
 				&:first-child {}
@@ -69,7 +66,6 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-
 
 	/* at this larger size, we can start to align images */
 	.alignleft, img.alignleft {

@@ -75,7 +75,7 @@ Customize it, and I'll advertise it.
 
 /*
 I don't really recommend editing the admin too much
-as things may get funky if WordPress updates. Here
+as things may get wonky if WordPress updates. Here
 are a few funtions which you can choose to use if
 you like.
 */

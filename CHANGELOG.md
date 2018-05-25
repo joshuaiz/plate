@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.3 2018-05-25
+- updated normalize.scss to 8.0.0
+- added actual call for 1600up in style.scss
+- formatting updates
+- minor CSS Grid adjustments
+- fixed the 'no tacos' issue
+
 ### 1.2.2 2018-05-17
 - updated page navigation function
 - cleaned up theme folder

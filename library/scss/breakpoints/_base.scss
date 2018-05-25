@@ -83,6 +83,7 @@ After searching far and wide, I came across this:
 http://type-scale.com which we used to get our base sizes.
 */
 
+/* Heading defaults */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin: 1.333em 0 0.5em;
     color: lighten($sb-black, 12%);
@@ -95,7 +96,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     http://css-tricks.com/watch-your-font-weight/
     */
 
-    /* removing text decoration from all headline links */
+    /* 
+    Removing text decoration from all headline links.
+    If you want it, then delete this. Do it your way.
+    */
     a {
         text-decoration: none;
     }
@@ -303,7 +307,6 @@ POSTS & CONTENT STYLES
 
 .hentry {
     header {}
-
     footer {}
 }
 
@@ -681,6 +684,8 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
+aside {}
+
 .sidebar {}
 
 .widgettitle {}
@@ -707,7 +712,7 @@ FOOTER STYLES
 *********************/
 
 .footer {
-    clear: both;
+    clear: both; // are you really still using floats? Tsk, tsk.
 }
 
 .footer-links {

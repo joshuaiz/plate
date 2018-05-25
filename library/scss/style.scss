@@ -175,6 +175,17 @@ This is for the larger monitors and possibly full screen viewers.
 // end of media query
 
 /*********************
+HIMALAYA XL 9000 SIZE
+This is for super ginormous monitors like your one friend has.
+*********************/
+@media only screen and (min-width: 1600px) {
+    // styles in 1600up.scss
+    @import "breakpoints/1600up";
+}
+
+// end of media query
+
+/*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make
 sense to print at the bottom. Things like nav, ads, and forms should

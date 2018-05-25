@@ -196,9 +196,9 @@ This stylesheet is loaded for larger devices. It's set to
 This isn't ideal because then you would be loading all those
 extra styles on that same mobile connection.
 
-A word of warning. This size COULD be a larger mobile device,
-so you still want to keep it pretty light and simply expand
-upon your base.scss styles.
+Not sure if people use this breakpoint much anymore. We don't.
+I can't remember the last time I used this stylesheet but keeping
+it in for now.
 
 ******************************************************************/
 /*********************
@@ -260,8 +260,8 @@ Author:
 Stylesheet: Tablet & Small Desktop Stylesheet
 
 This stylesheet will be used for tablets and larger devices
-like desktops. The grid starts working here and you can get
-busy with more stylings.
+like desktops. CSS Grid starts working its magic here so you
+can start to have fun with your layout(s).
 
 ******************************************************************/
 /*********************
@@ -357,6 +357,12 @@ SIDEBARS & ASIDES
 .widget ul li {
   /* deep nesting */ }
 
+/*!
+ *
+ * We rarely use these widget classes but they
+ * do come in handy sometimes. Know your widgets.
+ *
+ */
 /* links widget */
 /* meta widget */
 /* pages widget */
