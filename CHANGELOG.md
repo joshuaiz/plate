@@ -9,6 +9,7 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 ### 1.2.3 2018-05-25
 - updated normalize.scss to 8.0.0
 - added actual call for 1600up in style.scss
+- updated _print.scss
 - formatting updates
 - minor CSS Grid adjustments
 - fixed the 'no tacos' issue
