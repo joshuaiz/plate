@@ -428,6 +428,18 @@ function plate_scripts_and_styles() {
     }
 }
 
+
+/**
+ * Enqueue block editor style for Gutenberg
+ * Alternatively you can uncomment the gutenberg 
+ * import in style.scss. 
+ */
+function plate_block_editor_styles() {
+    wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'plate_block_editor_styles' );
+
 /****************************************
 * REMOVE WP EXTRAS & DEQUEUEING STUFFS *
 ****************************************/
@@ -648,16 +660,39 @@ function plate_theme_support() {
     add_theme_support( 'align-wide' );
 
     add_theme_support( 'editor-color-palette',
-        // Change to your colors
-        '#0056ac',
-        '#99bbde',
-        '#004181',
-        '#001c3a',
-        'f23e2f',
-        'dedede',
-        'aaaaaa',
-        '222222'
+        array(
+            'name' => 'studio bio blue',
+            'color' => '#0056ac',
+        ),
+        array(
+            'name' => 'studio bio light blue',
+            'color' => '#99bbde',
+        ),
+        array(
+            'name' => 'studio bio midnight',
+            'color' => '#001c3a',
+        ),
+        array(
+            'name' => 'studio bio purple',
+            'color' => '#cc0099',
+        ),
+        array(
+            'name' => 'studio bio red',
+            'color' => '#f23e2f',
+        ),
+        array(
+            'name' => 'grey 70',
+            'color' => '#444444',
+        ),
+        array(
+            'name' => 'grey 20',
+            'color' => '#cccccc',
+        )
     );
+
+    // Adds default Gutenberg styles to custom blocks
+    // Delete/comment out if you are adding your own block styles
+    add_theme_support( 'wp-block-styles' );
 
     // To limit the Gutenberg editor to your theme colors, uncomment this
     // add_theme_support( 'disable-custom-colors' );

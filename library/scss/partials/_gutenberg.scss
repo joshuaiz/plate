@@ -9,6 +9,40 @@ below so they *only* apply to the Gutenberg editor.
 
 ******************************************************************/
 
-.edit-post-visual-editor {
-    // add all of your Gutenberg styles here.
+.edit-post-visual-editor {}
+
+
+/**
+* Assigning colors to blocks.
+* Change/add more classes for your block colors:
+•
+* .has-your-theme-color-background-color {}
+* .has-your-theme-color-color {}
+*
+* See here: https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+*/
+.has-studio-bio-blue-background-color {
+    background-color: #0056ac;
+}
+
+.has-studio-bio-blue-color {
+    color: #0056ac;
+}
+
+
+
+/* Style the Gutenberg page */
+body.gutenberg-editor-page {}
+
+/* Main editor column width */
+body.gutenberg-editor-page .editor-post-title__block,
+body.gutenberg-editor-page .editor-default-block-appender,
+body.gutenberg-editor-page .editor-block-list__block {}
+
+/* Width of "wide" blocks */
+body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {}
+
+/* Width of "full-wide" blocks */
+body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
+    max-width: none;
 }

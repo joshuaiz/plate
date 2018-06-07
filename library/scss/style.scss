@@ -55,8 +55,16 @@ the whole project.
 */
 // @import "partials/grid";
 
-// Gutenberg styles
-@import "partials/gutenberg";
+/**
+* Gutenberg Styles.
+•
+* Now enqueued in a separate function in functions.php to
+* keep styles out of the main stylesheet. Alternatively
+* you can comment out the Gutenberg styles enqueue and 
+* uncomment this below to have a single stylesheet.
+* You do you.
+*/
+// @import "partials/gutenberg";
 
 /*********************
 IMPORTING MODULES

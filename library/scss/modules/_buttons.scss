@@ -30,8 +30,6 @@ https://medium.com/simple-human/buttons-shouldnt-have-a-hand-cursor-b11e99ca374b
 
 *********************/
 
-
-
 %button {
     position: relative;
     display: inline-block;
@@ -52,5 +50,9 @@ https://medium.com/simple-human/buttons-shouldnt-have-a-hand-cursor-b11e99ca374b
 
 .blue-button {
     @extend %button;
-    background: #0088CC;
+    background: #0056ac;
+    color: #fff;
+    &:hover, &:focus {
+        color: #fff;
+    }
 }

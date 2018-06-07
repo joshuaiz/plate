@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.4 2018-06-07 MOAR Gutenberg stuffs
+- updated Gutenberg theme support
+- added proper Gutenberg enqueue to functions.php
+- added new Gutenberg classes
+- updated button defaults
+- fixed a negative vitamin D issue
+
 ### 1.2.3 2018-05-25
 - updated normalize.scss to 8.0.0
 - added actual call for 1600up in style.scss
