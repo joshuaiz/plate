@@ -37,12 +37,12 @@ Yet, over time I found I was making the same changes to Bones at the start of ev
 
 Template picked up where Osseous left off and took things a bit further. It included namespaced functions and customized defaults along with a lot of other stuff I like and use for my development. Plate strips everything down even more for those who want to build from scratch (although with a few key defaults left in).
 
-2017-2018 Updates: 
-- CSS Grid support (coming soon: see our [Grate](https://github.com/joshuaiz/grate/) theme)
-- added Gutenberg support (new!)
+2018 Updates: 
+- CSS Grid support (new!)
+- extended Gutenberg support (new!)
 - cleaned up the `<head>` and header.php even further
 - WooCommerce support built-in (see functions.php)
-- updated to normalize.css 7.X
+- updated to normalize.css 8.X
 - namespaced all functions
 - updated readme
 - updated login.scss
