@@ -1,5 +1,12 @@
 # Plate by studio.bio
 
+[![GitHub issues](https://img.shields.io/github/issues/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/issues)
+[![GitHub forks](https://img.shields.io/github/forks/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/network)
+[![GitHub stars](https://img.shields.io/github/stars/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/stargazers)
+[![GitHub license](https://img.shields.io/github/license/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/blob/master/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/joshuaiz/plate.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjoshuaiz%2Fplate)
+
+
 See https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md for the most recent updates.
 
 https://github.com/joshuaiz/plate/
