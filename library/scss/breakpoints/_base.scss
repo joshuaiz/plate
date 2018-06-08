@@ -339,9 +339,13 @@ POSTS & CONTENT STYLES
 .tag-slug {}
 
 /* post meta */
-.byline {
-    time {}
+.byline-wrap {
+    margin-bottom: 1.5em;
+    .byline {
+        time {}
+    }
 }
+
 
 /* entry content */
 .entry-content {
