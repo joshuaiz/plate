@@ -938,11 +938,11 @@ PAGE NAVI
 
 */
 
-function plate_page_navi( $query_wp ) {
-    $pages = $query_wp->max_num_pages;
+function plate_page_navi( $wp_query ) {
+    $pages = $wp_query->max_num_pages;
     $big = 999999999; // need an unlikely integer
 
-    if ($pages > 1) {
+    if ( $pages > 1 ) {
         $page_current = max(1, get_query_var('paged'));
 
         echo '<nav class="pagination">';

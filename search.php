@@ -34,9 +34,15 @@
 
 					</article>
 
-					<?php get_template_part( 'templates/post-navigation'); ?>
+				<?php endwhile; ?>
 
-				<?php endwhile; endif; ?>
+                    <?php plate_page_navi( $wp_query ); ?>
+
+                <?php else : ?>
+
+                    <?php get_template_part( 'templates/404'); ?>
+
+                <?php endif; ?>
 
 			</main>
 

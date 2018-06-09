@@ -192,6 +192,16 @@ ul, ol {
     display: flex;
 }
 
+.page-numbers {
+    margin: 1em 0;
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    li {
+        margin-right: 1em;
+    }
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/

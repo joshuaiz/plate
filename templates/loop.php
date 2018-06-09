@@ -25,4 +25,12 @@
 
 	</article>
 
-<?php endwhile; endif; ?>
+<?php endwhile; ?>
+
+    <?php plate_page_navi( $wp_query ); ?>
+
+<?php else : ?>
+
+    <?php get_template_part( 'templates/404'); ?>
+
+<?php endif; ?>

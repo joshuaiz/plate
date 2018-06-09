@@ -19,7 +19,7 @@
 						<div class="404-txt">
 
 							<h3><?php _e( 'I\'m sorry Dave, I\'m afraid I can\'t do that.', 'platetheme' ); ?></h3>
-							<p>We couldn't find what you are looking for, please try searching.</p>
+							<p><?php _e( 'We couldn\'t find what you are looking for, please try searching.', 'platetheme' ); ?></p>
 
 						</div>
 

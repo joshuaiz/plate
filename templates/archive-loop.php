@@ -11,7 +11,7 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 		<header class="entry-header article-header">
 
-			<?php get_template_part( 'templates/header', 'title'); ?>
+			<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 		
 			<?php get_template_part( 'templates/byline'); ?>
 
@@ -37,6 +37,13 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 	</article>
 
-<?php endwhile; endif; ?>
+<?php endwhile; ?>
 
-<?php get_template_part( 'templates/post-navigation'); ?>
+    <?php get_template_part( 'templates/post-navigation'); ?>
+
+<?php else : ?>
+
+    <?php get_template_part( 'templates/404'); ?>
+
+<?php endif; ?>
+

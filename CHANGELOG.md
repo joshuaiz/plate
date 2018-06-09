@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.5 2018-06-09
+- added back 'Post(s) not found' stuffs to loops but a bit more elegantly
+- added CSS Grid styles for 1600up
+- fixed page navi broken calls on archive/taxonomy pages
+- regenerated .pot and default .po and .mo translation files (help us translate!)
+- Fixed a nagging 'not enough tennis' issue.
+
 ### 1.2.4 2018-06-07 MOAR Gutenberg stuffs
 - updated Gutenberg theme support
 - added proper Gutenberg enqueue to functions.php

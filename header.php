@@ -36,7 +36,7 @@
         <?php wp_head(); ?>
         <?php // end of wordpress head ?>
 
-        <?php // drop Google Analytics Here ?>
+        <?php // drop Google Analytics here ?>
         <?php // end analytics ?>
 
     </head>

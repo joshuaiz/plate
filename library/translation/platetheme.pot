@@ -1,9 +1,11 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Plate\n"
 "POT-Creation-Date: 2018-06-09 13:38-0500\n"
-"PO-Revision-Date: 2018-06-09 13:41-0500\n"
+"PO-Revision-Date: 2018-06-09 13:38-0500\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,146 +15,144 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
-"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
-"esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: en_US\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:21
 msgid "I'm sorry Dave, I'm afraid I can't do that."
-msgstr "I'm sorry Dave, I'm afraid I can't do that."
+msgstr ""
 
 #: 404.php:22
 msgid "We couldn't find what you are looking for, please try searching."
-msgstr "We couldn't find what you are looking for, please try searching."
+msgstr ""
 
 #: comments.php:17 templates/comment-count.php:2
 msgid "<span>No</span> Comments"
-msgstr "<span>No</span> Comments"
+msgstr ""
 
 #: comments.php:17 templates/comment-count.php:2
 msgid "<span>One</span> Comment"
-msgstr "<span>One</span> Comment"
+msgstr ""
 
 #: comments.php:17 templates/comment-count.php:2
 msgid "<span>%</span> Comments"
-msgstr "<span>%</span> Comments"
+msgstr ""
 
 #: comments.php:27
 msgid "Reply"
-msgstr "Reply"
+msgstr ""
 
 #: comments.php:43
 msgid "&larr; Previous Comments"
-msgstr "&larr; Previous Comments"
+msgstr ""
 
 #: comments.php:44
 msgid "More Comments &rarr;"
-msgstr "More Comments &rarr;"
+msgstr ""
 
 #: comments.php:52
 msgid "Comments are closed."
-msgstr "Comments are closed."
+msgstr ""
 
 #: functions.php:113
 msgid "600px by 600px"
-msgstr "600px by 600px"
+msgstr ""
 
 #: functions.php:114
 msgid "300px by 300px"
-msgstr "300px by 300px"
+msgstr ""
 
 #: functions.php:115
 msgid "150px by 150px"
-msgstr "150px by 150px"
+msgstr ""
 
 #: functions.php:137
 msgid "Sidebar 1"
-msgstr "Sidebar 1"
+msgstr ""
 
 #: functions.php:138
 msgid "The first (primary) sidebar."
-msgstr "The first (primary) sidebar."
+msgstr ""
 
 #: functions.php:227
 #, php-format
 msgid "<cite class=\"fn\">%1$s</cite> %2$s"
-msgstr "<cite class=\"fn\">%1$s</cite> %2$s"
+msgstr ""
 
 #: functions.php:227
 msgid "(Edit)"
-msgstr "(Edit)"
+msgstr ""
 
 #: functions.php:231
 msgid "F jS, Y"
-msgstr "F jS, Y"
+msgstr ""
 
 #: functions.php:241
 msgid "Your comment is awaiting moderation."
-msgstr "Your comment is awaiting moderation."
+msgstr ""
 
 #: functions.php:541
 msgid "Read "
-msgstr "Read "
+msgstr ""
 
 #: functions.php:541
 msgid "Read more &raquo;"
-msgstr "Read more &raquo;"
+msgstr ""
 
 #: functions.php:601 header.php:79
 msgid "The Main Menu"
-msgstr "The Main Menu"
+msgstr ""
 
 #: functions.php:743
 msgid "Site Name and Description"
-msgstr "Site Name and Description"
+msgstr ""
 
 #: functions.php:744
 msgid "Site Name"
-msgstr "Site Name"
+msgstr ""
 
 #: functions.php:745
 msgid "Site Description"
-msgstr "Site Description"
+msgstr ""
 
 #: functions.php:750
 msgid "Homepage Preferences"
-msgstr "Homepage Preferences"
+msgstr ""
 
 #: functions.php:752
 msgid "Choose Homepage Preference:"
-msgstr "Choose Homepage Preference:"
+msgstr ""
 
 #: functions.php:753
 msgid "Select Homepage:"
-msgstr "Select Homepage:"
+msgstr ""
 
 #: functions.php:754
 msgid "Select Blog Homepage:"
-msgstr "Select Blog Homepage:"
+msgstr ""
 
 #: functions.php:757
 msgid "Background Styles"
-msgstr "Background Styles"
+msgstr ""
 
 #: functions.php:763
 msgid "Header Text Styles"
-msgstr "Header Text Styles"
+msgstr ""
 
 #. translators: %s: post author
 #: functions.php:1090 page-custom-loop.php:43 templates/byline.php:7
 #, php-format
 msgid "by %s"
-msgstr "by %s"
+msgstr ""
 
 #. translators: %s: post date
 #: functions.php:1125
 #, php-format
 msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
-msgstr "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr ""
 
 #: library/admin.php:96
 msgid ""
@@ -160,215 +160,212 @@ msgid ""
 "target=\"_blank\">studio.bio</a></span>. Built using <a href=\"https://"
 "studio.bio/template\" target=\"_blank\">Plate</a>."
 msgstr ""
-"<span id=\"footer-thankyou\">Developed by <a href=\"https://studio.bio\" "
-"target=\"_blank\">studio.bio</a></span>. Built using <a href=\"https://"
-"studio.bio/template\" target=\"_blank\">Plate</a>."
 
 #: library/plugins/custom-post-type.php:48
 msgctxt "Post Type General Name"
 msgid "Staff"
-msgstr "Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:49
 msgctxt "Post Type Singular Name"
 msgid "Staff"
-msgstr "Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:50
 #: library/plugins/custom-post-type.php:51
 #: library/plugins/custom-post-type.php:81
 msgid "Staff"
-msgstr "Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:52
 msgid "Staff Archives"
-msgstr "Staff Archives"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:53
 msgid "Parent Staff:"
-msgstr "Parent Staff:"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:54
 msgid "All Staff"
-msgstr "All Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:55
 #: library/plugins/custom-post-type.php:56
 msgid "Add New Staff"
-msgstr "Add New Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:57
 msgid "New Staff"
-msgstr "New Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:58
 msgid "Edit Staff"
-msgstr "Edit Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:59
 msgid "Update Staff"
-msgstr "Update Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:60
 msgid "View Staff"
-msgstr "View Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:61
 msgid "Search Staff"
-msgstr "Search Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:62
 msgid "Not found"
-msgstr "Not found"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:63
 msgid "Not found in Trash"
-msgstr "Not found in Trash"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:64
 msgid "Featured Image"
-msgstr "Featured Image"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:65
 msgid "Set featured image"
-msgstr "Set featured image"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:66
 msgid "Remove featured image"
-msgstr "Remove featured image"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:67
 msgid "Use as featured image"
-msgstr "Use as featured image"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:68
 msgid "Insert into staff"
-msgstr "Insert into staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:69
 msgid "Uploaded to this staff"
-msgstr "Uploaded to this staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:70
 msgid "Staff list"
-msgstr "Staff list"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:71
 msgid "Staff list navigation"
-msgstr "Staff list navigation"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:72
 msgid "Filter staff list"
-msgstr "Filter staff list"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:82
 msgid "Plate Staff"
-msgstr "Plate Staff"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:115
 msgctxt "Taxonomy General Name"
 msgid "Groupings"
-msgstr "Groupings"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:116
 msgctxt "Taxonomy Singular Name"
 msgid "Grouping"
-msgstr "Grouping"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:117
 msgid "Groupings"
-msgstr "Groupings"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:118
 msgid "All Groupings"
-msgstr "All Groupings"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:119
 msgid "Parent Grouping"
-msgstr "Parent Grouping"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:120
 msgid "Parent Grouping:"
-msgstr "Parent Grouping:"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:121
 msgid "New Grouping Name"
-msgstr "New Grouping Name"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:122
 msgid "Add New Grouping"
-msgstr "Add New Grouping"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:123
 msgid "Edit Grouping"
-msgstr "Edit Grouping"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:124
 msgid "Update Grouping"
-msgstr "Update Grouping"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:125
 msgid "View Grouping"
-msgstr "View Grouping"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:126
 msgid "Separate groupings with commas"
-msgstr "Separate groupings with commas"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:127
 msgid "Add or remove groupings"
-msgstr "Add or remove groupings"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:128
 msgid "Choose from the most used"
-msgstr "Choose from the most used"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:129
 msgid "Popular Items"
-msgstr "Popular Items"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:130
 msgid "Search Groupings"
-msgstr "Search Groupings"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:131
 msgid "Not Found"
-msgstr "Not Found"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:132
 msgid "No items"
-msgstr "No items"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:133
 msgid "Groupings list"
-msgstr "Groupings list"
+msgstr ""
 
 #: library/plugins/custom-post-type.php:134
 msgid "Groupings list navigation"
-msgstr "Groupings list navigation"
+msgstr ""
 
 #: search.php:9
 msgid "Search Results for:"
-msgstr "Search Results for:"
+msgstr ""
 
 #: searchform.php:13 searchform.php:18
 msgctxt "label"
 msgid "Search for:"
-msgstr "Search for:"
+msgstr ""
 
 #: searchform.php:16
 msgctxt "placeholder"
 msgid "Search …"
-msgstr "Search …"
+msgstr ""
 
 #: searchform.php:22
 msgctxt "submit button"
 msgid "Search"
-msgstr "Search"
+msgstr ""
 
 #: sidebar.php:20
 msgid "Add some widgets and they will appear here."
-msgstr "Add some widgets and they will appear here."
+msgstr ""
 
 #: templates/404.php:7
 msgid "Sorry, no post found."
@@ -378,72 +375,70 @@ msgstr[1] ""
 
 #: templates/404.php:10
 msgid "Your query didn't return anything. Try checking things."
-msgstr "Your query didn't return anything. Try checking things."
+msgstr ""
 
 #: templates/404.php:13
 msgid "This is the error message in the templates/404.php template."
-msgstr "This is the error message in the templates/404.php template."
+msgstr ""
 
 #: templates/category-tags.php:1
 msgid "Filed under:"
-msgstr "Filed under:"
+msgstr ""
 
 #: templates/category-tags.php:3
 msgid "Tags:"
-msgstr "Tags:"
+msgstr ""
 
 #: templates/header-title.php:5
 msgid "Posts Categorized:"
-msgstr "Posts Categorized:"
+msgstr ""
 
 #: templates/header-title.php:26
 msgid "404"
-msgstr "404"
+msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Plate"
-msgstr "Plate"
+msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://studio.bio/themes/plate"
-msgstr "https://studio.bio/themes/plate"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
 "Plate is a super-minimal, stripped-down HTML5, responsive, retina-ready "
 "starter WordPress theme for developers."
 msgstr ""
-"Plate is a super-minimal, stripped-down HTML5, responsive, retina-ready "
-"starter WordPress theme for developers."
 
 #. Author of the plugin/theme
 msgid "Joshua Michaels & Jon Iler for studio.bio"
-msgstr "Joshua Michaels & Jon Iler for studio.bio"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://studio.bio/"
-msgstr "https://studio.bio/"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "HTML Elements Page"
-msgstr "HTML Elements Page"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Custom Page Example"
-msgstr "Custom Page Example"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full Width Page"
-msgstr "Full Width Page"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Sidebar Page"
-msgstr "Sidebar Page"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Home Page"
-msgstr "Home Page"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Custom Page With Full Loop"
-msgstr "Custom Page With Full Loop"
+msgstr ""

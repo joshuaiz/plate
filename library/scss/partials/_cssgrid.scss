@@ -193,6 +193,26 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
         
     } // end of media query
 
+    @media only screen and (min-width: 1600px)   {
+
+        .grid-aside {
+            // adjust the grid areas for higher viewports, keeping the content at manageable widths
+            #content {
+                grid-column: 3/8;
+            }
+            aside {
+                grid-column: 8/11;
+            }
+        }
+
+        .grid-full {
+            #content {
+                grid-column: 3/11;
+            }
+        }
+        
+    } // end of media query
+
     
 
 }

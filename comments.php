@@ -5,7 +5,7 @@ The comments page for Plate
 
 // don't load it if you can't comment
 if ( post_password_required() ) {
-  return;
+    return;
 }
 
 ?>

@@ -32,4 +32,10 @@
 
 	</article> <?php // end article ?>
 
-<?php endwhile; endif; ?>
+<?php endwhile; ?>
+
+<?php else : ?>
+
+    <?php get_template_part( 'templates/404'); ?>
+
+<?php endif; ?>
