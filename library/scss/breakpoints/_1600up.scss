@@ -12,7 +12,7 @@ You can add some advanced styles here for extra large monitors.
 //     width: 1570px; // uncomment if you want to restrict the content width
 // }
 
-// #inner-header, #inner-footer {
-//     max-width: 1600px; // adjust to your content width or remove for full-width
-//     margin: 0 auto;
-// }
+#inner-header, #inner-footer {
+    max-width: 1272px; // adjust to your content width or remove for full-width
+    margin: 0 auto;
+}

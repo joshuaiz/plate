@@ -1,3 +1,22 @@
+<?php
+/**
+ * 
+ * Template Part: The Loop
+ * Description: Loop code for Pages and Posts.
+ * 
+ * @example <?php get_template_part( 'templates/loop'); ?>
+ * 
+ * @author  Joshua Michaels for studio.bio <info@studio.bio>
+ * @since   1.0.0
+ * @version 1.3
+ * @license WTFPL
+ * 
+ * @see     https://konstantin.blog/2013/get_template_part/
+ *          http://buildwpyourself.com/get-template-part/
+ * 
+ */
+?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -21,7 +40,15 @@
 
 		</footer>
 
-		<?php comments_template(); ?>
+        <?php if( post_type_supports( get_post_type(), 'comments' ) ) {
+
+            if( comments_open() ) {
+
+                comments_template();
+                
+            }
+
+        } ?>
 
 	</article>
 

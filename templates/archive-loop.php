@@ -1,8 +1,25 @@
 <?php
+/**
+ * 
+ * Template Part: Archive Loop
+ * Description: Loop code for the archive.php template.
+ * 
+ * @example <?php get_template_part( 'templates/archive', 'loop'); ?>
+ * 
+ * @author  Joshua Michaels for studio.bio <info@studio.bio>
+ * @since   1.0.0
+ * @version 1.3
+ * @license WTFPL
+ * 
+ * @see     https://konstantin.blog/2013/get_template_part/
+ *          http://buildwpyourself.com/get-template-part/
+ * 
+ */
+?>
 
-the_archive_title( '<h1 class="page-title">', '</h1>' );
+<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 
-// Not all themes show these but you can if you want to
+<?php // Not all themes show these but you can if you want to
 the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 							
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -35,7 +52,7 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 		</footer>
 
-	</article>
+	</article> <?php // end article ?>
 
 <?php endwhile; ?>
 
@@ -46,4 +63,3 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
     <?php get_template_part( 'templates/404'); ?>
 
 <?php endif; ?>
-

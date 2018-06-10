@@ -1,3 +1,19 @@
+<?php
+/**
+ * 
+ * Template Part: 404 Post(s) not found
+ * Description: Code for post(s) not found in WordPress loop.
+ * 
+ * @example <?php get_template_part( 'templates/404'); ?>
+ * 
+ * @author  Joshua Michaels for studio.bio <info@studio.bio>
+ * @since   1.0.0
+ * @version 1.1
+ * @license WTFPL
+ * 
+ */
+?>
+
 <?php // get post count so we can use everywhere.
 $count = $GLOBALS['wp_query']->post_count;
 ?>

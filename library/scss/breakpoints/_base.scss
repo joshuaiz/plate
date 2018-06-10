@@ -573,7 +573,13 @@ COMMENT STYLES
 }
 
 .comment {
-    .comment-author {}
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted #ccc;
+    .comment-author {
+        display: flex;
+        align-items: center;
+    }
 
     /* vcard */
     .vcard {
@@ -589,7 +595,9 @@ COMMENT STYLES
 
         .photo {}
 
-        .avatar {}
+        .avatar {
+            margin-right: 1rem;
+        }
     } /* end .commentlist .vcard */
 
     &:last-child {}
@@ -647,7 +655,7 @@ COMMENT STYLES
 }
 
 /* comment content */
-.comment_content {
+.comment-content {
     p {}
 } /* end .commentlist .comment_content */
 
@@ -658,7 +666,9 @@ COMMENT STYLES
 } /* end .commentlist .comment-reply-link */
 
 /* edit comment link */
-.comment-edit-link {}
+.comment-edit-link {
+    margin-right: 6px;
+}
 
 /**********************
 COMMENT FORM STYLES

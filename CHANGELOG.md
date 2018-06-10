@@ -6,12 +6,20 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.6 2018-06-10
+- added docblock comments to template parts
+- updated comments function
+- updated comment styles
+- updated comment gravatar calls to retina
+- fixed header and footer widths with grid
+- resolved empty tummy issue
+
 ### 1.2.5 2018-06-09
 - added back 'Post(s) not found' stuffs to loops but a bit more elegantly
 - added CSS Grid styles for 1600up
 - fixed page navi broken calls on archive/taxonomy pages
 - regenerated .pot and default .po and .mo translation files (help us translate!)
-- Fixed a nagging 'not enough tennis' issue.
+- Fixed a nagging 'not enough tennis' issue
 
 ### 1.2.4 2018-06-07 MOAR Gutenberg stuffs
 - updated Gutenberg theme support
