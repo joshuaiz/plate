@@ -185,7 +185,7 @@ add_filter( 'avatar_defaults', 'new_default_avatar' );
 function new_default_avatar ( $avatar_defaults ) {
 
     //Set the URL where the image file for your avatar is located
-    $new_avatar_url = get_stylesheet_directory_uri() . '/library/images/custom-gravatar.jpg';
+    $new_avatar_url = get_stylesheet_directory_uri() . '/library/images/custom-gravatar.png';
 
     // var_dump($new_avatar_url);
 
@@ -262,8 +262,7 @@ function plate_comments( $comment, $args, $depth ) {
 
     <?php // </li> is added by WordPress automatically ?>
 
-<?php
-} // don't remove this bracket!
+<?php } // don't remove this bracket!
 
 
 /*
@@ -435,16 +434,42 @@ function plate_scripts_and_styles() {
 }
 
 
+/*********************
+GUTENBERG ENQUEUES
+
+These are kept out of the main enqueue
+function in case you don't need them.
+*********************/
+
 /**
+ * 
+ * Gutenberg Editor Styles
+ * 
  * Enqueue block editor style for Gutenberg
- * Alternatively you can uncomment the gutenberg 
- * import in style.scss. 
+ * This applies to the admin editor *only*,
+ * (e.g. not on the front end);
+ * 
  */
-function plate_block_editor_styles() {
-    wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
-}
 
 add_action( 'enqueue_block_editor_assets', 'plate_block_editor_styles' );
+
+function plate_block_editor_styles() {
+    wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
+
+}
+
+/**
+ * Gutenberg Front End Styles
+ * 
+ * Enqueue front end styles for Gutenberg.
+ * 
+ */
+add_action( 'enqueue_block_assets', 'plate_gutenberg_styles' );
+
+function plate_gutenberg_styles() {
+    wp_enqueue_style( 'plate-gutenbers-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
+
+}
 
 /****************************************
 * REMOVE WP EXTRAS & DEQUEUEING STUFFS *
