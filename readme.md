@@ -1,6 +1,7 @@
 # Plate by studio.bio
 
 [![Github Releases](https://img.shields.io/github/release/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/releases/tag/v1.2.5)
+[![Github Last Commit](https://img.shields.io/github/last-commit/joshuaiz/plate.svg)]()
 [![GitHub issues](https://img.shields.io/github/issues/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/issues)
 [![GitHub forks](https://img.shields.io/github/forks/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/network)
 [![GitHub stars](https://img.shields.io/github/stars/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/stargazers)
