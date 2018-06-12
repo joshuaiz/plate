@@ -1,6 +1,6 @@
 # Plate by studio.bio
 
-[![Github All Releases](https://img.shields.io/github/downloads/joshuaiz/plate/total.svg)]()
+[![Github Releases](https://img.shields.io/github/release/joshuaiz/plate/rubidium.svg)]()
 [![GitHub issues](https://img.shields.io/github/issues/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/issues)
 [![GitHub forks](https://img.shields.io/github/forks/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/network)
 [![GitHub stars](https://img.shields.io/github/stars/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/stargazers)
