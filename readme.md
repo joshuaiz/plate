@@ -41,13 +41,13 @@ Plate evolved out of the amazing [Bones](https://themble.com/bones/) starter the
 
 By fully ingesting Eddie's insightful words while working with Bones, we learned how WordPress themes *really* work and it made us much better developers. Nevertheless, we found we were performing the same changes to Bones at the start of every project so we forked it into our own theme which has evolved into what is now **Plate**.
 
-In the spirit of Bones, we've kept in some of Eddie's original comments and, where warranted, added our own throughout the theme to help developers of all levels. We see Plate as not only a great starter theme for advanced developers but a learning tool as well.
+In the spirit of Bones, we've kept in some of Eddie's original comments and, where warranted, added our own throughout the theme to help developers of all levels. We see Plate as not only a great starter theme for advanced developers but a learning tool for those just starting with WordPress themes as well.
 
 ![](https://studio.bio/images/plate_functions.png)
 
-We now use Plate for every single WordPress project so it is important to keep it up-to-date with the latest WordPress developments. Two years on from Bones, Plate includes more page templates, an updated default font stack, a custom post type plugin template, and some handy custom functions that we use all of the time.
+We now use Plate for every single WordPress project so it is important to keep it up-to-date with the latest WordPress releases. Thus we have added support for Gutenberg, Flexbox, CSS Grid, schema, WooCommerce and more. Two years on from Bones, Plate includes more page templates, an updated default font stack, a custom post type plugin template, and some handy custom functions that we use all of the time. 
 
-We've also included some extras and goodies that developers may find useful but kept those out of the main files.
+We've also included some extras and goodies that developers may find useful but kept those out of the main files like debuggers and scripts...copy those into the main files or delete them if you don't need them.
 
 Edit this, fork it, change it, delete it - whatever. As Eddie might say: _It's your world. But I hope you make something cool with it._
 
