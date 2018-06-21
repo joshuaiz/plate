@@ -63,10 +63,10 @@ We are working on two different projects that complement Plate: 1) our own compa
 
 ### ❔ FAQ
 **Should I update Plate with existing projects?**<br />
-In short, no. Each version of Plate should be viewed as a moment in time. Future updates may work differently or break your theme. Once you've included a particular version in your project, stick with that version or use a newer version as a separate theme. This is how Bones was and we decided to keep this roadmap so that Plate can evolve over time without worrying about backwards compatibility.
+In short, no. Each version of Plate should be viewed as a moment in time. Future updates may work differently or break your theme. Once you've included a particular version in your project, stick with that version or use a newer version as a separate theme. This is how Bones worked and we decided to keep this strategy when updating so that Plate can evolve over time without worrying about backwards compatibility. You can always download a previous version of Plate from the [Releases page](https://github.com/joshuaiz/plate/releases).
 
 **What are the colored blocks in the screenshot?**<br />
-The colored block colors are added in the `_cssgrid.scss` stylesheet. They are there to help while setting up CSS Grid so you can see the content areas easier. We've found them extremely helpful so we kept them in. You can comment out the styles, change the colors or remove the `.grid` class completely (and not use CSS Grid). Whatever floats your boat.
+The colored block colors are added in the `_cssgrid.scss` stylesheet. They are there to help while setting up CSS Grid so you can see the content areas easier as you are defining your grid(s). We've found them extremely helpful so we kept them in. You don't need to use the default Plate grid (and you probably should set up your own) but we are trying to push more people to use CSS Grid and the colors show how easy it is to set up. They are optional and purely for development so feel free to comment out the styles, change the colors or remove the `.grid` class completely (and not use CSS Grid). Whatever floats your boat.
 
 ### ⚡️ Other stuffs
 Designed by Joshua Michaels for studio.bio: https://studio.bio/
