@@ -16,6 +16,13 @@ See the [CHANGELOG](https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md) 
 _Plate Home page with sidebar showing CSS Grid layout blocks.
 It's almost as if it is not even there._
 
+#### How to use Plate?
+Download or clone into your `/wp-content/themes/` folder and activate the theme in the WordPress admin in `Appearance > Themes`. 
+
+**Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary.
+
+From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
+
 #### 🎉 As of June 21, 2018, Plate is 1 year old! 
 
 We want to say thank you to all those who have starred, forked and contributed to Plate over the past year. You have truly helped to make Plate better and better.
@@ -74,5 +81,5 @@ Eddie Machado — all credit is due to him and the original Bones collaborators:
 
 
 #### 🐞 Submit Bugs & or Fixes:
-https://github.com/joshuaiz/plate/issues
+https://github.com/joshuaiz/plate/issues<br />
 Thanks to @HardeepAsrani, @EnzoMartin and @thetwopct for enhancements and bug catches.
