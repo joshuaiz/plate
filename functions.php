@@ -1011,7 +1011,8 @@ function plate_body_class( $classes ) {
 
     if ( isset( $post ) ) {
 
-        /* $classes[] = $post->post_type . '-' . $post->post_name; *//*Un comment this if you want the post_type-post_name body class */
+        /* $classes[] = $post->post_type . '-' . $post->post_name; */
+        /*Un comment this if you want the post_type-post_name body class */
         $pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
         $classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
         $classes[] = $post->post_name;
