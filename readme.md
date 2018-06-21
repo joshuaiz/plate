@@ -69,7 +69,7 @@ In short, no. Each version of Plate should be viewed as a moment in time. Future
 The colored block colors are added in the `_cssgrid.scss` stylesheet. They are there to help while setting up CSS Grid so you can see the content areas easier. We've found them extremely helpful so we kept them in. You can comment out the styles, change the colors or remove the `.grid` class completely (and not use CSS Grid). Whatever floats your boat.
 
 ### ⚡️ Other stuffs
-Designed by Joshua Michaels for studio.bio: http://studio.bio/
+Designed by Joshua Michaels for studio.bio: https://studio.bio/
 
 With help from Jon Iler.
 
