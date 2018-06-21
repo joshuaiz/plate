@@ -1,12 +1,12 @@
 # Plate by studio.bio
 
-[![Github Releases](https://img.shields.io/github/release/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/releases/tag/v1.2.5)
-[![Github Last Commit](https://img.shields.io/github/last-commit/joshuaiz/plate.svg)]()
-[![GitHub issues](https://img.shields.io/github/issues/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/issues)
-[![GitHub forks](https://img.shields.io/github/forks/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/network)
-[![GitHub stars](https://img.shields.io/github/stars/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/stargazers)
-[![GitHub license](https://img.shields.io/github/license/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/joshuaiz/plate.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjoshuaiz%2Fplate)
+[![Github Releases](://img.shields.io/github/release/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/releases/tag/v1.2.5)
+[![Github Last Commit](://img.shields.io/github/last-commit/joshuaiz/plate.svg)]()
+[![GitHub issues](://img.shields.io/github/issues/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/issues)
+[![GitHub forks](://img.shields.io/github/forks/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/network)
+[![GitHub stars](://img.shields.io/github/stars/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/stargazers)
+[![GitHub license](://img.shields.io/github/license/joshuaiz/plate.svg)](https://github.com/joshuaiz/plate/blob/master/LICENSE)
+[![Twitter](://img.shields.io/twitter/url/https/github.com/joshuaiz/plate.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fjoshuaiz%2Fplate)
 
 See the [CHANGELOG](https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md) for the most recent updates.
 
@@ -67,7 +67,7 @@ In short, no. Each version of Plate should be viewed as a moment in time. Future
 The colored block colors are added in the `_cssgrid.scss` stylesheet. They are there to help while setting up CSS Grid so you can see the content areas easier. We've found them extremely helpful so we kept them in. You can comment out the styles, change the colors or remove the `.grid` class completely (and not use CSS Grid). Whatever floats your boat.
 
 ### ⚡️ Other stuffs
-Designed by Joshua Michaels for studio.bio: http://studio.bio/themes/template
+Designed by Joshua Michaels for studio.bio: http://studio.bio/
 
 With help from Jon Iler.
 
