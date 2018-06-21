@@ -19,7 +19,7 @@ It's almost as if it is not even there._
 #### How to use Plate?
 Download or clone into your `/wp-content/themes/` folder and activate the theme in the WordPress admin in `Appearance > Themes`. 
 
-**Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary.
+**Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary. We love CodeKit `<>`.
 
 From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
 
@@ -36,7 +36,9 @@ We want to say thank you to all those who have starred, forked and contributed t
 
 See the changelog for the most recent updates: https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md
 
-### Why Plate?
+### ⭐️ Why Plate?
+We chose the name **Plate** because it is literally a blank platform upon which you can build your own custom WordPress theme(s). There's no bloat or unnecessary fluff that comes with many pre-built themes so you can add in what you need and remove what you don't. Yet, it comes with some smart defaults that facilitate getting your project up and running quickly: CSS Reset, modular scss, typography, a user agent detection script, page slug body classes, built in page-navi, template parts and custom page/archive/taxonomy templates. 
+
 Plate evolved out of the amazing [Bones](https://themble.com/bones/) starter theme by Eddie Machado. We first started with Bones in 2011 after looking at every starter theme out there and subsequently used it on hundreds of projects. What made Bones unique was Eddie's exquisite comments throughout the theme. The Bones GitHub page is now gone (I has a sad) but I've uploaded an older version of Bones here if you want to check it out: [Bones theme](https://studio.bio/docs/bones-theme.zip).
 
 By fully ingesting Eddie's insightful words while working with Bones, we learned how WordPress themes *really* work and it made us much better developers. Nevertheless, we found we were performing the same changes to Bones at the start of every project so we forked it into our own theme which has evolved into what is now **Plate**.
