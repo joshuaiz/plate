@@ -730,6 +730,24 @@ function plate_theme_support() {
 
 } /* end plate theme support */
 
+/** 
+ * $content_width.
+ * 
+ * We need this to pass the theme check. Massive eye roll.
+ * IT DOESN'T MAKE SENSE WITH RESPONSIVE LAYOUTS.
+ * I'm looking at you, WordPress Trac peoples.
+ * 
+ * Probably best to not touch this unless you really want to
+ * assign a maximum content width.
+ * 
+ * https://codex.wordpress.org/Content_Width
+ * 
+ */
+
+if ( ! isset( $content_width ) ) {
+	$content_width = '100%';
+}
+
 
 /* 
 * WooCommerce Support

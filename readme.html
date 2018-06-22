@@ -86,6 +86,9 @@ In short, no. Each version of Plate should be viewed as a moment in time. Future
 <p><strong>What are the colored blocks in the screenshot?</strong><br />
 The colored block colors are added in the <code>_cssgrid.scss</code> stylesheet. They are there to help while setting up CSS Grid so you can see the content areas easier as you are defining your grid(s). We&#8217;ve found them extremely helpful so we kept them in. You don&#8217;t need to use the default Plate grid (and you probably should set up your own) but we are trying to push more people to use CSS Grid and the colors show how easy it is to set up. They are optional and purely for development so feel free to comment out the styles, change the colors or remove the <code>.grid</code> class completely (and not use CSS Grid). Whatever floats your boat.</p>
 
+<p><strong>I tested Plate with Theme Check and there are errors. What should I do?</strong><br />
+<a href="https://wordpress.org/plugins/theme-check/">Theme Check</a> is ideal if you are trying to get your theme validated for release on WordPress.org. That said, we use Theme Check and test before every GitHub release to see if we have any egregious errors in Plate. Mind you, Plate was created for our studio and not (necessarily) for general release. With that in mind, there are some things that will fail the check like not having <code>&lt;php wp_link_pages(); ?&gt;</code> which we don&#8217;t ever use as well as having a CPT plugin template included. We&#8217;re ok with those errors and as long as they don&#8217;t bother you,</p>
+
 <h3 id="⚡️otherstuffs">⚡️ Other stuffs</h3>
 
 <p>Designed by Joshua Michaels for studio.bio: https://studio.bio/</p>
