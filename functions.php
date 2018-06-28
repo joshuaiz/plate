@@ -285,7 +285,7 @@ http://www.longren.io/add-schema-org-markup-to-any-wordpress-theme/
 
 function html_schema() {
 
-    $schema = 'http://schema.org/';
+    $schema = 'https://schema.org/';
  
     // Is single post
     if( is_single()) {

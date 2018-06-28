@@ -41,17 +41,17 @@
 
     </head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
         <?php // remove grid classes below if you aren't using CSS Grid (but you should) ?>
 		<div id="container" class="grid grid-aside">
 
-			<header class="header" id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<header class="header" id="header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
 
                 <div id="inner-header" class="wrap">
 
                     <?php // updated with proper markup and wrapping div for organization ?>
-                    <div id="bloginfo" itemscope itemtype="http://schema.org/Organization">
+                    <div id="bloginfo" itemscope itemtype="https://schema.org/Organization">
 
                         <?php // You can use text or a logo (or both) in your header. Uncomment below to use a logo ?>
                         <div id="logo" itemprop="logo">
@@ -68,7 +68,7 @@
 
                     </div>
 
-                    <nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <nav class="header-nav" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
 
                     <?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 
