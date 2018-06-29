@@ -21,6 +21,8 @@ Download or clone into your `/wp-content/themes/` folder and activate the theme 
 
 **Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary. We love CodeKit `<>`.
 
+We also have Grunt support built-in if that's your thang.
+
 From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
 
 #### 🎉 As of June 21, 2018, Plate is 1 year old! 
