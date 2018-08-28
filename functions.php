@@ -86,7 +86,7 @@ function plate_lunch() {
 // Thumbnail sizes
 add_image_size( 'plate-image-600', 600, 600, true );
 add_image_size( 'plate-image-300', 300, 300, true );
-add_image_size( 'plate-image-300', 150, 150, true );
+add_image_size( 'plate-image-150', 150, 150, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -292,7 +292,7 @@ function html_schema() {
     $schema = 'https://schema.org/';
  
     // Is single post
-    if( is_single()) {
+    if( is_single() ) {
         $type = "Article";
     }
 
@@ -302,12 +302,12 @@ function html_schema() {
     }
 
     // Is static front page
-    else if( is_front_page()) {
+    else if( is_front_page() ) {
         $type = "Website";
     }
 
     // Is a general page
-     else {
+    else {
         $type = 'WebPage';
     }
  
@@ -338,13 +338,13 @@ function plate_head_cleanup() {
     remove_action( 'wp_head', 'wlwmanifest_link' );
 
     // previous link
-    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+    remove_action( 'wp_head', 'parent_post_rel_link' );
 
     // start link
-    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+    remove_action( 'wp_head', 'start_post_rel_link' );
 
     // links for adjacent posts
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );
 
     // WP version
     remove_action( 'wp_head', 'wp_generator' );
@@ -641,8 +641,8 @@ function plate_theme_support() {
     // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
     register_nav_menus( array(
 
-          'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
-          // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
+        'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
+        // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
 
         )
     );
@@ -917,11 +917,11 @@ RELATED POSTS FUNCTION
  *   Set the widget title.
  */
 
-function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Related Posts') {
+function plate_related_posts( $display = 'category', $qty = 5, $images = true, $title = 'Related Posts' ) {
     global $post;
     $show = false;
     $post_qty = (int) $qty;
-    switch ($display) :
+    switch ( $display ) :
         case 'tag':
             $tags = wp_get_post_tags($post->ID);
             if ($tags) {
