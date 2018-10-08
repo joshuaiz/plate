@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.7 2018-10-08
+- updated page-custom.php and page-custom-loop.php comments
+- updated instructions in base.scss
+- minor formatting fixes in some functions in functions.php
+- fixed issue where I hadn't had a vacation all year
+
 ### 1.2.6 2018-06-10
 - added docblock comments to template parts
 - updated comments function

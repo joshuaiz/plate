@@ -86,7 +86,7 @@ function plate_lunch() {
 // Thumbnail sizes
 add_image_size( 'plate-image-600', 600, 600, true );
 add_image_size( 'plate-image-300', 300, 300, true );
-add_image_size( 'plate-image-300', 150, 150, true );
+add_image_size( 'plate-image-150', 150, 150, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -292,7 +292,7 @@ function html_schema() {
     $schema = 'https://schema.org/';
  
     // Is single post
-    if( is_single()) {
+    if( is_single() ) {
         $type = "Article";
     }
 
@@ -302,7 +302,7 @@ function html_schema() {
     }
 
     // Is static front page
-    else if( is_front_page()) {
+    else if( is_front_page() ) {
         $type = "Website";
     }
 
@@ -338,13 +338,13 @@ function plate_head_cleanup() {
     remove_action( 'wp_head', 'wlwmanifest_link' );
 
     // previous link
-    remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+    remove_action( 'wp_head', 'parent_post_rel_link' );
 
     // start link
-    remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+    remove_action( 'wp_head', 'start_post_rel_link' );
 
     // links for adjacent posts
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );
 
     // WP version
     remove_action( 'wp_head', 'wp_generator' );
@@ -641,8 +641,8 @@ function plate_theme_support() {
     // To add another menu, uncomment the second line and change it to whatever you want. You can have even more menus.
     register_nav_menus( array(
 
-          'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
-          // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
+        'main-nav' => __( 'The Main Menu', 'platetheme' ),   // main nav in header
+        // 'footer-links' => __( 'Footer Links', 'platetheme' ) // secondary nav in footer. Uncomment to use or edit.
 
         )
     );
@@ -917,53 +917,53 @@ RELATED POSTS FUNCTION
  *   Set the widget title.
  */
 
-function plate_related_posts($display = 'category', $qty = 5, $images = true, $title = 'Related Posts') {
+function plate_related_posts( $display = 'category', $qty = 5, $images = true, $title = 'Related Posts' ) {
     global $post;
     $show = false;
     $post_qty = (int) $qty;
-    switch ($display) :
+    switch ( $display ) :
         case 'tag':
-            $tags = wp_get_post_tags($post->ID);
-            if ($tags) {
+            $tags = wp_get_post_tags( $post->ID) ;
+            if ( $tags ) {
                 $show = true;
                 $tag_ids = array();
-                foreach ($tags as $individual_tag) {
+                foreach ( $tags as $individual_tag ) {
                     $tag_ids[] = $individual_tag->term_id;
                 }
                 $args = array(
                     'tag__in' => $tag_ids,
-                    'post__not_in' => array($post->ID),
+                    'post__not_in' => array( $post->ID ),
                     'posts_per_page' => $post_qty,
                     'ignore_sticky_posts' => 1
                 );
             }
             break;
         default :
-            $categories = get_the_category($post->ID);
-            if ($categories) {
+            $categories = get_the_category( $post->ID );
+            if ( $categories ) {
                 $show = true;
                 $category_ids = array();
-                foreach ($categories as $individual_category) {
+                foreach ( $categories as $individual_category ) {
                     $category_ids[] = $individual_category->term_id;
                 }
                 $args = array(
                     'category__in' => $category_ids,
-                    'post__not_in' => array($post->ID),
+                    'post__not_in' => array( $post->ID ),
                     'showposts' => $post_qty,
                     'ignore_sticky_posts' => 1
                 );
             }
     endswitch;
-    if ($show == true) {
-        $related = new wp_query($args);
-        if ($related->have_posts()) {
+    if ( $show == true ) {
+        $related = new wp_query( $args );
+        if ( $related->have_posts() ) {
             $layout = '<div class="related-posts">';
-            $layout .= '<h3>' . strip_tags($title) . '</h3>';
+            $layout .= '<h3>' . strip_tags( $title ) . '</h3>';
             $layout .= '<ul class="nostyle related-posts-list">';
-            while ($related->have_posts()) {
+            while ( $related->have_posts() ) {
                 $related->the_post();
                 $layout .= '<li class="related-post">';
-                if ($images == true) {
+                if ( $images == true ) {
                     $layout .= '<span class="related-thumb">';
                     $layout .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_post_thumbnail() . '</a>';
                     $layout .= '</span>';
