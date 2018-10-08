@@ -52,8 +52,11 @@ LINK STYLES
 *********************/
 
 a, a:visited {
+    text-decoration: none;
     /* on hover */
-    &:hover, &:focus {}
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
 
     /* on click */
     &:active {}
@@ -76,12 +79,16 @@ HEADING STYLES
 
 /* 
 While there are several frameworks for Sass web typography and
-baselines like Sassline, Megatype and Gutenberg, those all seemed
-overly complex. What I wanted was simple defaults that looked good
-out of the box without a lot of calculations and segmented mixins.
+baselines like Sassline, Megatype and Gutenberg (not the new WP editor), 
+those all seemed overly complex. What I wanted was simple defaults that 
+looked good out of the box without a lot of calculations and segmented mixins.
 
 After searching far and wide, I came across this:
 http://type-scale.com which we used to get our base sizes.
+
+You should use only one <h1> element per page (generally for the page title). 
+Then, use <h2> for sub-headings and h3-h6 if you need to structure your text
+further. Using correct headings helps with readability, SEO, and accessibility.
 */
 
 /* Heading defaults */

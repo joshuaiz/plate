@@ -3,7 +3,7 @@
  Template Name: Full Width Page
  * 
  * No Sidebar on this page.
- * Be sure to change your CSS Grid to adjust.
+ * Be sure to change your CSS Grid styles to adjust (in _cssgrid.scss).
 */
 ?>
 

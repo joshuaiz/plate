@@ -4,13 +4,16 @@
  *
  * This is the base custom page template. 
  * 
- * Change the "Template Name" at the top and save as page-newname.php and it will
- * show up as a template in the Page Templates drop-down on page edit screens in 
- * the admin. 
+ * To use for your theme, change the name of your template from 
+ * "Custom Page Example" above. Example: 
  * 
- * Then change it as you need for each page or groups of pages. 
+ * Template Name: My Custom Page 
  * 
- * Convenience, look it up.
+ * Then save this template as page-mycustompage.php and it will show up 
+ * as a template in the Page Templates drop-down on page edit screens in the admin. 
+ * 
+ * Important: the "Template Name: " is required by WordPress so that your template
+ * will show up as a choice in the admin.
  * 
  * Remember to keep the markup and content separate. 
  * 
