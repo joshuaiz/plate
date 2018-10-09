@@ -14,7 +14,7 @@ See the [CHANGELOG](https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md) 
 
 ![](https://studio.bio/images/plate_home_cssgrid.png)
 _Plate Home page with sidebar showing CSS Grid layout blocks.
-It's almost as if it is not even there._
+It's almost as if it is not even there. (The colors are just for development to see your grid and are easily removed)_
 
 #### How to use Plate?
 Download or clone into your `/wp-content/themes/` folder and activate the theme in the WordPress admin in `Appearance > Themes`.
