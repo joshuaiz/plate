@@ -17,13 +17,19 @@ _Plate Home page with sidebar showing CSS Grid layout blocks.
 It's almost as if it is not even there._
 
 #### How to use Plate?
-Download or clone into your `/wp-content/themes/` folder and activate the theme in the WordPress admin in `Appearance > Themes`. 
+Download or clone into your `/wp-content/themes/` folder and activate the theme in the WordPress admin in `Appearance > Themes`.
+
+Plate uses modular Sass/SCSS files with CSS media queries that map to the default HTML elements in the theme, providing a quick way to get a project up-and-running. You may not need all of the supplied classes to style your theme, so just delete what you don't use.
+
+On the other hand, if you need to style the user name for nested comments 3 levels deep, Plate is ready. 
 
 **Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary. We love CodeKit `<>`.
 
 We also have Grunt support built-in if that's your thang.
 
 From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
+
+There are lots of comments throughout the theme so we encourage you to read them to help you with development. The theme and its respective comments are updated all the time.
 
 #### 🎉 As of June 21, 2018, Plate is 1 year old! 
 
