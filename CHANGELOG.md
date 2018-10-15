@@ -6,6 +6,11 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.8 2018-10-14
+- updated searchform.php for accessibility
+- updated 404.php styles for accessbility
+- minor fixes and adjustments
+
 ### 1.2.7 2018-10-08
 - updated page-custom.php and page-custom-loop.php comments
 - updated instructions in base.scss

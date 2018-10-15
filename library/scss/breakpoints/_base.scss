@@ -262,7 +262,11 @@ the cool kids do.
 
 .search-paged-1 {}
 
-.error404 {}
+.error404 {
+    input[type="search"] {
+        margin: 0 0 1em;
+    }
+}
 
 .single {}
 
