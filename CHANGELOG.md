@@ -9,6 +9,8 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 ### 1.2.8 2018-10-14
 - updated searchform.php for accessibility
 - updated 404.php styles for accessbility
+- updated colors in _cssgrid.scss for accessibility
+- removed `<h1>` for site title in header
 - minor fixes and adjustments
 
 ### 1.2.7 2018-10-08

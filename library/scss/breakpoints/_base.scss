@@ -158,6 +158,9 @@ HEADER STYLES
     margin-bottom: 0;
     font-size: 2em;
     line-height: inherit;
+    a {
+        color: lighten($sb-black, 12%);
+    }
 }
 
 #bloginfo {

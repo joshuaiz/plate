@@ -53,18 +53,23 @@
                     <?php // updated with proper markup and wrapping div for organization ?>
                     <div id="bloginfo" itemscope itemtype="https://schema.org/Organization">
 
-                        <?php // You can use text or a logo (or both) in your header. Uncomment below to use a logo ?>
+                        <?php 
+                        /*
+                        * You can use text or a logo (or both) in your header. If you use both, 
+                        * try placing them in a single link element for better accessibility.
+                        */
+                        ?>
                         <div id="logo" itemprop="logo">
                             <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
-                                <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.svg" itemprop="logo" />
+                                <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.svg" itemprop="logo" alt="site logo" />
                             </a>
                         </div>
 
-                        <h1 id="site-title" class="h1" itemprop="name">
+                        <div id="site-title" class="site-title" itemprop="name">
                             <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
                                 <?php bloginfo('name'); ?>
                             </a>
-                        </h1>
+                        </div>
 
                     </div>
 

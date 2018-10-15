@@ -114,14 +114,14 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
         // add colors just to show what's going on. Comment the colors out when you've sorted your layouts.
         #content {
             flex: 1; // fallback
-            background: yellow;
+            background-color: cornsilk;
         }
         aside {
-            background: red;
+            background-color: coral;
             min-height: 80px; // just to make sure it is visible on mobile; 
         }
         #footer {
-            background: blue;
+            background-color: lightblue;
         }
     }
 

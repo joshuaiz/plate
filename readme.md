@@ -12,7 +12,7 @@ See the [CHANGELOG](https://github.com/joshuaiz/plate/blob/master/CHANGELOG.md) 
 
 ## A super stripped-down WordPress starter theme for developers. 
 
-![](https://studio.bio/images/plate_home_cssgrid.png)
+![](https://studio.bio/images/plate_home_page_2018.png)
 _Plate Home page with sidebar showing CSS Grid layout blocks.
 It's almost as if it is not even there. (The colors are just for development to see your grid and are easily removed)_
 
