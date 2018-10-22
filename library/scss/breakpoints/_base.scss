@@ -55,6 +55,7 @@ a, a:visited {
     text-decoration: none;
     /* on hover */
     &:hover, &:focus {
+        // make sure your links are noticable
         text-decoration: underline;
     }
 
@@ -71,7 +72,6 @@ a, a:visited {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
     }
 }
-
 
 /******************************************************************
 HEADING STYLES
@@ -140,6 +140,7 @@ h6, .h6 {
     text-transform: uppercase;
     letter-spacing: 4.333px;
 }
+
 
 /*********************
 HEADER STYLES

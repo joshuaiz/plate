@@ -4,7 +4,7 @@
  * 
  * Use this template for a static home page. 
  * If you don't need the main loop, remove it
- * and get busy.
+ * and get busy one time.
 */
 ?>
 
@@ -28,3 +28,4 @@
     <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
+
