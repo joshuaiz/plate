@@ -6,6 +6,7 @@
 <!--[if gt IE 8]><!--> <html <?php html_schema(); ?> <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
 	<head>
+
         <?php // See everything you need to know about the <head> here: https://github.com/joshbuchea/HEAD ?>
         <meta charset='<?php bloginfo( 'charset' ); ?>'>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -37,6 +38,7 @@
 
         <?php // drop Google Analytics here ?>
         <?php // end analytics ?>
+
     </head>
 
 	<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
