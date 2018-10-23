@@ -6,6 +6,11 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.2.9 2018-10-23
+- added acf-json folder to support ACF's Local JSON feature by default
+- updated some comments in base.scss
+- reverted a couple wonky commits. Whoops
+
 ### 1.2.8 2018-10-14
 - updated searchform.php for accessibility
 - updated 404.php styles for accessbility
