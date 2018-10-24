@@ -20,6 +20,39 @@ http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
 ******************************************************************/
 
+// Centering.
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+    position: absolute;
+    
+    @if $position == 'vertical' {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @else if $position == 'horizontal' {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translate(-50%);
+    }
+    @else if $position == 'both' {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+// Using the mixin
+.foo {
+    @include center(both);
+}
+.foo-parent {
+    position: relative;
+}
+
 /*********************
 TINTS/SHADES
 https://css-tricks.com/snippets/sass/tint-shade-functions/
@@ -41,6 +74,14 @@ https://css-tricks.com/snippets/sass/tint-shade-functions/
 /// @return {Color}
 @function shade($color, $percentage) {
     @return mix(black, $color, $percentage);
+}
+
+@mixin black-and-white() {
+	filter: grayscale(100%);
+}
+
+@mixin color() {
+	filter: grayscale(0%);
 }
 
 /*********************

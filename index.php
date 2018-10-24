@@ -1,3 +1,12 @@
+<?php
+/**
+ * This file is loaded if no other template files are found.
+ * 
+ * Know your WordPress template hierarchy:
+ * https://wphierarchy.com
+ * 
+ */
+
 <?php get_header(); ?>
 
 	<div id="content">

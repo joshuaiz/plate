@@ -29,7 +29,7 @@
             <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php endif; ?>
 
-        <?php // put font scripts like Typekit here ?>
+        <?php // put font scripts like Typekit/Adobe Fonts here ?>
         <?php // end fonts ?>
 
         <?php // wordpress head functions ?>

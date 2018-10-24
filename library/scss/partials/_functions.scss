@@ -41,6 +41,15 @@ box-shadow: 0 0 4px rgba(0,0,0,0.3);
     @return rgba(255, 255, 255, $opacity);
 }
 
+// Shades/tints functions. Sweet.
+@function darkest( $color ) 	{ @return darken($color,20%); }
+@function darker( $color ) 		{ @return darken($color,13.333%); }
+@function dark( $color ) 		{ @return darken($color,6.667%); }
+@function light( $color ) 		{ @return lighten($color,16.667%); }
+@function lighter( $color ) 	{ @return lighten($color,33.333%); }
+@function lightest( $color ) 	{ @return lighten($color,50%); }
+
+
 /*********************
 RESPONSIVE HELPER FUNCTION
 If you're creating a responsive site, then
@@ -65,4 +74,77 @@ width: 65%;
 
 @function cp($target, $container) {
     @return calc-percent($target, $container);
+}
+
+
+/************************
+MORE SASS FUNCTIONS
+*************************/
+
+
+// include background images easily
+@function path($src, $dir: img) {
+	$src: unquote($src);
+	@return url(unquote("..")/$dir/$src);
+}
+
+// strip the unit from a value
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+/* Example:
+$length: 42em;
+$int: strip-unit($length); // 42
+*/
+
+/**
+ * Calculate rems based on a base unit.
+ */
+ @function remCalc($size, $base) {
+    $remSize: $size / $font-base-size;
+    @return #{$remSize}rem;
+}
+
+
+// mapping function (key=>value pairs)
+@function match($haystack, $needle) {
+    @each $item in $haystack {
+        $index: index($item, $needle);
+        @if $index {
+            $return: if($index == 1, 2, $index);
+            @return nth($item, $return);
+        }
+    }
+    @return false;
+}
+
+/* Example:
+$list: a b, c d, e f;
+$value: match($list, e); // returns f
+$value: match($list, b); // returns a
+$value: match($list, z); // returns false
+*/
+
+
+// create arrows (triangles)
+// from here: http://selfteach.me/sass-extends-mixins-functions/
+@mixin arrow ($direction, $size, $color) {
+	@if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+	} @else if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+	} @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+	} @else if $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right:$size solid $color;
+	}
 }

@@ -285,6 +285,22 @@ width: calc-percent(650px, 1000px);
 both compile to:
 width: 65%;
 *********************/
+  /************************
+MORE SASS FUNCTIONS
+*************************/
+  /* Example:
+$length: 42em;
+$int: strip-unit($length); // 42
+*/
+  /**
+ * Calculate rems based on a base unit.
+ */
+  /* Example:
+$list: a b, c d, e f;
+$value: match($list, e); // returns f
+$value: match($list, b); // returns a
+$value: match($list, z); // returns false
+*/
   /******************************************************************
 Site Name:
 Author:
@@ -365,8 +381,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     font-size: 2em;
     margin: 0.67em 0; }
   body#tinymce.wp-editor hr {
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    box-sizing: content-box;
     /* 1 */
     height: 0;
     /* 1 */
@@ -451,8 +466,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   body#tinymce.wp-editor fieldset {
     padding: 0.35em 0.75em 0.625em; }
   body#tinymce.wp-editor legend {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* 1 */
     color: inherit;
     /* 2 */
@@ -470,8 +484,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     overflow: auto; }
   body#tinymce.wp-editor [type="checkbox"],
   body#tinymce.wp-editor [type="radio"] {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* 1 */
     padding: 0;
     /* 2 */ }
@@ -506,7 +519,6 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     body#tinymce.wp-editor .clearfix:after, body#tinymce.wp-editor .cf:after {
       clear: both; }
   body#tinymce.wp-editor * {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   body#tinymce.wp-editor .image-replacement,
   body#tinymce.wp-editor .ir {
@@ -527,6 +539,14 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     -ms-font-feature-settings: "liga", "dlig";
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
+  body#tinymce.wp-editor .foo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  body#tinymce.wp-editor .foo-parent {
+    position: relative; }
   @media only screen and (min-width: 481px) {
     body#tinymce.wp-editor {
       /* at this larger size, we can start to align images */ }
@@ -616,7 +636,5 @@ ul, ol {
   list-style-type: none; }
 
 .related-posts-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
 /*# sourceMappingURL=editor-style.css.map */

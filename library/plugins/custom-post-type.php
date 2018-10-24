@@ -29,6 +29,9 @@ Edit this or replace your own code from generatewp.com and then place
 in the /wp-content/plugins folder and activate it like any other
 plugin. Sweetness.
 
+** And yes, I know having this file in the theme gives an error in
+Theme Check. Big whoop.
+
 ******************************************************************/
 
 

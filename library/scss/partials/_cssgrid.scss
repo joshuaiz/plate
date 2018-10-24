@@ -103,7 +103,12 @@ more pure CSS Grid interpretation: https://github.com/joshuaiz/grate
 // (!) don't use @supports(display: grid) {} as this will still return true for IE10 and Edge
 @supports( grid-area: auto ) {
 
-    // grid defaults. If you don't want to use CSS Grid, remove the .grid class from #container.
+    /**
+    * Grid defaults. 
+    * If you don't want to use CSS Grid, remove the .grid class 
+    * from #container in header.php
+    * 
+    */
     .grid {
         display: grid;
         margin: 0 auto;

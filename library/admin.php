@@ -93,7 +93,7 @@ add_action( 'admin_enqueue_scripts', 'plate_admin_css', 10 );
 add_filter( 'admin_footer_text', 'plate_custom_admin_footer' );
 
 function plate_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="https://studio.bio" target="_blank">studio.bio</a></span>. Built using <a href="https://studio.bio/template" target="_blank">Plate</a>.', 'platetheme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="https://studio.bio" target="_blank">studio.bio</a></span>. Built using <a href="https://studio.bio/themes/plate" target="_blank">Plate</a>.', 'platetheme' );
 }
 
 ?>

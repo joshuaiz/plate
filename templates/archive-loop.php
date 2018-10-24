@@ -28,7 +28,9 @@ the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 		<header class="entry-header article-header">
 
-			<h3 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+			<h3 class="h2 entry-title">
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+            </h3>
 		
 			<?php get_template_part( 'templates/byline'); ?>
 

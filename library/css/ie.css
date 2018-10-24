@@ -149,6 +149,16 @@ http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
 http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 
 ******************************************************************/
+.foo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.foo-parent {
+  position: relative; }
+
 /*********************
 TINTS/SHADES
 https://css-tricks.com/snippets/sass/tint-shade-functions/
@@ -400,7 +410,7 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 At this breakpoint you can start setting things like max-width for
-your content. Or go full-width. Like Nas said: "The world is yours!."
+your content. Or go full-width. Like Nas said: "The world is yours!"
 
 ******************************************************************/
 #inner-header, #inner-footer {

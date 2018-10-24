@@ -14,7 +14,7 @@
 *
 */
 
-/* LOAD TEMPLATE DEVELOPMENT FUNCTIONS
+/* LOAD PLATE DEVELOPMENT FUNCTIONS
 (not required but helper stuff for debugging and development)
 */
 // require_once( 'library/plate.php' );
@@ -24,16 +24,13 @@
 */
 require_once( 'library/admin.php' );
 
-/*
-*-------------------------------------------------
-* PLATE LUNCH
-*
-* Let's get everything on the plate and eat!
-* 
-*-------------------------------------------------
-*/
 
-// mmmmmmmmmmmmm dig in!
+/************************************
+ * PLATE LUNCH
+ * 
+ * Let's get everything on the plate. Mmmmmmmm.
+ * 
+ ************************************/
 add_action( 'after_setup_theme', 'plate_lunch' );
 
 function plate_lunch() {
