@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.0 2018-10-24
+- release update
+- added new Sass functions in _functions.scss
+- cleaned up comments
+- formatting updates
+- fixed an ongoing not enough dub reggae issue
+
 ### 1.2.9 2018-10-23
 - added acf-json folder to support ACF's Local JSON feature by default
 - updated some comments in base.scss
