@@ -6,6 +6,7 @@
  * https://wphierarchy.com
  * 
  */
+?>
 
 <?php get_header(); ?>
 
