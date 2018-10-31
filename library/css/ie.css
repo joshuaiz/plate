@@ -277,20 +277,19 @@ can start to have fun with your layout(s).
 /*********************
 GLOBAL STYLES
 *********************/
-.edit-post-visual-editor .alignfull {
-  margin-right: calc(50% - 50vw);
-  margin-left: calc(50% - 50vw);
-  max-width: 1000%;
-  width: auto; }
+.entry-content .alignfull {
+  margin-left: calc( -100vw / 2 + 100% / 2);
+  margin-right: calc( -100vw / 2 + 100% / 2);
+  max-width: 100vw; }
 
-.edit-post-visual-editor .alignwide {
+.entry-content .alignwide {
   margin-right: calc(25% - 25vw);
   margin-left: calc(25% - 25vw);
   max-width: 1000%;
   width: auto; }
 
-.edit-post-visual-editor .alignwide img,
-.edit-post-visual-editor .alignfull img {
+.entry-content .alignwide img,
+.entry-content .alignfull img {
   display: block;
   margin: 0 auto; }
 
@@ -361,6 +360,11 @@ style a page via class
 We like having these classes for use in iPad and larger devices
 so we've copied them here.
 */
+.single-full #main {
+  max-width: 640px;
+  float: none;
+  margin: 0 auto; }
+
 /*********************
 SIDEBARS & ASIDES
 *********************/

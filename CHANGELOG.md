@@ -6,6 +6,14 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.1 2018-10-30
+- updated Gutenberg image styles (in _768up)
+- added single-full.php (for full-width posts)
+- added header-full.php (for header with full-width grid)
+- added single-full styles
+- added .single-full class in body class function
+- updated no collusion to collusion
+
 ### 1.3.0 2018-10-24
 - release update
 - added new Sass functions in _functions.scss

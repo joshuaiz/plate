@@ -1089,6 +1089,10 @@ function plate_body_class( $classes ) {
 
     }
 
+    if ( is_page_template('single-full.php') ) {
+        $classes[] = 'single-full';
+    }
+
     return $classes;
 
 }
