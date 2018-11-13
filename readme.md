@@ -36,7 +36,7 @@ There are lots of comments throughout the theme so we encourage you to read them
 We want to say thank you to all those who have starred, forked and contributed to Plate over the past year. You have truly helped to make Plate better and better.
 
 ### 🔘 What's new with Plate?
-- Expanded Gutenberg support
+- Expanded Gutenberg support (updated 12 Nov 2018)
 - Full CSS Grid support with starter grids
 - Updated page-navi and related posts functions
 - HTML schema built-in
