@@ -426,6 +426,9 @@ function plate_scripts_and_styles() {
         // adding scripts file in the footer
         wp_enqueue_script( 'plate-js', get_theme_file_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
+        // accessibility (a11y) scripts
+        wp_enqueue_script( 'plate-a11y', get_theme_file_uri() . '/library/js/a11y.js', array( 'jquery' ), '', true );
+
         $wp_styles->add_data( 'plate-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
         // plate extra scripts. Uncomment to use. Or better yet, copy what you need to the main scripts folder or on the page(s) you need it
@@ -473,9 +476,9 @@ add_action( 'enqueue_block_assets', 'plate_gutenberg_styles' );
 
 function plate_gutenberg_styles() {
     if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-        wp_enqueue_style( 'plate-gutenbers-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
+        wp_enqueue_style( 'plate-gutenberg-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
     } else {
-        wp_enqueue_style( 'plate-gutenbers-styles', get_theme_file_uri( '/library/css/gutenberg.min.css' ), false, '1.0', 'all' );
+        wp_enqueue_style( 'plate-gutenberg-styles', get_theme_file_uri( '/library/css/gutenberg.min.css' ), false, '1.0', 'all' );
     }
 
 }
@@ -572,15 +575,28 @@ function plate_filter_ptags_on_images( $content ) {
 }
 
 
-// This removes the annoying […] to a Read More link
+
+if ( ! function_exists( 'plate_excerpt_more' ) && ! is_admin() ) :
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.
+ * Be sure to change the text domain to the one matching your theme.
+ *
+ * @since Your Theme 1.0
+ *
+ * @return string 'Continue reading' link prepended with an ellipsis.
+ */
 function plate_excerpt_more( $more ) {
-
-    global $post;
-
-     // edit here if you like
-    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
-
+    $link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+        esc_url( get_permalink( get_the_ID() ) ),
+        /* translators: %s: Name of current post */
+        sprintf( __( 'Continue reading %s', 'platetheme' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+        );
+    return ' &hellip; ' . $link;
 }
+add_filter( 'excerpt_more', 'yourtheme_excerpt_more' );
+
+endif;
+
 
 
 /*********************

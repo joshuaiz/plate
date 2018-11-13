@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.3 2018-11-13
+- added a11y.js enqueue for expanded accessibility support (👍)
+- added accessibility-ready patterns from the WP theme guide
+- updated header.php with ARIA values and screen reader text
+- updated 'Read More' function with ARIA setting
+- fixed an issue where my workspace needed a tidy
+
 ### 1.3.2 2018-11-12
 - added default editor styles in _gutenberg.scss to match front end
 - updated header to allow for non-blocking scripts

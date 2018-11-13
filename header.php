@@ -82,9 +82,12 @@
 
                     </div>
 
-                    <nav class="header-nav" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                    <nav class="header-nav primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="<?php _e( 'Primary Menu ', 'universal' ); ?>">
 
-                    <?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
+                        <?php // added primary menu marker for accessibility ?>
+                        <h2 class="screen-reader-text"><?php _e( 'Primary Menu', 'universal' ); ?></h2>
+
+                        <?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 
                         <?php wp_nav_menu( array(
 
