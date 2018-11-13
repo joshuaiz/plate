@@ -37,7 +37,7 @@ We want to say thank you to all those who have starred, forked and contributed t
 
 ### 🔘 What's new with Plate?
 - Expanded Gutenberg support (updated 12 Nov 2018)
-- Expanded accessibility features (??)
+- Expanded accessibility features
 - Full CSS Grid support with starter grids
 - Updated page-navi and related posts functions
 - HTML schema built-in
