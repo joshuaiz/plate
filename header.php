@@ -11,7 +11,7 @@
          * updated with non-blocking order
          * see here: https://csswizardry.com/2018/11/css-and-network-performance/
          * 
-         * In short, place any js that doesn't need to act on css before any css to
+         * In short, place any js here that doesn't need to act on css before any css to
          * speed up page loads.
          */
         ?>
@@ -82,10 +82,10 @@
 
                     </div>
 
-                    <nav class="header-nav primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="<?php _e( 'Primary Menu ', 'universal' ); ?>">
+                    <nav class="header-nav primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="<?php _e( 'Primary Menu ', 'platetheme' ); ?>">
 
                         <?php // added primary menu marker for accessibility ?>
-                        <h2 class="screen-reader-text"><?php _e( 'Primary Menu', 'universal' ); ?></h2>
+                        <h2 class="screen-reader-text"><?php _e( 'Primary Menu', 'platetheme' ); ?></h2>
 
                         <?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
 
