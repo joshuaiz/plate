@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.4 2018-11-13
+- updated 404.php with better semantic layout
+- updated 404 page styles: search input, button, padding
+- fixed error in 'Read more' function
+- minor adjustments and fixes
+
 ### 1.3.3 2018-11-13
 - added a11y.js enqueue for expanded accessibility support (👍)
 - added accessibility-ready patterns from the WP theme guide

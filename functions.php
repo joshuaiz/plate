@@ -593,7 +593,7 @@ function plate_excerpt_more( $more ) {
         );
     return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', 'yourtheme_excerpt_more' );
+add_filter( 'excerpt_more', 'plate_excerpt_more' );
 
 endif;
 

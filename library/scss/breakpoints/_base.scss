@@ -155,7 +155,7 @@ HEADER STYLES
 }
 
 #site-title {
-    margin-bottom: 0;
+    margin: 0 0.5em 0 0;
     font-size: 2em;
     line-height: inherit;
     a {
@@ -266,8 +266,20 @@ the cool kids do.
 .search-paged-1 {}
 
 .error404 {
+    .search-outer {
+        padding: 1.5em 0;
+    }
+    .search-input {
+        display: flex;
+        width: 100%;
+    }
     input[type="search"] {
-        margin: 0 0 1em;
+        margin: 0 1em 0 0;
+        height: 40px;
+        min-width: 250px;
+    }
+    .search-submit {
+        width: 100px;
     }
 }
 

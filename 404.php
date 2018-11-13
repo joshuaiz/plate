@@ -25,7 +25,7 @@
 
 					</section>
 
-					<section class="search">
+					<section class="search-outer">
 
 						<div class="search-form-outer"><?php get_search_form(); ?></div>
 
@@ -42,5 +42,7 @@
 		</div>
 
 	</div>
+
+    <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

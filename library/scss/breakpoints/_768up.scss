@@ -65,6 +65,8 @@ nav {}
 
 .header-nav {
     // class on the main navigation nav element
+    display: flex;
+    align-items: center; // centers nav links vertically in header
 }
 
 .nav { // the ul element
@@ -79,8 +81,8 @@ nav {}
 
         a {
             display: block;
-            padding: 0.2em;
             border-bottom: 0;
+            padding: 0 0.5em;
             text-decoration: none;
 
             /*
