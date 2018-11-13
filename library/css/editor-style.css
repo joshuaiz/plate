@@ -11,8 +11,9 @@ and placed in the root theme directory folder as editor-style.css
 For more info, check out the codex:
 http://codex.wordpress.org/Editor_Style
 
-1.2.0 NOTE: This is pretty much deprecated with Gutenberg coming
-so this will get a revamp soon!
+NOTE: This file only loads in the classic editor, not for the
+Gutenberg editor. To add styles for Gutenbergm, use the 
+_gutenberg.scss file.
 
 ******************************************************************/
 /* Wrap the entire post style inside the TinyMCE selector, as suggested

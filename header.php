@@ -7,6 +7,18 @@
 
 	<head>
 
+        <?php /**
+         * updated with non-blocking order
+         * see here: https://csswizardry.com/2018/11/css-and-network-performance/
+         * 
+         * In short, place any js that doesn't need to act on css before any css to
+         * speed up page loads.
+         */
+        ?>
+
+        <?php // drop Google Analytics here ?>
+        <?php // end analytics ?>
+
         <?php // See everything you need to know about the <head> here: https://github.com/joshbuchea/HEAD ?>
         <meta charset='<?php bloginfo( 'charset' ); ?>'>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -35,9 +47,6 @@
         <?php // wordpress head functions ?>
         <?php wp_head(); ?>
         <?php // end of wordpress head ?>
-
-        <?php // drop Google Analytics here ?>
-        <?php // end analytics ?>
 
     </head>
 

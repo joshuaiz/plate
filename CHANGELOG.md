@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.2 2018-11-12
+- added default editor styles in _gutenberg.scss to match front end
+- updated header to allow for non-blocking scripts
+- updated Gutenberg comments
+- updated editor-style.scss for Gutenberg
+- fixed issue where I had no fire and it was cold
+
 ### 1.3.1 2018-10-30
 - updated Gutenberg image styles (in _768up)
 - added single-full.php (for full-width posts)
