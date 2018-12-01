@@ -54,7 +54,7 @@ By fully ingesting Eddie's insightful words while working with Bones, we learned
 
 In the spirit of Bones, we've kept in some of Eddie's original comments and, where warranted, added our own throughout the theme to help developers of all levels. We see Plate as not only a great starter theme for advanced developers but a learning tool for those just starting with WordPress themes as well.
 
-![](https://studio.bio/images/plate_functions.png)
+![](https://studio.bio/images/plate_theme_support.png)
 
 We now use Plate for every single WordPress project so it is important to keep it up-to-date with the latest WordPress releases. Thus we have added support for Gutenberg, Flexbox, CSS Grid, schema, WooCommerce and more. Two years on from Bones, Plate includes more page templates, an updated default font stack, a custom post type plugin template, and some handy custom functions that we use all of the time. 
 
