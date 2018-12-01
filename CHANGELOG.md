@@ -6,9 +6,15 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.6 2018-12-01
+- added default Plate dashboard widget + styles
+- fixed `plate_excerpt_more()` function and added comments
+- minor Gutenberg fixes
+- fixed a no sunshine issue
+
 ### 1.3.5 2018-11-30
 - updated (well switched really) _editor.scss and _gutenberg.scss (see comments)
-- _editor.scss is not *only* for the gutenberg editor in the admin
+- _editor.scss is now *only* for the gutenberg editor in the admin
 - _gutenberg.scss is for both the editor and the front end
 - fixed `plate_excerpt_more()` function because Gutenberg didn't like it
 - fixed issue where a check did not clear

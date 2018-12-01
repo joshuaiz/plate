@@ -10,3 +10,20 @@ is empty, but you can just start dropping your styles here to
 start customizing. All admin functions are located in admin.php.
 
 ******************************************************************/
+
+#plate_dashboard_widget {
+    width: 48vw;
+    padding-bottom: 1em;
+    * {
+        line-height: 1.4;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.664em;
+    }
+    p {
+        font-size: 15px;
+    }
+}

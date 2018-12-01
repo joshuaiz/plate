@@ -568,11 +568,12 @@ add_filter('the_content', 'plate_filter_ptags_on_images');
 
 function plate_filter_ptags_on_images( $content ) {
 
-    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+    return preg_replace('/<pp>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 
 }
 
 
+// Simple function to remove the [...] from excerpt and add a 'Read More »' link.
 function plate_excerpt_more($more) {
   global $post;
   // edit here if you like
@@ -1193,6 +1194,49 @@ function plate_time_link() {
     );
 }
 endif;
+
+
+/** 
+ * Dashboard Widget
+ * 
+ * Add a widget to the dashboard in the WP Admin.
+ * Great to add instructions or info for clients.
+ *  
+ * If you don't need/want this, just remove it or 
+ * comment it out.
+ * 
+ * Customize it...yeaaaahhh...but don't criticize it.
+ * 
+ * 
+ * 
+ */
+
+function plate_add_dashboard_widgets() {
+
+    // Call the built-in dashboard widget function with our callback
+    wp_add_dashboard_widget(
+                'plate_dashboard_widget', // Widget slug. Also the HTML id for styling in admin.scss.
+                __( 'Welcome to Plate!', 'platetheme' ), // Title.
+                'plate_dashboard_widget_init' // Display function (below)
+        );
+}
+add_action( 'wp_dashboard_setup', 'plate_add_dashboard_widgets' );
+
+// Create the function to output the contents of our Dashboard Widget.
+function plate_dashboard_widget_init() {
+
+    // helper vars for links and images and stuffs.
+    $url = get_admin_url();
+    $img = get_theme_file_uri() . '/library/images/logo.svg';
+
+    echo '<div class="dashboard-image"><img src=' . $img . '" width="96" height="96" /></div>';
+    echo '<h3>You\'ve arrived at the WordPress Dashboard aka the \'Site Admin\' or \'WordPress Admin\' or simply the \'Admin\'.</h3>'; 
+    echo '<p><strong>Thank you for using the <a href="https://github.com/joshuaiz/plate" target="_blank">Plate</a> theme by <a href="https://studio.bio/" target="_blank">studio.bio</a>!</strong></p>'; 
+    echo '<p>You can add your own message(s) or HTML here. Edit the <code>plate_dashboard_widget_init()</code> function in <code>functions.php</code> at line 1225. Styles are in <code>admin.scss</code>. Or if you don\'t want or need this, just delete the function. Have it your way.</p>';
+    echo '<p>This is a great place for site instructions, links to help or resources, and to add your contact info for clients.</p>';
+    echo '<p>Make sure to remind them about the <code>Screen Options</code> tab on the top right. Often clients do not know about that and that they can show or hide or rearrange these Dashboard Widgets.</p>';
+    
+}
 
 
 // Live Reload for Grunt during development
