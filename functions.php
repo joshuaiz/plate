@@ -459,9 +459,7 @@ add_action( 'enqueue_block_editor_assets', 'plate_block_editor_styles' );
 
 function plate_block_editor_styles() {
     if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-        wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
-    } else {
-        wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/gutenberg.min.css' ), false, '1.0', 'all' );
+        wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/editor.css' ), false, '1.0', 'all' );
     }
 
 }
@@ -575,27 +573,11 @@ function plate_filter_ptags_on_images( $content ) {
 }
 
 
-
-if ( ! function_exists( 'plate_excerpt_more' ) && ! is_admin() ) :
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.
- * Be sure to change the text domain to the one matching your theme.
- *
- * @since Your Theme 1.0
- *
- * @return string 'Continue reading' link prepended with an ellipsis.
- */
-function plate_excerpt_more( $more ) {
-    $link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-        esc_url( get_permalink( get_the_ID() ) ),
-        /* translators: %s: Name of current post */
-        sprintf( __( 'Continue reading %s', 'platetheme' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
-        );
-    return ' &hellip; ' . $link;
+function plate_excerpt_more($more) {
+  global $post;
+  // edit here if you like
+  return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
 }
-add_filter( 'excerpt_more', 'plate_excerpt_more' );
-
-endif;
 
 
 
