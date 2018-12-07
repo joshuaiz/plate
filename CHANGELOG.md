@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.7 2018-12-07
+- added new 'page-blog' and 'blogroll' classes for static posts page
+- contained 'alignfull' and 'alignwide' images on static posts page
+- minor adjustments and fixes
+- Gutenberg is here!
+
 ### 1.3.6 2018-12-01
 - added default Plate dashboard widget + styles
 - fixed `plate_excerpt_more()` function and added comments

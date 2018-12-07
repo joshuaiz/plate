@@ -315,6 +315,16 @@ the cool kids do.
 
 .tag-paged-1 {}
 
+.page-blog {
+    .entry-content {
+        // keep new Gutenberg image styles in check for blog page
+        .alignfull, .alignwide {
+            margin: 0;
+            max-width: 100%;
+        }
+    }
+}
+
 .page-template {}
 
 .page-template-page-php {}

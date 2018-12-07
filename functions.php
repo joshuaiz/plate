@@ -1037,6 +1037,15 @@ add_filter( 'body_class', 'plate_body_class' );
 
 function plate_body_class( $classes ) {
 
+    // Adds new classes for blogroll page (list of blog posts)
+    // good for containing full-width images from Gutenberg
+    // Added: 2018-12-07
+    global $wp_query;
+
+    if ( isset( $wp_query ) && (bool) $wp_query->is_posts_page ) {
+        $classes[] = 'blogroll page-blog';
+    }
+
     global $post;
 
     if ( isset( $post ) ) {
