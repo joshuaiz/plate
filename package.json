@@ -1,6 +1,6 @@
 {
-  "name": "BoilerPlate",
-  "version": "0.0.2",
+  "name": "platetheme",
+  "version": "1.3.0",
   "devDependencies": {
     "connect-livereload": "*",
     "grunt": "*",
@@ -9,7 +9,10 @@
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-svgstore": "*"
+    "grunt-contrib-watch": "*"
+  },
+  "dependencies": {
+    "grunt-sass": "*",
+    "node-sass": "*"
   }
 }
