@@ -23,7 +23,7 @@ Plate uses modular Sass/SCSS files with CSS media queries that map to the defaul
 
 On the other hand, if you need to style the user name for nested comments 3 levels deep, Plate is ready. 
 
-**Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary. We love CodeKit `<>`.
+**Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary. We love CodeKit `</>`.
 
 We also have Grunt support built-in if that's your thang.
 
