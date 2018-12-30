@@ -31,16 +31,13 @@ require_once( 'library/admin.php' );
  * Let's get everything on the plate. Mmmmmmmm.
  * 
  ************************************/
+
 add_action( 'after_setup_theme', 'plate_lunch' );
 
 function plate_lunch() {
 
     // editor style
-    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-        add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
-    } else {
-        add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.min.css' );
-    }
+    add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
     // let's get language support going, if you need it
     load_theme_textdomain( 'platetheme', get_template_directory() . '/library/translation' );
@@ -256,7 +253,9 @@ function plate_comments( $comment, $args, $depth ) {
             </section>
 
             <div class="comment-reply">
+
                 <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                
             </div>
             
         </article>
@@ -458,9 +457,8 @@ function in case you don't need them.
 add_action( 'enqueue_block_editor_assets', 'plate_block_editor_styles' );
 
 function plate_block_editor_styles() {
-    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-        wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/editor.css' ), false, '1.0', 'all' );
-    }
+    
+    wp_enqueue_style( 'plate-block-editor-styles', get_theme_file_uri( '/library/css/editor.css' ), false, '1.0', 'all' );
 
 }
 
@@ -991,12 +989,12 @@ PAGE NAVI
 * function will play nice. Example:
 * 
 * plate_page_navi( $query );
-•
-• Also make sure your query has pagination set, e.g.:
+*
+* Also make sure your query has pagination set, e.g.:
 * $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 * (or something similar)
-• See the codex: https://codex.wordpress.org/Pagination
-
+* See the codex: https://codex.wordpress.org/Pagination
+*
 */
 
 function plate_page_navi( $wp_query ) {
@@ -1215,7 +1213,6 @@ endif;
  * comment it out.
  * 
  * Customize it...yeaaaahhh...but don't criticize it.
- * 
  * 
  * 
  */

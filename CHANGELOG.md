@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.8 2018-12-29
+- removed last vestiges of clearfix (although 'cf' class still exists)
+- cleaned up `editor.css` and `editor-style.css`
+- updated comments throughout
+- minor cleanup of template files
+- fixed a not enough dub reggae issue
+
 ### 1.3.7 2018-12-07
 - added new 'page-blog' and 'blogroll' classes for static posts page
 - contained 'alignfull' and 'alignwide' images on static posts page

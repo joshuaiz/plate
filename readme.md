@@ -63,7 +63,7 @@ We've also included some extras and goodies that developers may find useful but 
 Edit this, fork it, change it, delete it - whatever. As Eddie might say: _It's your world. But I hope you make something cool with it._
 
 ### 🔮 The Future of Plate
-**Gutenberg:** As the Gutenberg project gets closer to a release candidate, we are watching closely and adjusting Gutenberg support as necessary. Things have been changing rapidly although much of the Gutenberg core has been solidified. We will add styles for default blocks once they become finalized.
+**Gutenberg:** Gutenberg is here! And Plate is ready. We've got full theme support for Gutenberg along with included classes and styles for all of the included default blocks.
 
 **CSS Grid:** we are using CSS Grid on all new projects so as we get more familiar with edge cases and better default implementations, Plate will be updated accordingly.
 

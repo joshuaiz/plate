@@ -1,7 +1,7 @@
 <?php
 /*
 * This is the basic search form that will get shown when you use get_search_form() anywhere in your theme.
-* Updated with new HTMl5 goodness.
+* Updated for accessibility November, 2018.
 *
 */
 ?>
