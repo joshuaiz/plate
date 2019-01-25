@@ -6,6 +6,14 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.3.9 2019-01-24
+- removed WP_DEBUG conditionals from enqueues. Why? Because you should be
+able to decide for yourself how your .scss files are outputted: minimized, not, etc.
+- minor functions.php updates
+- comment updates
+- formatting updates
+- fixed a 'no pie' issue
+
 ### 1.3.8 2018-12-29
 - removed last vestiges of clearfix (although 'cf' class still exists)
 - cleaned up `editor.css` and `editor-style.css`

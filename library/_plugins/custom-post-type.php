@@ -158,13 +158,13 @@ add_action( 'init', 'plate_staff_grouping_tax', 0 );
 
 // Change the 'Title' field text on edit screen
 function plate_staff_change_title_text( $title ){
-     $screen = get_current_screen();
+    $screen = get_current_screen();
 
-     if  ( 'plate_staff' == $screen->post_type ) {
-          $title = 'Full Name (First Last)';
-     }
+    if  ( 'plate_staff' == $screen->post_type ) {
+        $title = 'Full Name (First Last)';
+    }
 
-     return $title;
+    return $title;
 }
 
 add_filter( 'enter_title_here', 'plate_staff_change_title_text' );
@@ -174,10 +174,10 @@ add_filter( 'enter_title_here', 'plate_staff_change_title_text' );
 add_filter("manage_edit-plate_staff_sortable_columns", 'plate_staff_sort');
 
 function plate_staff_sort($columns) {
-   $custom = array(
-       'taxonomy-grouping' => 'taxonomy-grouping'
-   );
-   return wp_parse_args($custom, $columns);
+    $custom = array(
+        'taxonomy-grouping' => 'taxonomy-grouping'
+    );
+    return wp_parse_args($custom, $columns);
 }
 
 

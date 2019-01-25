@@ -471,11 +471,8 @@ function plate_block_editor_styles() {
 add_action( 'enqueue_block_assets', 'plate_gutenberg_styles' );
 
 function plate_gutenberg_styles() {
-    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-        wp_enqueue_style( 'plate-gutenberg-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
-    } else {
-        wp_enqueue_style( 'plate-gutenberg-styles', get_theme_file_uri( '/library/css/gutenberg.min.css' ), false, '1.0', 'all' );
-    }
+
+    wp_enqueue_style( 'plate-gutenberg-styles', get_theme_file_uri( '/library/css/gutenberg.css' ), false, '1.0', 'all' );
 
 }
 
@@ -562,6 +559,7 @@ function disable_emojicons_tinymce( $plugins ) {
 // Remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 // This only works for the main content box, not using ACF or other page builders.
 // Added small bit of javascript in scripts.js that will work everywhere. 
+// Keeping this in in case people are still using it.
 add_filter('the_content', 'plate_filter_ptags_on_images');
 
 function plate_filter_ptags_on_images( $content ) {
@@ -573,9 +571,9 @@ function plate_filter_ptags_on_images( $content ) {
 
 // Simple function to remove the [...] from excerpt and add a 'Read More »' link.
 function plate_excerpt_more($more) {
-  global $post;
-  // edit here if you like
-  return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
+    global $post;
+    // edit here if you like
+    return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'platetheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'platetheme' ) .'</a>';
 }
 
 
@@ -836,11 +834,8 @@ function plate_customizer_scripts() {
     wp_enqueue_script( 'plate_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js', array( 'jquery', 'customize-preview' ), '', true);
 
     // register customizer stylesheet
-    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-        wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
-    } else {
-        wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.min.css', array(), '', 'all' );
-    }
+    wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
+   
     wp_enqueue_style( 'plate-customizer' );
 
 }
@@ -1048,8 +1043,9 @@ function plate_body_class( $classes ) {
 
     if ( isset( $post ) ) {
 
+        /* Un comment below if you want the post_type-post_name body class */
         /* $classes[] = $post->post_type . '-' . $post->post_name; */
-        /*Un comment this if you want the post_type-post_name body class */
+        
         $pagetemplate = get_post_meta( $post->ID, '_wp_page_template', true);
         $classes[] = sanitize_html_class( str_replace( '.', '-', $pagetemplate ), '' );
         $classes[] = $post->post_name;
@@ -1221,10 +1217,10 @@ function plate_add_dashboard_widgets() {
 
     // Call the built-in dashboard widget function with our callback
     wp_add_dashboard_widget(
-                'plate_dashboard_widget', // Widget slug. Also the HTML id for styling in admin.scss.
-                __( 'Welcome to Plate!', 'platetheme' ), // Title.
-                'plate_dashboard_widget_init' // Display function (below)
-        );
+        'plate_dashboard_widget', // Widget slug. Also the HTML id for styling in admin.scss.
+        __( 'Welcome to Plate!', 'platetheme' ), // Title.
+        'plate_dashboard_widget_init' // Display function (below)
+    );
 }
 add_action( 'wp_dashboard_setup', 'plate_add_dashboard_widgets' );
 
@@ -1246,7 +1242,7 @@ function plate_dashboard_widget_init() {
 
 
 // Live Reload for Grunt during development
-//If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
+// If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
 if ( in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')) ) {
 
     function livereload_script() {

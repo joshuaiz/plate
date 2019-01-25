@@ -57,7 +57,7 @@ the whole project.
 
 /**
 * Gutenberg Styles.
-•
+*
 * Now enqueued in a separate function in functions.php to
 * keep styles out of the main stylesheet. Alternatively
 * you can comment out the Gutenberg styles enqueue and 
@@ -84,8 +84,8 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 @import "modules/forms";
 
 /*********************
-BASE (MOBILE) SIZE
-This are the mobile styles. It's what people see on their phones. If
+BASE STYLESHEET
+These are the base styles and it's loaded on every device. If
 you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 *********************/
