@@ -83,10 +83,17 @@ POSTS & CONTENT STYLES
 	.aligncenter, img.aligncenter {
 		margin-right: auto;
 		margin-left: auto;
-		display: block;
+		display: table;
 		clear: both;
 		margin-top: 11px;
-	}
+    }
+    
+    .wp-block-media-text.alignfull {
+        // fix for Gutenberg media block
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
 } /* end .entry-content */
 

@@ -14,15 +14,21 @@
 *
 */
 
-/* LOAD PLATE DEVELOPMENT FUNCTIONS
+/* Plate development and debug functions
 (not required but helper stuff for debugging and development)
 */
 // require_once( 'library/plate.php' );
 
-/* CUSTOMIZE THE WORDPRESS ADMIN 
+/* WordPress Admin functions (for customizing the WP Admin)
 (also not required so comment it out if you don't need it)
 */
 require_once( 'library/admin.php' );
+
+// WordPress Customizer functions and enqueues
+// include( get_template_directory_uri() . '/library/customizer.php' );
+
+require_once( 'library/customizer.php' );
+
 
 
 /************************************
@@ -606,11 +612,15 @@ function plate_theme_support() {
     // Custom Header Image
     add_theme_support( 'custom-header', array(
 
-        'default-image'          => get_template_directory_uri() . '/library/images/header-image.png',
-        'default-text-color'     => 'ffffff',
-        'header-text'            => true,
-        'uploads'                => true,
-        'wp-head-callback'       => 'plate_style_header',
+            'default-image'      => get_template_directory_uri() . '/library/images/header-image.png',
+            'default-text-color' => '000',
+            'width'              => 1440,
+            'height'             => 220,
+            'flex-width'         => true,
+            'flex-height'        => true,
+            'header-text'        => true,
+            'uploads'            => true,
+            'wp-head-callback'   => 'plate_style_header',
 
         ) 
     );
@@ -619,7 +629,7 @@ function plate_theme_support() {
     add_theme_support( 'custom-logo', array(
 
         'height'      => 100,
-        'width'       => 400,
+        'width'       => 100,
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -776,104 +786,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 }
 
-
-/****************************************
-* CUSTOMIZER *
-****************************************/
-
-// Needs updating as of WP 4.9.X
-
-add_action( 'customize_register', 'plate_register_theme_customizer' );
-
-function plate_register_theme_customizer( $wp_customize ) {
-
-    // Uncomment this to see what's going on if you make a lot of changes
-    // echo '<pre>';
-    // var_dump( $wp_customize );  
-    // echo '</pre>';
-
-    // Customize title and tagline sections and labels
-    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Name and Description', 'platetheme' );  
-    $wp_customize->get_control( 'blogname' )->label = __( 'Site Name', 'platetheme' );  
-    $wp_customize->get_control( 'blogdescription' )->label = __( 'Site Description', 'platetheme' );  
-    $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-
-    // Customize the Front Page Settings
-    $wp_customize->get_section( 'static_front_page' )->title = __( 'Homepage Preferences', 'platetheme' );
-    $wp_customize->get_section( 'static_front_page' )->priority = 20;
-    $wp_customize->get_control( 'show_on_front' )->label = __( 'Choose Homepage Preference:', 'platetheme' );  
-    $wp_customize->get_control( 'page_on_front' )->label = __( 'Select Homepage:', 'platetheme' );  
-    $wp_customize->get_control( 'page_for_posts' )->label = __( 'Select Blog Homepage:', 'platetheme' );  
-
-    // Customize Background Settings
-    $wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'platetheme' );  
-    $wp_customize->get_control( 'background_color' )->section = 'background_image'; 
-
-    // Customize Header Image Settings  
-    $wp_customize->add_section( 'header_text_styles' , array(
-
-        'title'      => __( 'Header Text Styles', 'platetheme' ), 
-        'priority'   => 30
-
-        ) 
-    );
-
-    $wp_customize->get_control( 'display_header_text' )->section = 'header_text_styles';  
-    $wp_customize->get_control( 'header_textcolor' )->section = 'header_text_styles'; 
-    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage'; 
-
-}
-
-
-// Custom scripts + styles for theme customizer
-add_action( 'customize_preview_init', 'plate_customizer_scripts' );
-
-function plate_customizer_scripts() {
-
-    wp_enqueue_script( 'plate_theme_customizer', get_template_directory_uri() . '/library/js/theme-customizer.js', array( 'jquery', 'customize-preview' ), '', true);
-
-    // register customizer stylesheet
-    wp_register_style( 'plate-customizer', get_theme_file_uri() . '/library/css/customizer.css', array(), '', 'all' );
-   
-    wp_enqueue_style( 'plate-customizer' );
-
-}
-
-
-// Callback function for updating header styles
-function plate_style_header() {
-
-    $text_color = get_header_textcolor();
-  
-    ?>
-  
-    <style type="text/css">
-
-        header.header .site-title a {
-          color: #<?php echo esc_attr( $text_color ); ?>;
-        }
-      
-        <?php if( display_header_text() != true ): ?>
-        .site-title, .site-description {
-          display: none;
-        } 
-        <?php endif; ?>
-
-        #banner .header-image {
-          max-width: 100%;
-          height: auto;
-        }
-
-        .customize-control-description {
-          font-style: normal;
-        }
-
-    </style>
-
-  <?php 
-
-}
 
 /*********************
 RELATED POSTS FUNCTION
@@ -1236,7 +1148,7 @@ function plate_dashboard_widget_init() {
     echo '<p><strong>Thank you for using the <a href="https://github.com/joshuaiz/plate" target="_blank">Plate</a> theme by <a href="https://studio.bio/" target="_blank">studio.bio</a>!</strong></p>'; 
     echo '<p>You can add your own message(s) or HTML here. Edit the <code>plate_dashboard_widget_init()</code> function in <code>functions.php</code> at line 1225. Styles are in <code>admin.scss</code>. Or if you don\'t want or need this, just delete the function. Have it your way.</p>';
     echo '<p>This is a great place for site instructions, links to help or resources, and to add your contact info for clients.</p>';
-    echo '<p>Make sure to remind them about the <code>Screen Options</code> tab on the top right. Often clients do not know about that and that they can show or hide or rearrange these Dashboard Widgets.</p>';
+    echo '<p>Make sure to remind them about the <code>Screen Options</code> tab on the top right. Often clients do not know about that and that they can show or hide or rearrange these Dashboard Widgets or show/hide boxes on any edit screen.</p>';
     
 }
 

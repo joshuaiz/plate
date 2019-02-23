@@ -6,6 +6,14 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.0 2019-02-23
+- Lots of Gutenberg updates: front-end styles, enqueues, `theme_support`
+- updated new Gutenberg block default styles
+- WP Customizer updates: moved to separate file `/library/customizer.php`
+- updated Customizer function(s) to support latest updates
+- 1.4.0 release(!)
+- fixed an issue regarding not enough JavaScript
+
 ### 1.3.9 2019-01-24
 - removed WP_DEBUG conditionals from enqueues. Why? Because you should be
 able to decide for yourself how your .scss files are outputted: minimized, not, etc.

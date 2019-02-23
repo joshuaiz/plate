@@ -250,9 +250,13 @@ POSTS & CONTENT STYLES
   .entry-content .aligncenter, .entry-content img.aligncenter {
     margin-right: auto;
     margin-left: auto;
-    display: block;
+    display: table;
     clear: both;
     margin-top: 11px; }
+  .entry-content .wp-block-media-text.alignfull {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
 
 /* end .entry-content */
 /*********************

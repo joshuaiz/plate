@@ -68,18 +68,34 @@
                         * try placing them in a single link element for better accessibility.
                         */
                         ?>
-                        <div id="logo" itemprop="logo">
-                            <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
-                                <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.svg" itemprop="logo" alt="site logo" />
-                            </a>
-                        </div>
+                        <?php if (has_custom_logo()) { ?>
 
-                        <div id="site-title" class="site-title" itemprop="name">
-                            <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
-                                <?php bloginfo('name'); ?>
-                            </a>
-                        </div>
+                            <div id="logo" itemprop="logo">
+                                <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>"><?php the_custom_logo(); ?></a>
+                            </div>
 
+                            <div id="site-title" class="site-title" itemprop="name">
+                                <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
+                                    <?php bloginfo('name'); ?>
+                                </a>
+                            </div>
+                            
+                        <?php } else { ?>
+
+                            <div id="logo" itemprop="logo">
+                                <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
+                                    <img src="<?php echo get_theme_file_uri(); ?>/library/images/logo.svg" itemprop="logo" alt="site logo" />
+                                </a>
+                            </div>
+
+                            <div id="site-title" class="site-title" itemprop="name">
+                                <a href="<?php echo home_url(); ?>" rel="nofollow" itemprop="url" title="<?php bloginfo('name'); ?>">
+                                    <?php bloginfo('name'); ?>
+                                </a>
+                            </div>
+
+                        <?php } ?>
+                        
                     </div>
 
                     <nav class="header-nav primary-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="<?php _e( 'Primary Menu ', 'platetheme' ); ?>">
