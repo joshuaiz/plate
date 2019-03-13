@@ -27,13 +27,17 @@ It&#8217;s almost as if it is not even there. (The colors are just for developme
 
 <p>Download or clone into your <code>/wp-content/themes/</code> folder and activate the theme in the WordPress admin in <code>Appearance &gt; Themes</code>.</p>
 
-<p>Plate uses modular Sass/SCSS files with CSS media queries that map to the default HTML elements in the theme, providing a quick way to get a project up-and-running. You may not need all of the supplied classes to style your theme, so just delete what you don&#8217;t use.</p>
+<p>Plate uses modular Sass/SCSS files with CSS media queries that map to the default HTML elements in the theme, providing a quick way to get a project up-and-running. You may not need all of the supplied classes to style your theme, so just delete what you don&#8217;t use. On the other hand, if you need to style the user name for nested comments 3 levels deep, Plate is ready.</p>
 
-<p>On the other hand, if you need to style the user name for nested comments 3 levels deep, Plate is ready.</p>
+<p>You can find the modular scss files in <code>library/scss/</code> and then further broken down into <code>/breakpoints</code> for our most-used media queries, <code>/modules</code> for buttons, alerts, and forms and then <code>/partials</code> for grids, typography, functions, variables and anything else.</p>
+
+<p>All of the stylesheets are then imported via the <code>/library/scss/style.scss</code> file which is rendered to <code>/library/css/style.css</code> via your preprocessor.</p>
 
 <p><strong>Note:</strong> You will need to use a pre-processor to compile <code>.scss</code> (Sass) into <code>CSS</code>. We recommend <a href="https://codekitapp.com">CodeKit</a>. Just drop your theme into CodeKit and you&#8217;re all set. No configuration necessary. We love CodeKit <code>&lt;/&gt;</code>.</p>
 
 <p>We also have Grunt support built-in if that&#8217;s your thang.</p>
+
+<p><code>_base.scss</code> includes styles loaded for all devices. From there you can add styles to the respective breakpoint stylesheets for the devices that will use them.</p>
 
 <p>From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate&#8217;s defaults. That&#8217;s it!</p>
 

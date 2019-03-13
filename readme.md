@@ -19,13 +19,17 @@ It's almost as if it is not even there. (The colors are just for development to 
 #### How to use Plate?
 Download or clone into your `/wp-content/themes/` folder and activate the theme in the WordPress admin in `Appearance > Themes`.
 
-Plate uses modular Sass/SCSS files with CSS media queries that map to the default HTML elements in the theme, providing a quick way to get a project up-and-running. You may not need all of the supplied classes to style your theme, so just delete what you don't use.
+Plate uses modular Sass/SCSS files with CSS media queries that map to the default HTML elements in the theme, providing a quick way to get a project up-and-running. You may not need all of the supplied classes to style your theme, so just delete what you don't use. On the other hand, if you need to style the user name for nested comments 3 levels deep, Plate is ready.
 
-On the other hand, if you need to style the user name for nested comments 3 levels deep, Plate is ready. 
+You can find the modular scss files in `library/scss/` and then further broken down into `/breakpoints` for our most-used media queries, `/modules` for buttons, alerts, and forms and then `/partials` for grids, typography, functions, variables and anything else.
+
+All of the stylesheets are then imported via the `/library/scss/style.scss` file which is rendered to `/library/css/style.css` via your preprocessor.
 
 **Note:** You will need to use a pre-processor to compile `.scss` (Sass) into `CSS`. We recommend [CodeKit](https://codekitapp.com). Just drop your theme into CodeKit and you're all set. No configuration necessary. We love CodeKit `</>`.
 
 We also have Grunt support built-in if that's your thang.
+
+`_base.scss` includes styles loaded for all devices. From there you can add styles to the respective breakpoint stylesheets for the devices that will use them. 
 
 From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
 
