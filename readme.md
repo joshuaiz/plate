@@ -31,7 +31,7 @@ We also have Grunt support built-in if that's your thang.
 
 `_base.scss` includes styles loaded for all devices. From there you can add styles to the respective breakpoint stylesheets for the devices that will use them. 
 
-From there, fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
+Fire up your favorite text editor, customize the default styles or add your own, and create your own theme templates from Plate's defaults. That's it!
 
 There are lots of comments throughout the theme so we encourage you to read them to help you with development. The theme and its respective comments are updated all the time.
 
