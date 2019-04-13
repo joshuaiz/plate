@@ -16,7 +16,7 @@
 
 	<div id="content">
 
-		<div id="inner-content" class="wrap cf">
+		<div id="inner-content" class="wrap">
 
 			<main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 

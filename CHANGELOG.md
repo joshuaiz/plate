@@ -6,6 +6,13 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.l 2019-04-13
+- Removed last few remaining cf/clearfix calls in templates
+- Added custom page template with no loop (for ACF pages)
+- Updated formatting in theme templates throughout
+- Updated Readme
+- Fixed a "not enough sunshine" issue
+
 ### 1.4.0 2019-02-23
 - Lots of Gutenberg updates: front-end styles, enqueues, `theme_support`
 - updated new Gutenberg block default styles

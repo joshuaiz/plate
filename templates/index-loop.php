@@ -29,7 +29,7 @@
 
 		</header>
 
-		<section class="entry-content cf">
+		<section class="entry-content">
 									
 			<?php the_content(); ?>
 
