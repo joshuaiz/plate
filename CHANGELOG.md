@@ -6,6 +6,10 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.2 2019-04-28
+- moved `the_title()` calls into individual templates from template parts
+- `/templates/header-title.php` is still there if you need it
+
 ### 1.4.l 2019-04-13
 - Removed last few remaining cf/clearfix calls in templates
 - Added custom page template with no loop (for ACF pages)

@@ -23,7 +23,7 @@
 
 		<header class="article-header">
 
-			<?php get_template_part( 'templates/header', 'title'); ?>
+            <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 			
 			<?php get_template_part( 'templates/byline'); ?>
 
