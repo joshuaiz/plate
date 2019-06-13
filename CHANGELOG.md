@@ -6,6 +6,10 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.3 2019-06-13
+- added `body_open()` function supporting WP 5.2 features
+- cleaned up some text encoding stuffs in some files
+
 ### 1.4.2 2019-04-28
 - moved `the_title()` calls into individual templates from template parts
 - `/templates/header-title.php` is still there if you need it
