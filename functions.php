@@ -78,6 +78,23 @@ function plate_lunch() {
     // clean up the default WP excerpt
     add_filter( 'excerpt_more', 'plate_excerpt_more' );
 
+    // new body_open() function added in WP 5.2
+    // https://generatewp.com/wordpress-5-2-action-that-every-theme-should-use/
+    if ( ! function_exists( 'wp_body_open' ) ) {
+        /**
+         * Fire the wp_body_open action.
+         *
+         * Added for backwards compatibility to support WordPress versions prior to 5.2.0.
+         */
+        function wp_body_open() {
+            /**
+             * Triggered after the opening <body> tag.
+             */
+            do_action( 'wp_body_open' );
+        }
+    }
+
+
 } /* end plate lunch */
 
 
@@ -743,6 +760,7 @@ function plate_theme_support() {
     // add_theme_support( 'disable-custom-colors' );
 
 } /* end plate theme support */
+
 
 /** 
  * $content_width.

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /******************************************************************
 Site Name:
 Author:
@@ -50,7 +49,7 @@ Stylesheet: Typography
 
 ******************************************************************/
 /*
-"Web design is 95% typography" — Oliver Reichenstein
+"Web design is 95% typography" - Oliver Reichenstein
 
 When that quote was made in 2006 it was before web fonts, auto-play video,
 and animated pop-ups so even if it is 65 or 75% today that is still *most* 
@@ -73,7 +72,7 @@ https://zellwk.com/blog/responsive-typography/
 https://github.com/zellwk/typi
 
 Note that most of the typography styles are set in base.scss with
-the html, body, and h1–h6 tags so adjust as needed. Set a good baseline
+the html, body, and h1-h6 tags so adjust as needed. Set a good baseline
 and consider your vertical rhythm.
 
 */
@@ -310,8 +309,12 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 .header-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  align-items: center; }
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center; }
 
 .nav {
   margin: 0;
