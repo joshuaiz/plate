@@ -776,8 +776,9 @@ function plate_theme_support() {
  * 
  */
 
+// commented by default now as it breaks Instagram Gutenberg Block embeds.
 if ( ! isset( $content_width ) ) {
-	$content_width = '100%';
+	// $content_width = '100%';
 }
 
 
