@@ -6,6 +6,12 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.4 2019-10-20
+- added theme support for responsive embeds
+- cleaned up `page-html.php`
+- fixed `page-custom-no-loop.php` so that it actually has no loop now
+- fixed 'Going back to Cali' issue.
+
 ### 1.4.3 2019-06-13
 - added `body_open()` function supporting WP 5.2 features
 - cleaned up some text encoding stuffs in some files

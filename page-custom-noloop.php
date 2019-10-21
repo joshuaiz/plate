@@ -33,52 +33,25 @@
 
             <main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/Blog">
 
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="https://schema.org/BlogPosting">
 
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="https://schema.org/BlogPosting">
+                    <header class="article-header">
 
-                        <header class="article-header">
+                        <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
-                            <h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+                    </header> <?php // end article header ?>
 
-                            <div class="byline-wrap">
+                    <section class="entry-content" itemprop="articleBody">
 
-                                <?php // Get the author name; wrap it in a link.
-                                if ( get_the_author_meta( 'ID' ) ) { $byline = sprintf( __( 'by %s', 'platetheme' ), '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>' );
+                        <?php // place your main content ACF calls here. ?>
 
-                                echo '<span class="posted-on">' . plate_time_link() . '</span><span class="byline"> ' . $byline . '</span>';
+                    </section> <?php // end article section ?>
 
-                                } else { echo '<span class="posted-on">Posted on:' . plate_time_link() . '</span>'; }
+                    <footer class="article-footer">
 
-                                ?>
-                                
-                            </div>
+                    </footer>
 
-                        </header> <?php // end article header ?>
-
-                        <section class="entry-content" itemprop="articleBody">
-
-                            <?php the_content(); ?>
-
-                        </section> <?php // end article section ?>
-
-                        <footer class="article-footer">
-
-                        </footer>
-
-                        <?php comments_template(); ?>
-
-                    </article>
-
-                <?php endwhile; ?>
-
-                    <?php plate_page_navi( $wp_query ); ?>
-
-                <?php else : ?>
-
-                    <?php get_template_part( 'templates/404'); ?>
-
-                <?php endif; ?>
+                </article>
 
             </main>
 
@@ -86,6 +59,7 @@
 
     </div>
 
+    <?php // remove the sidebar if you don't need it ?>
     <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

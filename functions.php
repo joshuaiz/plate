@@ -752,6 +752,9 @@ function plate_theme_support() {
         )
     );
 
+    // Adds responsive embeds to Gutenberg blocks
+    add_theme_support( 'responsive-embeds' );
+
     // Adds default Gutenberg styles to custom blocks
     // Delete/comment out if you are adding your own block styles
     add_theme_support( 'wp-block-styles' );
