@@ -6,6 +6,11 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.5 2019-10-31 
+- updated byline/post time
+- updated theme support
+- fixed some php docblocks
+
 ### 1.4.4 2019-10-20
 - added theme support for responsive embeds
 - cleaned up `page-html.php`

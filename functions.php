@@ -909,7 +909,7 @@ function plate_related_posts( $display = 'category', $qty = 5, $images = true, $
 PAGE NAVI
 *********************/
 
-/* 
+/** 
 * Numeric Page Navi (built into the theme by default).
 * (Updated 2018-05-17)
 * 
@@ -923,6 +923,8 @@ PAGE NAVI
 * $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 * (or something similar)
 * See the codex: https://codex.wordpress.org/Pagination
+* 
+* @param array $wp_query
 *
 */
 
@@ -1109,16 +1111,17 @@ if ( ! function_exists( 'plate_time_link' ) ) :
  */
 function plate_time_link() {
 
-    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    // if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    //   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-    // }
+    $time_string = 'Posted on: <time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string = 'Posted on: <time class="entry-date published" datetime="%1$s">%2$s</time> | Updated: <time class="updated" datetime="%3$s">%4$s</time>';
+    }
 
-    $time_string = sprintf( $time_string,
-        get_the_date( DATE_W3C ),
-        get_the_date(),
-        get_the_modified_date( DATE_W3C ),
-        get_the_modified_date()
+    $time_string = sprintf(
+        $time_string,
+        esc_attr( get_the_date( DATE_W3C ) ),
+        esc_html( get_the_date() ),
+        esc_attr( get_the_modified_date( DATE_W3C ) ),
+        esc_html( get_the_modified_date() )
     );
 
     // Wrap the time string in a link, and preface it with 'Posted on'.
@@ -1126,11 +1129,12 @@ function plate_time_link() {
 
         /* translators: %s: post date */
         __( '<span class="screen-reader-text">Posted on</span> %s', 'platetheme' ),
-        '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+        $time_string
 
     );
 }
 endif;
+
 
 
 /** 
