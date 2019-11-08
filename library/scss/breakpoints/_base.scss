@@ -41,6 +41,13 @@ img {
     height: auto;
 }
 
+pre {
+    code {
+        // if your code looks wonky, remove this
+        white-space: pre-line;
+    }
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/

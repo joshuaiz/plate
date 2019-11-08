@@ -195,7 +195,7 @@
 
                             </section>
 
-                            <section>
+                            <section id="forms">
                                 <h2 class="other-class">Forms</h2>
                                 <form>
                                     <fieldset>

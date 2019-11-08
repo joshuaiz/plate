@@ -6,6 +6,11 @@ Author: Joshua Michaels for studio.bio with help from Jon Iler
 
 *******************************************************************
 
+### 1.4.6 2019-11-07
+- updated Modernizr script to address hyphens/anchor link issue
+- fixed `<pre><code>` formatting globally
+- various small fixes and updates
+
 ### 1.4.5 2019-10-31 
 - updated byline/post time
 - updated theme support
