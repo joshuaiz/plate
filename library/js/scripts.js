@@ -23,7 +23,7 @@
 * http://cssuseragent.org
 *----------------------------------------
 * This is by far the best detection script I've found. 
-* Using javascript means that this will work with caching. W00t.
+* Using javascript means that this will work with caching. W00t. 
 *
 * Adds user agent classes to the <html> element on your page including OS
 * and browser version.

@@ -100,11 +100,14 @@ further. Using correct headings helps with readability, SEO, and accessibility.
 
 /* Heading defaults */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    margin: 1.333em 0 0.5em;
+    margin: 0;
     color: lighten($sb-black, 12%);
     font-weight: 500;
     line-height: 1.2;
     text-rendering: optimizelegibility;
+    // line-height: 1.2; capital letter width: 0.7
+    // change for your typeface.
+    @include lhCrop(1.2, 0.7); 
 
     /*
     if you're going to use webfonts, be sure to check your weights
@@ -122,12 +125,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
     margin-top: 0;
-    margin-bottom: 0.319em;
+    // margin-bottom: 0.319em;
     font-size: 3.157em;
 }
 
 h2, .h2 {
-    margin-top: 0.88em;
+    // margin-top: 0.88em;
     font-size: 2.369em;
 }
 

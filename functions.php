@@ -721,36 +721,44 @@ function plate_theme_support() {
     // .alignwide styles added to _768up
     add_theme_support( 'align-wide' );
 
-    add_theme_support( 'editor-color-palette',
+    add_theme_support( 'editor-color-palette', array(
         array(
-            'name' => 'studio bio blue',
+            'name' => __( 'studio bio blue', 'platetheme' ),
+            'slug' => 'studio-bio-blue',
             'color' => '#0056ac',
         ),
         array(
-            'name' => 'studio bio light blue',
+            'name' => __( 'studio bio light blue', 'platetheme' ),
+            'slug' => 'studio-bio-light-blue',
             'color' => '#99bbde',
         ),
         array(
-            'name' => 'studio bio midnight',
+            'name' => __( 'studio bio midnight', 'platetheme' ),
+            'slug' => 'studio-bio-midnight',
             'color' => '#001c3a',
         ),
         array(
-            'name' => 'studio bio purple',
+            'name' => __( 'studio bio purple', 'platetheme' ),
+            'slug' => 'studio-bio-purple',
             'color' => '#cc0099',
         ),
         array(
-            'name' => 'studio bio red',
+            'name' => __( 'studio bio red', 'platetheme' ),
+            'slug' => 'studio-bio-red',
             'color' => '#f23e2f',
         ),
         array(
-            'name' => 'grey 70',
+            'name' => __( 'grey 70', 'platetheme' ),
+            'slug' => 'grey-70',
             'color' => '#444444',
         ),
         array(
-            'name' => 'grey 20',
+            'name' => __( 'grey 20', 'platetheme' ),
+            'slug' => 'grey-20',
             'color' => '#cccccc',
-        )
-    );
+        ),
+    ) );
+
 
     // Adds responsive embeds to Gutenberg blocks
     add_theme_support( 'responsive-embeds' );
