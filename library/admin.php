@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------
- * Theme: Plate by studio.bio 
+ * Theme: Plate by studio.bio
  * File: Admin custom functions
  * Author: Joshua Michaels
  * URI: https://studio.bio/themes/plate
@@ -63,9 +63,9 @@ function plate_login_url() {  return home_url(); }
 function plate_login_title() { return get_option( 'blogname' ); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'plate_login_css', 10 );
-add_filter( 'login_headerurl', 'plate_login_url' );
-add_filter( 'login_headertitle', 'plate_login_title' );
+add_action( 'login_enqueue_scripts', 'template_login_css', 10 );
+add_filter( 'login_headerurl', 'template_login_url' );
+add_filter( 'login_headertext', 'template_login_title' );
 
 
 /*********************
